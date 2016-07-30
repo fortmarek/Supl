@@ -1,0 +1,154 @@
+99.7ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:38:10	func getUrl(urlString: String)
+84.6ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:38:10	func getUrl(urlString: String)
+63.5ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:47:71	(closure)
+62.6ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:79:19	@objc override func viewDidAppear(animated: Bool)
+61.1ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:79:19	@objc override func viewDidAppear(animated: Bool)
+57.0ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:47:71	(closure)
+55.9ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:41:10	func getDate() -> String
+52.1ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:41:10	func getDate() -> String
+41.2ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:124:14	@objc get {}
+36.6ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:249:10	func cellsWithSuplArray(array: [suplStruct], indexPath: NSIndexPath) -> UITableViewCell
+34.9ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:13:10	func replaceString(stringArray: [String]) -> String
+32.7ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:13:10	func replaceString(stringArray: [String]) -> String
+31.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:124:14	@objc get {}
+31.4ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:124:73	(closure)
+29.9ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:112:14	@objc get {}
+29.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:112:14	@objc get {}
+29.2ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:38:19	@objc override func viewDidLoad()
+29.2ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:249:10	func cellsWithSuplArray(array: [suplStruct], indexPath: NSIndexPath) -> UITableViewCell
+28.6ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:112:53	(closure)
+28.6ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:112:53	(closure)
+25.0ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:192:10	func getData(urlString: String, schoolclassIndex: Int, isLastTable: Bool)
+24.9ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:192:10	func getData(urlString: String, schoolclassIndex: Int, isLastTable: Bool)
+24.6ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:46:19	@objc override func viewWillDisappear(animated: Bool)
+23.1ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:214:75	(closure)
+22.7ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:214:75	(closure)
+21.6ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:114:10	@objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+21.3ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:46:19	@objc override func viewWillDisappear(animated: Bool)
+19.1ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:114:10	@objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+17.7ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:62:10	@objc func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+17.5ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:62:10	@objc func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+17.4ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:186:10	@objc func saveData(textField: UITextField) -> Bool
+17.1ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:186:10	@objc func saveData(textField: UITextField) -> Bool
+16.7ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:188:19	@objc override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+16.5ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:117:87	(closure)
+15.7ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:28:19	@objc override func viewDidLoad()
+14.9ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:188:19	@objc override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+14.6ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:117:87	(closure)
+14.3ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:20:10	@objc func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool
+12.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:20:10	@objc func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool
+12.5ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:99:80	(closure)
+12.0ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:99:80	(closure)
+9.0ms	/Users/marekfort/Development/Supl/Supl/NotificationCell.swift:33:10	@objc func switchIsChanged(cellSwitch: UISwitch)
+8.9ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:22:10	func compareDate() -> (date: NSDate?, isNotBeforeToday: Bool)
+8.8ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:214:71	(closure)
+8.7ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:214:71	(closure)
+8.7ms	/Users/marekfort/Development/Supl/Supl/NotificationCell.swift:33:10	@objc func switchIsChanged(cellSwitch: UISwitch)
+8.7ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:22:10	func compareDate() -> (date: NSDate?, isNotBeforeToday: Bool)
+8.4ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:64:10	@objc dynamic func daysFrom(date: NSDate) -> Int
+8.4ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:64:10	@objc dynamic func daysFrom(date: NSDate) -> Int
+8.1ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:230:19	@objc override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+8.1ms	/Users/marekfort/Development/Supl/Supl/SettingsCell.swift:28:19	@objc override func awakeFromNib()
+8.0ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:336:10	func setSuplItem(table: HTMLDocument, xPath: String) -> (supltItem: suplStruct, hours: Array<String>)
+7.9ms	/Users/marekfort/Development/Supl/Supl/SettingsCell.swift:28:19	@objc override func awakeFromNib()
+7.0ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:118:14	@objc get {}
+6.9ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:336:10	func setSuplItem(table: HTMLDocument, xPath: String) -> (supltItem: suplStruct, hours: Array<String>)
+6.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:118:14	@objc get {}
+6.6ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:230:19	@objc override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+6.6ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:118:57	(closure)
+6.4ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:164:10	@objc func showMark(didFuncSucceed: Bool, message: String)
+6.4ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:118:57	(closure)
+6.2ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:55:10	func stringToDate() -> NSDate
+6.1ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:55:10	func stringToDate() -> NSDate
+6.0ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:279:74	(closure)
+5.9ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:165:51	(closure)
+5.9ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:279:74	(closure)
+5.6ms	/Users/marekfort/Development/Supl/Supl/NotificationCell.swift:17:19	@objc override func awakeFromNib()
+5.5ms	/Users/marekfort/Development/Supl/Supl/NotificationCell.swift:17:19	@objc override func awakeFromNib()
+5.4ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:334:10	@objc func getDefaults(message: String)
+5.3ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:334:10	@objc func getDefaults(message: String)
+5.3ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:164:10	@objc func showMark(didFuncSucceed: Bool, message: String)
+5.2ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:107:10	@objc func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+5.1ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:70:10	@objc dynamic func getWeekDay() -> String
+5.1ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:70:10	@objc dynamic func getWeekDay() -> String
+4.8ms	<invalid loc>	get {}
+4.8ms	<invalid loc>	get {}
+4.8ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:165:51	(closure)
+4.7ms	<invalid loc>	get {}
+4.6ms	<invalid loc>	get {}
+4.6ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:64:10	@objc func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
+4.5ms	<invalid loc>	get {}
+4.4ms	<invalid loc>	get {}
+4.3ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:64:10	@objc func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData)
+4.2ms	/Users/marekfort/Development/Supl/Supl/SettingsViewController.swift:107:10	@objc func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+4.1ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:79:10	@objc func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+3.9ms	<invalid loc>	get {}
+3.8ms	<invalid loc>	get {}
+3.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:79:10	@objc func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
+3.2ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:149:14	@objc get {}
+3.1ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:149:14	@objc get {}
+3.0ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:71:10	@objc func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
+2.9ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:71:10	@objc func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
+2.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:149:61	(closure)
+2.8ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:149:61	(closure)
+2.5ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:163:19	@objc override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+2.5ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:163:19	@objc override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+2.1ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:320:10	func getText(table: HTMLDocument, xPath: String, width: Int) -> (String)
+2.0ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:180:19	@objc override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+1.9ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:180:19	@objc override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+1.6ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:224:19	@objc override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+1.6ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:37:10	func contains(find: String) -> Bool
+1.6ms	/Users/marekfort/Development/Supl/Supl/Extensions.swift:37:10	func contains(find: String) -> Bool
+1.6ms	/Users/marekfort/Development/Supl/Supl/DataController.swift:320:10	func getText(table: HTMLDocument, xPath: String, width: Int) -> (String)
+1.5ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:388:10	@objc func saveData()
+1.5ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:159:10	@objc func saveContext()
+1.4ms	/Users/marekfort/Development/Supl/Supl/AppDelegate.swift:159:10	@objc func saveContext()
+1.2ms	<invalid loc>	get {}
+1.2ms	<invalid loc>	get {}
+1.2ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:388:10	@objc func saveData()
+1.1ms	<invalid loc>	get {}
+1.1ms	<invalid loc>	get {}
+1.1ms	<invalid loc>	get {}
+1.1ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	<invalid loc>	get {}
+1.0ms	/Users/marekfort/Development/Supl/Supl/ViewController.swift:224:19	@objc override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
