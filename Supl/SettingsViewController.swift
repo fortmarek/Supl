@@ -168,7 +168,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 guard let cell = self.tableView.dequeueReusableCellWithIdentifier("schoolCell") as? SchoolCell
                     else {return UITableViewCell()}
-                cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                cell.textField.addTarget(self, action: #selector(saveData(_:)), forControlEvents: .EditingDidEndOnExit)
                 
                 return cell
                 
@@ -177,10 +177,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 guard let cell = self.tableView.dequeueReusableCellWithIdentifier("classCell") as? ClassCell
                     else {return UITableViewCell()}
                 
-                cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                cell.textField.addTarget(self, action: #selector(saveData(_:)), forControlEvents: .EditingDidEndOnExit)
                 
-                cell.segmentController.addTarget(self, action: #selector(self.segmentChanged(_:)), forControlEvents: .ValueChanged)
-            
                 return cell
             }
         }
@@ -216,14 +214,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         
-    }
-    
-    func segmentChanged(segmentController: UISegmentedControl) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        guard let clas = defaults.valueForKey("class") as? String where clas != "" else {return}
-        if segmentController.selectedSegmentIndex == 0 {
-            
-        }
     }
     
     

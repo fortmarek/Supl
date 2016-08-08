@@ -13,35 +13,55 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         textField.delegate = self
         self.selectionStyle = .None
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
         textField.keyboardType = .Default
         textField.autocapitalizationType = .AllCharacters
+        textForTextfield()
         
-        //Placeholder if class is not set
-        guard let classString = defaults.valueForKey("class") as? String
-            else {
-                textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
-                return
-        }
-        textField.text = classString.replaceString([" "])
-        textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
- 
-    
+        textField.addTarget(self, action: #selector(refreshPlaceholder), forControlEvents: .EditingDidEndOnExit)
+        
+        segmentController.addTarget(self, action: #selector(segmentChanged(_:)), forControlEvents: .ValueChanged)
         
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func segmentChanged(segmentController: UISegmentedControl) {
+        getPlaceholder()
+    }
+    
+    func refreshPlaceholder() {
+        if let clas = textField.text?.replaceString([" "]) where clas == "" {
+            textField.text = ""
+            getPlaceholder()
+        }
+    }
+    
+    func textForTextfield() {
+        //Placeholder if class is not set
+        guard let classString = defaults.valueForKey("class") as? String where classString != ""
+            else {
+                getPlaceholder()
+                return
+        }
+        
+        
+        textField.text = classString.replaceString([" "])
+    }
+    
+    func getPlaceholder() {
+        if segmentController.selectedSegmentIndex == 0 {
+            textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
+        }
+        
+        else {
+            textField.attributedPlaceholder = NSAttributedString(string: "Novák")
+        }
     }
 
 }
