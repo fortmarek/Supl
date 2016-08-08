@@ -47,30 +47,35 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1545">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="892">
+              <caret line="262" column="35" selection-start-line="262" selection-start-column="35" selection-end-line="262" selection-end-column="35" />
               <folding>
                 <element signature="e#47#96#0" expanded="true" />
-                <marker date="1470054764000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
-                <marker date="1470054764000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
-                <marker date="1470054764000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
-                <marker date="1470054764000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
-                <marker date="1470054764000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
-                <marker date="1470054764000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
-                <marker date="1470054764000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
-                <marker date="1470054764000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
-                <marker date="1470054764000" expanded="true" signature="4062:4117" ph="SELECT * FRO... users" />
-                <marker date="1470054764000" expanded="true" signature="4216:4264" ph="UPDATE `user... " />
-                <marker date="1470054764000" expanded="true" signature="4439:4490" ph="SELECT * FRO... users" />
-                <marker date="1470054764000" expanded="true" signature="4782:4850" ph="SELECT `clas... classes" />
-                <marker date="1470054764000" expanded="true" signature="4982:5052" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470054764000" expanded="true" signature="5205:5272" ph="INSERT INTO `temporary_classes`... " />
-                <marker date="1470054764000" expanded="true" signature="5912:5980" ph="SELECT `clas... classes" />
-                <marker date="1470054764000" expanded="true" signature="6112:6182" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470054764000" expanded="true" signature="6636:6690" ph="SELECT * FRO... missing_value" />
-                <marker date="1470054764000" expanded="true" signature="6789:6840" ph="INSERT INTO missing_value... " />
-                <marker date="1470054764000" expanded="true" signature="6957:7011" ph="SELECT * FRO... missing_value" />
-                <marker date="1470054764000" expanded="true" signature="7110:7162" ph="DELETE FROM " />
+                <marker date="1470664557000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
+                <marker date="1470664557000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
+                <marker date="1470664557000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
+                <marker date="1470664557000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
+                <marker date="1470664557000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
+                <marker date="1470664557000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
+                <marker date="1470664557000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
+                <marker date="1470664557000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
+                <marker date="1470664557000" expanded="true" signature="4062:4117" ph="SELECT * FRO... users" />
+                <marker date="1470664557000" expanded="true" signature="4216:4264" ph="UPDATE `user... " />
+                <marker date="1470664557000" expanded="true" signature="4439:4490" ph="SELECT * FRO... users" />
+                <marker date="1470664557000" expanded="true" signature="4782:4850" ph="SELECT `clas... classes" />
+                <marker date="1470664557000" expanded="true" signature="4982:5052" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1470664557000" expanded="true" signature="5205:5272" ph="INSERT INTO `temporary_classes`... " />
+                <marker date="1470664557000" expanded="true" signature="5912:5980" ph="SELECT `clas... classes" />
+                <marker date="1470664557000" expanded="true" signature="6112:6182" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1470664557000" expanded="true" signature="6788:6864" ph="SELECT `clas... classes" />
+                <marker date="1470664557000" expanded="true" signature="6996:7069" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1470664557000" expanded="true" signature="7222:7292" ph="INSERT INTO `temporary_classes`... " />
+                <marker date="1470664557000" expanded="true" signature="7932:8000" ph="SELECT `clas... classes" />
+                <marker date="1470664557000" expanded="true" signature="8132:8202" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1470664557000" expanded="true" signature="8655:8709" ph="SELECT * FRO... missing_value" />
+                <marker date="1470664557000" expanded="true" signature="8808:8859" ph="INSERT INTO missing_value... " />
+                <marker date="1470664557000" expanded="true" signature="8976:9030" ph="SELECT * FRO... missing_value" />
+                <marker date="1470664557000" expanded="true" signature="9129:9181" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -1050,30 +1055,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1545">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="892">
+          <caret line="262" column="35" selection-start-line="262" selection-start-column="35" selection-end-line="262" selection-end-column="35" />
           <folding>
             <element signature="e#47#96#0" expanded="true" />
-            <marker date="1470054764000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
-            <marker date="1470054764000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
-            <marker date="1470054764000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
-            <marker date="1470054764000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
-            <marker date="1470054764000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
-            <marker date="1470054764000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
-            <marker date="1470054764000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
-            <marker date="1470054764000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
-            <marker date="1470054764000" expanded="true" signature="4062:4117" ph="SELECT * FRO... users" />
-            <marker date="1470054764000" expanded="true" signature="4216:4264" ph="UPDATE `user... " />
-            <marker date="1470054764000" expanded="true" signature="4439:4490" ph="SELECT * FRO... users" />
-            <marker date="1470054764000" expanded="true" signature="4782:4850" ph="SELECT `clas... classes" />
-            <marker date="1470054764000" expanded="true" signature="4982:5052" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470054764000" expanded="true" signature="5205:5272" ph="INSERT INTO `temporary_classes`... " />
-            <marker date="1470054764000" expanded="true" signature="5912:5980" ph="SELECT `clas... classes" />
-            <marker date="1470054764000" expanded="true" signature="6112:6182" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470054764000" expanded="true" signature="6636:6690" ph="SELECT * FRO... missing_value" />
-            <marker date="1470054764000" expanded="true" signature="6789:6840" ph="INSERT INTO missing_value... " />
-            <marker date="1470054764000" expanded="true" signature="6957:7011" ph="SELECT * FRO... missing_value" />
-            <marker date="1470054764000" expanded="true" signature="7110:7162" ph="DELETE FROM " />
+            <marker date="1470664557000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
+            <marker date="1470664557000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
+            <marker date="1470664557000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
+            <marker date="1470664557000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
+            <marker date="1470664557000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
+            <marker date="1470664557000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
+            <marker date="1470664557000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
+            <marker date="1470664557000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
+            <marker date="1470664557000" expanded="true" signature="4062:4117" ph="SELECT * FRO... users" />
+            <marker date="1470664557000" expanded="true" signature="4216:4264" ph="UPDATE `user... " />
+            <marker date="1470664557000" expanded="true" signature="4439:4490" ph="SELECT * FRO... users" />
+            <marker date="1470664557000" expanded="true" signature="4782:4850" ph="SELECT `clas... classes" />
+            <marker date="1470664557000" expanded="true" signature="4982:5052" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1470664557000" expanded="true" signature="5205:5272" ph="INSERT INTO `temporary_classes`... " />
+            <marker date="1470664557000" expanded="true" signature="5912:5980" ph="SELECT `clas... classes" />
+            <marker date="1470664557000" expanded="true" signature="6112:6182" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1470664557000" expanded="true" signature="6788:6864" ph="SELECT `clas... classes" />
+            <marker date="1470664557000" expanded="true" signature="6996:7069" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1470664557000" expanded="true" signature="7222:7292" ph="INSERT INTO `temporary_classes`... " />
+            <marker date="1470664557000" expanded="true" signature="7932:8000" ph="SELECT `clas... classes" />
+            <marker date="1470664557000" expanded="true" signature="8132:8202" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1470664557000" expanded="true" signature="8655:8709" ph="SELECT * FRO... missing_value" />
+            <marker date="1470664557000" expanded="true" signature="8808:8859" ph="INSERT INTO missing_value... " />
+            <marker date="1470664557000" expanded="true" signature="8976:9030" ph="SELECT * FRO... missing_value" />
+            <marker date="1470664557000" expanded="true" signature="9129:9181" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
