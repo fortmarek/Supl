@@ -19,6 +19,10 @@ class SchoolCell: UITableViewCell, UITextFieldDelegate {
         textField.delegate = self
         self.selectionStyle = .None
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        guard let schoolUrl = defaults.valueForKey("schoolUrl") as? String else {return}
+        textField.text = schoolUrl
+        
         
     }
 

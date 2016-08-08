@@ -162,8 +162,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         if indexPath.section == 0 {
-            let defaults = NSUserDefaults.standardUserDefaults()
-
+        
             switch indexPath.row {
             case 0:
                 
@@ -171,31 +170,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                     else {return UITableViewCell()}
                 cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
                 
-                guard let schoolUrl = defaults.valueForKey("schoolUrl") as? String else {return cell}
-                cell.textField.text = schoolUrl
-                
                 return cell
                 
             default:
                 
                 guard let cell = self.tableView.dequeueReusableCellWithIdentifier("classCell") as? ClassCell
                     else {return UITableViewCell()}
+                
                 cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
                 
                 cell.segmentController.addTarget(self, action: #selector(self.segmentChanged(_:)), forControlEvents: .ValueChanged)
-                
-                cell.textField.keyboardType = .Default
-                cell.textField.autocapitalizationType = .AllCharacters
-                
-                //Placeholder if class is not set
-                guard let classString = defaults.valueForKey("class") as? String
-                    else {
-                        cell.textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
-                        return cell
-                }
-                cell.textField.text = classString.replaceString([" "])
-                cell.textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
-                
+            
                 return cell
             }
         }

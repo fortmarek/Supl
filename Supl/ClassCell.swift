@@ -19,12 +19,8 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         
         textField.delegate = self
         self.selectionStyle = .None
-        /*
+        
         let defaults = NSUserDefaults.standardUserDefaults()
-        
-        textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
-        
-        segmentController.addTarget(self, action: #selector(SettingsViewController.segmentChanged(_:)), forControlEvents: .ValueChanged)
         
         textField.keyboardType = .Default
         textField.autocapitalizationType = .AllCharacters
@@ -37,7 +33,7 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         }
         textField.text = classString.replaceString([" "])
         textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
- */
+ 
     
         
     }
