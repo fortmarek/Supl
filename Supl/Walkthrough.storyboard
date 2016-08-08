@@ -276,7 +276,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzO-q1-B7w">
-                                <rect key="frame" x="260" y="86" width="81" height="48"/>
+                                <rect key="frame" x="260" y="18" width="81" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -290,19 +290,33 @@
                                     <action selector="emailButtonTapped:" destination="3vk-TU-txy" eventType="touchUpInside" id="Uoc-pe-Db5"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-Se-tJd">
+                                <rect key="frame" x="215" y="103" width="170" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1Es-Rr-3Gk"/>
+                                    <constraint firstAttribute="width" constant="170" id="v4l-yf-M7e"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="student"/>
+                                    <segment title="" image="teacher"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.2274509804" green="0.54901960780000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kfU-Hm-kXh" firstAttribute="top" secondItem="yD9-Lo-O7Z" secondAttribute="bottom" constant="20" id="285-tA-OLU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="o25-yb-1LD" secondAttribute="trailing" id="4oh-H2-w1f"/>
                             <constraint firstItem="hXS-PQ-eTp" firstAttribute="top" secondItem="kfU-Hm-kXh" secondAttribute="bottom" constant="185" id="CGm-Gn-prS"/>
+                            <constraint firstItem="fuB-Se-tJd" firstAttribute="top" secondItem="BzO-q1-B7w" secondAttribute="bottom" constant="37" id="D3o-w0-9es"/>
                             <constraint firstItem="yD9-Lo-O7Z" firstAttribute="centerX" secondItem="2pB-qe-VlW" secondAttribute="centerX" id="Dgc-Hm-VeQ"/>
                             <constraint firstItem="BzO-q1-B7w" firstAttribute="centerX" secondItem="1Z3-QF-b68" secondAttribute="centerX" id="LcZ-j9-9XY"/>
                             <constraint firstAttribute="leadingMargin" secondItem="o25-yb-1LD" secondAttribute="leading" id="RX6-8f-Mbu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yD9-Lo-O7Z" secondAttribute="trailing" id="UBn-CU-tH8"/>
-                            <constraint firstItem="o25-yb-1LD" firstAttribute="top" secondItem="BzO-q1-B7w" secondAttribute="bottom" constant="28" id="ViF-NF-ZRe"/>
                             <constraint firstItem="kfU-Hm-kXh" firstAttribute="centerX" secondItem="1Z3-QF-b68" secondAttribute="centerX" id="aGV-bD-wxN"/>
+                            <constraint firstItem="fuB-Se-tJd" firstAttribute="centerX" secondItem="1Z3-QF-b68" secondAttribute="centerX" id="dLR-4f-JNP"/>
                             <constraint firstItem="yD9-Lo-O7Z" firstAttribute="top" secondItem="2pB-qe-VlW" secondAttribute="bottom" constant="29" id="ern-Hs-NDl"/>
+                            <constraint firstItem="o25-yb-1LD" firstAttribute="top" secondItem="fuB-Se-tJd" secondAttribute="bottom" constant="24" id="get-Bk-3tN"/>
                             <constraint firstAttribute="leadingMargin" secondItem="2pB-qe-VlW" secondAttribute="leading" id="ioP-vY-fcS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="yD9-Lo-O7Z" secondAttribute="leading" id="l6c-qy-uAh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2pB-qe-VlW" secondAttribute="trailing" id="lNW-M5-eMV"/>
@@ -314,6 +328,7 @@
                         <outlet property="emailButton" destination="kfU-Hm-kXh" id="BDB-7n-gGc"/>
                         <outlet property="emailButtonBottomLayout" destination="CGm-Gn-prS" id="5zk-R6-psR"/>
                         <outlet property="getStartedButton" destination="yD9-Lo-O7Z" id="1tr-Ds-jMF"/>
+                        <outlet property="professorStudentSegment" destination="fuB-Se-tJd" id="kGl-3O-JmW"/>
                         <outlet property="schoolTextField" destination="o25-yb-1LD" id="4cZ-Ab-ujF"/>
                         <outlet property="suplLabel" destination="BzO-q1-B7w" id="atr-tD-m4g"/>
                     </connections>
@@ -397,5 +412,7 @@
         <image name="Notification" width="115" height="135"/>
         <image name="Safari" width="218" height="249"/>
         <image name="icon" width="160" height="160"/>
+        <image name="student" width="27" height="27"/>
+        <image name="teacher" width="25" height="25"/>
     </resources>
 </document>

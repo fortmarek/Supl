@@ -13,6 +13,7 @@ import Kanna
 
 class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var professorStudentSegment: UISegmentedControl!
     @IBOutlet weak var schoolTextField: UITextField!
     @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var getStartedButton: UIButton!
@@ -26,7 +27,7 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //Keyboard Notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetUpViewController.keyboardNotification(_:)), name:UIKeyboardWillChangeFrameNotification, object: nil)
 
@@ -62,6 +63,7 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         self.view.layoutIfNeeded()
         schoolOrigin = schoolTextField.frame.origin.y
         
+
     }
     
     deinit {

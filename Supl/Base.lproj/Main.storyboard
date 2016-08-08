@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.22745098039215686" green="0.5490196078431373" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hwT-Ho-ce3" kind="relationship" relationship="rootViewController" id="Glb-Ek-oBu"/>
@@ -164,7 +164,7 @@
                                     <constraint firstAttribute="height" constant="500" id="Tnm-BZ-Zo6"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="ltA-8E-iGR" customClass="SettingsCell" customModule="Supl" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="schoolCell" id="ltA-8E-iGR" customClass="SchoolCell" customModule="Supl" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="ltA-8E-iGR" id="0X0-wD-bpI">
@@ -196,12 +196,50 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="icon" destination="NOM-1S-Nzh" id="4K5-dp-aVr"/>
-                                            <outlet property="textField" destination="dA5-9o-gcJ" id="fqj-aA-ZMx"/>
+                                            <outlet property="textField" destination="dA5-9o-gcJ" id="7rC-95-vuF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="classCell" id="WiM-q4-8ra" customClass="ClassCell" customModule="Supl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="105" width="600" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="WiM-q4-8ra" id="fgC-pU-buf">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GQh-c2-hok">
+                                                    <rect key="frame" x="14" y="13" width="90" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="yTj-9h-py4"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="" image="student-small"/>
+                                                        <segment title="" image="teacher-small"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="http://old.gjk.cz/suplovani.php" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-we-zq3">
+                                                    <rect key="frame" x="119" y="15" width="458" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="S8N-P1-y7k" id="wd6-oL-cbC"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wLH-we-zq3" firstAttribute="leading" secondItem="GQh-c2-hok" secondAttribute="trailing" constant="15" id="8Gs-HC-40b"/>
+                                                <constraint firstItem="wLH-we-zq3" firstAttribute="centerY" secondItem="fgC-pU-buf" secondAttribute="centerY" id="99I-E5-A1B"/>
+                                                <constraint firstItem="GQh-c2-hok" firstAttribute="centerY" secondItem="fgC-pU-buf" secondAttribute="centerY" id="Kkb-FN-XvQ"/>
+                                                <constraint firstItem="GQh-c2-hok" firstAttribute="leading" secondItem="fgC-pU-buf" secondAttribute="leadingMargin" constant="6" id="phc-uQ-e6s"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wLH-we-zq3" secondAttribute="trailing" constant="15" id="zyl-J1-ZmE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="segmentController" destination="GQh-c2-hok" id="d3R-xW-wXv"/>
+                                            <outlet property="textField" destination="wLH-we-zq3" id="wZj-VN-hhp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notificationCell" id="otr-Yh-tJt" customClass="NotificationCell" customModule="Supl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="105" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="160" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="otr-Yh-tJt" id="a5c-wf-woc">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -244,7 +282,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="urlCell" id="r1T-17-XCB" customClass="UrlCell" customModule="Supl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="160" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="215" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="r1T-17-XCB" id="xPa-AO-16J">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="54"/>
@@ -282,7 +320,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shareCell" id="Gp5-es-nfR" customClass="UrlCell" customModule="Supl" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="215" width="600" height="55"/>
+                                        <rect key="frame" x="0.0" y="270" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="Gp5-es-nfR" id="MTG-1B-hh0">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
@@ -407,5 +445,7 @@
         <image name="Settings" width="22" height="22"/>
         <image name="University" width="34" height="34"/>
         <image name="background" width="323" height="571"/>
+        <image name="student-small" width="23" height="23"/>
+        <image name="teacher-small" width="21" height="21"/>
     </resources>
 </document>

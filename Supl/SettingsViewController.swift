@@ -162,15 +162,31 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
         if indexPath.section == 0 {
-            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("settingsCell") as? SettingsCell
-                else {return UITableViewCell()}
             let defaults = NSUserDefaults.standardUserDefaults()
-            cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+
             switch indexPath.row {
-            case 1:
+            case 0:
+                
+                guard let cell = self.tableView.dequeueReusableCellWithIdentifier("schoolCell") as? SchoolCell
+                    else {return UITableViewCell()}
+                cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                
+                guard let schoolUrl = defaults.valueForKey("schoolUrl") as? String else {return cell}
+                cell.textField.text = schoolUrl
+                
+                return cell
+                
+            default:
+                
+                guard let cell = self.tableView.dequeueReusableCellWithIdentifier("classCell") as? ClassCell
+                    else {return UITableViewCell()}
+                cell.textField.addTarget(self, action: #selector(SettingsViewController.saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                
+                cell.segmentController.addTarget(self, action: #selector(self.segmentChanged(_:)), forControlEvents: .ValueChanged)
+                
                 cell.textField.keyboardType = .Default
                 cell.textField.autocapitalizationType = .AllCharacters
-                cell.icon.image = UIImage(named: "User Groups")
+                
                 //Placeholder if class is not set
                 guard let classString = defaults.valueForKey("class") as? String
                     else {
@@ -179,11 +195,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 cell.textField.text = classString.replaceString([" "])
                 cell.textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
-                return cell
-            default:
-                guard let schoolUrl = defaults.valueForKey("schoolUrl") as? String else {
-                    return cell}
-                cell.textField.text = schoolUrl
+                
                 return cell
             }
         }
@@ -221,7 +233,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
+    func segmentChanged(segmentController: UISegmentedControl) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        guard let clas = defaults.valueForKey("class") as? String where clas != "" else {return}
+        if segmentController.selectedSegmentIndex == 0 {
+            
+        }
+    }
     
     
     func showMark(message: String) {
@@ -237,17 +255,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func getValues() -> (String, String) {
-        let cells = tableView.visibleCells as! Array<SettingsCell>
-        var arrayOfTextFields: [String] = []
-        for i in 0...1 {
-            let cell = cells[i]
-            if let textField = cell.textField.text {
-                arrayOfTextFields.append(textField)
-            }
-        }
-        
-        let school = arrayOfTextFields[0]
-        let clas = arrayOfTextFields[1]
+        guard
+            let schoolCell = tableView.visibleCells[0] as? SchoolCell,
+            let clasCell = tableView.visibleCells[1] as? ClassCell,
+            let school = schoolCell.textField.text,
+            let clas = clasCell.textField.text
+        else {return ("", "")}
         
         return (school, clas)
     }
@@ -359,21 +372,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             mail.setToRecipients(["marekfort@me.com"])
             mail.setSubject("Supl")
             
-            let cells = tableView.visibleCells as! Array<SettingsCell>
-            
             guard
-                let schoolCell = cells.ref(0),
-                let classCell = cells.ref(1),
-                let schoolTextField = schoolCell.textField,
-                let classTextField = classCell.textField,
-                let schoolString = schoolTextField.text,
-                let classString = classTextField.text
+                let schoolCell = tableView.visibleCells.ref(0) as? SchoolCell,
+                let classCell = tableView.visibleCells.ref(1) as? ClassCell,
+                let school = schoolCell.textField.text,
+                let clas = classCell.textField.text
                 else {
                     mail.setMessageBody("<p>Mám problémy s přihlášením, mohli byste mi pomoct?</p>", isHTML: true)
                     return
             }
             
-            mail.setMessageBody("<p>Mám problémy s přihlášením. Zadal jsem url \(schoolString) a třídu \(classString), ale nepodařilo se mi přihlásit.</p>", isHTML: true)
+            mail.setMessageBody("<p>Mám problémy s přihlášením. Zadal jsem url \(school) a třídu \(clas), ale nepodařilo se mi přihlásit.</p>", isHTML: true)
             
             presentViewController(mail, animated: true, completion: nil)
         }
