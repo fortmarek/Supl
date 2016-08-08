@@ -28,11 +28,15 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         textField.addTarget(self, action: #selector(refreshPlaceholder), forControlEvents: .EditingDidEndOnExit)
         
         segmentController.addTarget(self, action: #selector(segmentChanged(_:)), forControlEvents: .ValueChanged)
+        guard let segmentIndex = defaults.valueForKey("segmentIndex") as? Int else {return}
+        segmentController.selectedSegmentIndex = segmentIndex
         
     }
     
     func segmentChanged(segmentController: UISegmentedControl) {
         getPlaceholder()
+        
+        defaults.setInteger(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
     }
     
     func refreshPlaceholder() {

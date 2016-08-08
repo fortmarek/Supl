@@ -29,11 +29,11 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.viewDidLoad()
                 
         //Keyboard Notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SetUpViewController.keyboardNotification(_:)), name:UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardNotification(_:)), name:UIKeyboardWillChangeFrameNotification, object: nil)
 
         
         //Keyboard Editing ends when tapped outside of textfield
-        let tap = UITapGestureRecognizer(target: self, action: #selector(SetUpViewController.dismissKeyboard))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         if let clasString = defaults.valueForKey("class") as? String where clasString != "" {
@@ -44,8 +44,13 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
             schoolTextField.text = schoolString
         }
         
-        schoolTextField.addTarget(self, action: #selector(SetUpViewController.goToNextField), forControlEvents: .EditingDidEndOnExit)
-        classTextField.addTarget(self, action: #selector(SetUpViewController.saveData), forControlEvents: .EditingDidEndOnExit)
+        if let segmentIndex = defaults.valueForKey("segmentIndex") as? Int {
+            professorStudentSegment.selectedSegmentIndex = segmentIndex
+        }
+        
+        professorStudentSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+        schoolTextField.addTarget(self, action: #selector(goToNextField), forControlEvents: .EditingDidEndOnExit)
+        classTextField.addTarget(self, action: #selector(saveData), forControlEvents: .EditingDidEndOnExit)
         
         getStartedButton.backgroundColor = UIColor.clearColor()
         getStartedButton.layer.cornerRadius = 5
@@ -72,7 +77,13 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
     
     override func viewDidLayoutSubviews() {
         initTextField("http://old.gjk.cz/suplovani.php", textField: schoolTextField)
-        initTextField("R6.A", textField: classTextField)
+        if professorStudentSegment.selectedSegmentIndex == 0 {
+            initTextField("R6.A", textField: classTextField)
+        }
+        else {
+            initTextField("Novák", textField: classTextField)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -84,6 +95,20 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         saveData()
     }
     
+    func segmentChanged() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
+        
+        if professorStudentSegment.selectedSegmentIndex == 0 {
+            initTextField("R6.A", textField: classTextField)
+        }
+        
+        else {
+            initTextField("Novák", textField: classTextField)
+        }
+
+    }
+    
     func initTextField(placeholder: String, textField: UITextField) {
         //Placeholder
         let attributes = [NSForegroundColorAttributeName : UIColor(hue: 0, saturation: 0.0, brightness: 1.0, alpha: 0.6)]
@@ -91,8 +116,6 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         textField.attributedPlaceholder = attributedString
         
         textField.borderStyle = .RoundedRect
-        
-        
     }
     
     func saveData() -> Bool {
