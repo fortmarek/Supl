@@ -81,6 +81,12 @@ extension Array {
 
 extension String {
     
+    var removeExcessiveSpaces: String {
+        let components = self.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let filtered = components.filter({!$0.isEmpty})
+        return filtered.joinWithSeparator(" ")
+    }
+    
     func replaceString (stringArray: [String]) -> String {
         var result = self
         for i in 0 ..< stringArray.count {

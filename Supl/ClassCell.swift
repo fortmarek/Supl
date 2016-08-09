@@ -22,7 +22,6 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         textField.delegate = self
         self.selectionStyle = .None
         textField.keyboardType = .Default
-        textField.autocapitalizationType = .AllCharacters
         textForTextfield()
         
         textField.addTarget(self, action: #selector(refreshPlaceholder), forControlEvents: .EditingDidEndOnExit)
@@ -31,16 +30,31 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         guard let segmentIndex = defaults.valueForKey("segmentIndex") as? Int else {return}
         segmentController.selectedSegmentIndex = segmentIndex
         
+        getPlaceholder()
+        
     }
     
     func segmentChanged(segmentController: UISegmentedControl) {
         getPlaceholder()
         
+        guard
+            let clas = defaults.valueForKey("class") as? String,
+            let school = defaults.valueForKey("schoolUrl") as? String
+            else {
+                defaults.setInteger(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
+                return
+        }
+        let dataController = DataController()
+        
+        //Before setting segmentIndex delete the property and then post it again with the new segmentIndex
+        
+        dataController.deleteProperty(clas, school: school)
         defaults.setInteger(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
+        dataController.postProperty(clas, school: school)
     }
     
     func refreshPlaceholder() {
-        if let clas = textField.text?.replaceString([" "]) where clas == "" {
+        if let clas = textField.text?.removeExcessiveSpaces where clas == "" {
             textField.text = ""
             getPlaceholder()
         }
@@ -48,23 +62,21 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
     
     func textForTextfield() {
         //Placeholder if class is not set
-        guard let classString = defaults.valueForKey("class") as? String where classString != ""
-            else {
-                getPlaceholder()
-                return
-        }
+        guard let classString = defaults.valueForKey("class") as? String else {return}
         
-        
-        textField.text = classString.replaceString([" "])
+        getPlaceholder()
+        textField.text = classString.removeExcessiveSpaces
     }
     
     func getPlaceholder() {
         if segmentController.selectedSegmentIndex == 0 {
+            textField.autocapitalizationType = .AllCharacters
             textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
         }
         
         else {
-            textField.attributedPlaceholder = NSAttributedString(string: "Novák")
+            textField.autocapitalizationType = .Words
+            textField.attributedPlaceholder = NSAttributedString(string: "Příjmení Jméno")
         }
     }
 

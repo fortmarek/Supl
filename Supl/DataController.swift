@@ -49,15 +49,42 @@ class DataController {
         }
     }
     
-    func deleteClas(clas: String, school: String) {
+    func deleteProperty(property: String, school: String) {
         guard let userId = self.userId else {return}
-        Alamofire.request(.DELETE, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : clas, "user" : userId])
+        
+        
+        let segmentIndex = getSegmentIndex()
+    
+        if segmentIndex == 0 {
+            Alamofire.request(.DELETE, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : property, "user" : userId])
+        }
+        
+        else {
+            Alamofire.request(.DELETE, "http://139.59.144.155/professors", parameters: ["school" : school, "prof" : property, "user" : userId])
+        }
     }
     
-    func postClas(clas: String, school: String) {
+    func postProperty(property: String, school: String) {
         guard let userId = self.userId else {return}
-        Alamofire.request(.POST, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : clas, "user" : userId])
         
+        let segmentIndex = getSegmentIndex()
+        
+        if segmentIndex == 0 {
+            Alamofire.request(.POST, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : property, "user" : userId])
+        }
+        
+        else {
+            Alamofire.request(.POST, "http://139.59.144.155/professors", parameters: ["school" : school, "prof" : property, "user" : userId])
+        }
+    }
+    
+    func getSegmentIndex() -> Int {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        guard let segmentIndex = defaults.valueForKey("segmentIndex") as? Int else {
+            return 0
+        }
+        
+        return segmentIndex
     }
     
     func getData() {

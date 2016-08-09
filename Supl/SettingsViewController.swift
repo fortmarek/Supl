@@ -117,7 +117,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             guard let _ = footer.textLabel else {return}
             footer.textLabel!.font = UIFont().getFont(14, weight: .Light)
             footer.textLabel!.textAlignment = .Center
-            footer.textLabel!.text = "Verze 2.0.1\nVytvořil Marek Fořt"
+            footer.textLabel!.text = "Verze 2.1\nVytvořil Marek Fořt"
         }
         
     }
@@ -248,7 +248,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         var school = String()
         var clas = String()
         (school, clas) = getValues()
-        clas = clas.replaceString([" "])
+        clas = clas.removeExcessiveSpaces
+        print(clas)
+        
+        
         
         let dataController = DataController()
         
@@ -260,19 +263,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 if let oldClas = defaults.valueForKey("class") as? String {
                     if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true &&
                         clas != oldClas {
-                        dataController.postClas(clas, school: school)
-                        dataController.deleteClas(oldClas, school: school)
+                        dataController.postProperty(clas, school: school)
+                        dataController.deleteProperty(oldClas, school: school)
                     }
                 }
                 else {
                     if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true {
-                        dataController.postClas(clas, school: school)
+                        dataController.postProperty(clas, school: school)
                     }
                 }
                 
                 self.showMark("Povedlo se")
             }
         }
+            
         else {
             postSchool(school, clas: clas, oldSchool: "")
         }
@@ -293,14 +297,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         //When school changes, clas should as well (change of properties ...)
         if let oldClas = defaults.valueForKey("class") as? String {
-            dataController.deleteClas(oldClas, school: oldSchool)
+            dataController.deleteProperty(oldClas, school: oldSchool)
         }
         
         dataController.postSchool(school, completion: {
             result in
             if result == "Povedlo se" {
                 self.defaults.setBool(true, forKey: "isUrlRight")
-                dataController.postClas(clas, school: school)
+                dataController.postProperty(clas, school: school)
             }
             else {
                 self.defaults.setBool(false, forKey: "isUrlRight")

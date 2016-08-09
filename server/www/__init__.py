@@ -91,6 +91,7 @@ parser.add_argument('key', type=str)
 parser.add_argument('user', type=str)
 parser.add_argument('clas', type=str)
 parser.add_argument('token', type=str)
+parser.add_argument('prof', type=str)
 
 class Notification(Resource):
     def post(self, user_id):
@@ -116,7 +117,7 @@ class Clas(Resource):
     def post(self):
         c, conn = connection()
         args = parser.parse_args()
-        clas = args['clas']
+        clas = args['clas'].encode('utf-8')
         school = args['school']
         user = args['user']
         sql = "SELECT `clas_id` FROM `classes` WHERE `clas_name`=%s AND `school`=%s"
@@ -130,13 +131,13 @@ class Clas(Resource):
                 temp_add = "INSERT INTO `temporary_classes` (clas_name, school) VALUES (%s, %s)"
                 c.execute(temp_add, (clas, school))
                 clas_id = c.lastrowid
-                insert_property(c, "temp_properties", clas_id, user)
+                insert_clas_property(c, "temp_properties", clas_id, user)
             else:
                 clas_id = clas_object[0]
-                insert_property(c, "temp_properties", clas_id, user)
+                insert_clas_property(c, "temp_properties", clas_id, user)
         else:
             clas_id = clas_object[0]
-            insert_property(c, "user_properties", clas_id, user)
+            insert_clas_property(c, "user_properties", clas_id, user)
         conn.commit()
         conn.close()
 
@@ -144,6 +145,9 @@ class Clas(Resource):
         c, conn = connection()
         args = parser.parse_args()
         clas = args['clas']
+        file = open('/home/scrape/log-apache.txt', 'a')
+        file.write("%s\n" % clas)
+        file.close()
         school = args['school']
         user = args['user']
         sql = "SELECT `clas_id` FROM `classes` WHERE `clas_name`=%s AND `school`=%s"
@@ -155,18 +159,36 @@ class Clas(Resource):
             clas_object = c.fetchone()
             if clas_object != None:
                 clas_id = clas_object[0]
-                delete_property(c, "temp_properties", clas_id, user)
+                delete_clas_property(c, "temp_properties", clas_id, user)
         else:
             clas_id = clas_object[0]
-            delete_property(c, "user_properties", clas_id, user)
+            delete_clas_property(c, "user_properties", clas_id, user)
         conn.commit()
         conn.close()
+
+
+def insert_clas_property(c, table, clas_id, user):
+    find = "SELECT * FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
+    c.execute(find, (clas_id, user))
+    if c.fetchone() == None:
+        property = "INSERT INTO %s (clas_id, user_id) VALUES (%%s, %%s)" % (table,)
+        c.execute(property, (clas_id, user))
+
+def delete_clas_property(c, table, clas_id, user):
+    find = "SELECT * FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
+    c.execute(find, (clas_id, user))
+    if c.fetchone() != None:
+        property = "DELETE FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
+        c.execute(property, (clas_id, user))
 
 class Prof(Resource):
     def post(self):
         c, conn = connection()
         args = parser.parse_args()
-        prof = args['prof']
+        prof = args['prof'].encode('utf-8')
+        file = open('/home/scrape/log-apache.txt', 'a')
+        file.write("%s\n" % prof)
+        file.close()
         school = args['school']
         user = args['user']
         sql = "SELECT `professor_id` FROM `professors` WHERE `professor`=%s AND `school`=%s"
@@ -180,13 +202,13 @@ class Prof(Resource):
                 temp_add = "INSERT INTO `temporary_professors` (professor, school) VALUES (%s, %s)"
                 c.execute(temp_add, (prof, school))
                 prof_id = c.lastrowid
-                insert_property(c, "temp_properties", prof_id, user)
+                insert_prof_property(c, "temp_properties", prof_id, user)
             else:
                 prof_id = prof_object[0]
-                insert_property(c, "temp_properties", prof_id, user)
+                insert_prof_property(c, "temp_properties", prof_id, user)
         else:
             prof_id = prof_object[0]
-            insert_property(c, "user_properties", prof_id, user)
+            insert_prof_property(c, "user_properties", prof_id, user)
         conn.commit()
         conn.close()
 
@@ -196,39 +218,35 @@ class Prof(Resource):
         prof = args['prof']
         school = args['school']
         user = args['user']
-        sql = "SELECT `clas_id` FROM `classes` WHERE `clas_name`=%s AND `school`=%s"
+        sql = "SELECT `professor_id` FROM `professors` WHERE `professor`=%s AND `school`=%s"
         c.execute(sql, (prof, school))
-        clas_object = c.fetchone()
-        if clas_object == None:
-            temp_sql = "SELECT * FROM `temporary_classes` WHERE `clas_name`=%s AND `school`=%s"
+        prof_object = c.fetchone()
+        if prof_object == None:
+            temp_sql = "SELECT * FROM `temporary_professors` WHERE `professor`=%s AND `school`=%s"
             c.execute(temp_sql, (prof, school))
-            clas_object = c.fetchone()
-            if clas_object != None:
-                clas_id = clas_object[0]
-                delete_property(c, "temp_properties", clas_id, user)
+            prof_object = c.fetchone()
+            if prof_object != None:
+                prof_id = prof_object[0]
+                delete_prof_property(c, "temp_properties", prof_id, user)
         else:
-            clas_id = clas_object[0]
-            delete_property(c, "user_properties", clas_id, user)
+            prof_id = prof_object[0]
+            delete_prof_property(c, "user_properties", prof_id, user)
         conn.commit()
         conn.close()
 
-def insert_property(c, table, clas_id, user):
-    find = "SELECT * FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
-    c.execute(find, (clas_id, user))
+def insert_prof_property(c, table, prof_id, user):
+    find = "SELECT * FROM %s WHERE `professor_id`=%%s AND `user_id`=%%s" % (table,)
+    c.execute(find, (prof_id, user))
     if c.fetchone() == None:
-        property = "INSERT INTO %s (clas_id, user_id) VALUES (%%s, %%s)" % (table,)
-        c.execute(property, (clas_id, user))
+        property = "INSERT INTO %s (professor_id, user_id) VALUES (%%s, %%s)" % (table,)
+        c.execute(property, (prof_id, user))
 
-def delete_property(c, table, clas_id, user):
-    find = "SELECT * FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
-    c.execute(find, (clas_id, user))
+def delete_prof_property(c, table, prof_id, user):
+    find = "SELECT * FROM %s WHERE `professor_id`=%%s AND `user_id`=%%s" % (table,)
+    c.execute(find, (prof_id, user))
     if c.fetchone() != None:
-        property = "DELETE FROM %s WHERE `clas_id`=%%s AND `user_id`=%%s" % (table,)
-        c.execute(property, (clas_id, user))
-
-
-
-
+        property = "DELETE FROM %s WHERE `professor_id`=%%s AND `user_id`=%%s" % (table,)
+        c.execute(property, (prof_id, user))
 
 class School(Resource):
     def post(self):

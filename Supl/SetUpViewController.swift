@@ -79,9 +79,11 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         initTextField("http://old.gjk.cz/suplovani.php", textField: schoolTextField)
         if professorStudentSegment.selectedSegmentIndex == 0 {
             initTextField("R6.A", textField: classTextField)
+            classTextField.autocapitalizationType = .AllCharacters
         }
         else {
-            initTextField("Novák", textField: classTextField)
+            initTextField("Příjmení jméno", textField: classTextField)
+            classTextField.autocapitalizationType = .Words
         }
         
     }
@@ -96,15 +98,15 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     func segmentChanged() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
         
         if professorStudentSegment.selectedSegmentIndex == 0 {
             initTextField("R6.A", textField: classTextField)
+            classTextField.autocapitalizationType = .AllCharacters
         }
         
         else {
-            initTextField("Novák", textField: classTextField)
+            initTextField("Příjmení Jméno", textField: classTextField)
+            classTextField.autocapitalizationType = .Words
         }
 
     }
@@ -129,27 +131,34 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
             var clas = classTextField.text where clas != ""
         else {
             showMark("Vyplňte všechna pole")
-            return false}
+            return false
+        }
         
-        clas = clas.replaceString([" "])
+        clas = clas.removeExcessiveSpaces
         
         let dataController = DataController()
         
-        if let oldSchool = defaults.valueForKey("schoolUrl") as? String {
+        if let oldSchool = defaults.stringForKey("schoolUrl") {
             if oldSchool != school {
                 postSchool(school, clas: clas, oldSchool: oldSchool)
             }
             else {
-                if let oldClas = defaults.valueForKey("class") as? String {
+                if let oldClas = defaults.stringForKey("class") {
+                    let segmentIndex = defaults.integerForKey("segmentIndex")
                     if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true &&
                         clas != oldClas {
-                        dataController.postClas(clas, school: school)
-                        dataController.deleteClas(oldClas, school: school)
+                        dataController.postProperty(clas, school: school)
+                        dataController.deleteProperty(oldClas, school: school)
+                    }
+                    else if segmentIndex != professorStudentSegment.selectedSegmentIndex {
+                        dataController.deleteProperty(clas, school: school)
+                        self.defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
+                        dataController.postProperty(clas, school: school)
                     }
                 }
                 else {
                     if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true {
-                        dataController.postClas(clas, school: school)
+                        dataController.postProperty(clas, school: school)
                     }
                 }
                 
@@ -163,8 +172,9 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         
         
-        self.defaults.setValue(clas, forKey: "class")
-        self.defaults.setValue(school, forKey: "schoolUrl")
+        defaults.setValue(clas, forKey: "class")
+        defaults.setValue(school, forKey: "schoolUrl")
+        defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
         
         return false
     }
@@ -175,14 +185,14 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         //When school changes, clas should as well (change of properties ...)
         if let oldClas = defaults.valueForKey("class") as? String {
-            dataController.deleteClas(oldClas, school: oldSchool)
+            dataController.deleteProperty(oldClas, school: oldSchool)
         }
         
         dataController.postSchool(school, completion: {
             result in
             if result == "Povedlo se" {
                 self.defaults.setBool(true, forKey: "isUrlRight")
-                dataController.postClas(clas, school: school)
+                dataController.postProperty(clas, school: school)
             }
             else {
                 self.defaults.setBool(false, forKey: "isUrlRight")
