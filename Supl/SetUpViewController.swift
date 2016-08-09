@@ -9,7 +9,6 @@
 import UIKit
 import SwiftSpinner
 import MessageUI
-import Kanna
 
 class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate {
     

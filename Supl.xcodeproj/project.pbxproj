@@ -13,7 +13,6 @@
 		F82A841E1C6793AD00FF680A /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82A841D1C6793AD00FF680A /* Walkthrough.storyboard */; };
 		F82A842C1C6907EC00FF680A /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A842B1C6907EC00FF680A /* PageVC.swift */; };
 		F82A842E1C691FD100FF680A /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A842D1C691FD100FF680A /* MasterVC.swift */; };
-		F8351DDB1BA47C5500995D1A /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8351DDA1BA47C5500995D1A /* Kanna.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F84C7F941B7A8BA7006ADCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F931B7A8BA7006ADCE3 /* AppDelegate.swift */; };
 		F84C7F961B7A8BA7006ADCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F951B7A8BA7006ADCE3 /* ViewController.swift */; };
 		F84C7F991B7A8BA7006ADCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84C7F971B7A8BA7006ADCE3 /* Main.storyboard */; };
@@ -102,7 +101,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F89E246C1C7B735500551394 /* libxml2.tbd in Frameworks */,
-				F8351DDB1BA47C5500995D1A /* Kanna.framework in Frameworks */,
 				15F5EF281AEFA19898B3782F /* Pods_Supl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

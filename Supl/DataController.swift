@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Kanna
 import Alamofire
 import SwiftyJSON
 

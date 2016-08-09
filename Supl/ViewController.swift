@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Kanna
 
 // TODO: When user posts a school, server has to react
 
