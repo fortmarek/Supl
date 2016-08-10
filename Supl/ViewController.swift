@@ -292,7 +292,8 @@ class ViewController: UITableViewController, DataControllerDelegate {
     func emptyArray() {
         self.tableView.separatorStyle = .None
         self.messageLabel.hidden = false
-        if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true {
+        
+        if defaults.boolForKey("isUrlRight") == true {
             messageLabel.text = "V nejbližší době nemáte žádné změny v rozvrhu"
         }
         else {

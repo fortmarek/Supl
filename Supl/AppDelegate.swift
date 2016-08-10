@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
         // Override point for customization after application launch.
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.valueForKey("userId") == nil {
+        if defaults.stringForKey("userId") == nil {
             guard let userId = UIDevice.currentDevice().identifierForVendor else {return true}
             let id = userId.UUIDString
             defaults.setValue(id, forKey: "userId")

@@ -248,26 +248,26 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         var clas = String()
         (school, clas) = getValues()
         clas = clas.removeExcessiveSpaces
-        print(clas)
         
         
         
         let dataController = DataController()
         
-        if let oldSchool = defaults.valueForKey("schoolUrl") as? String {
+        if let oldSchool = defaults.stringForKey("schoolUrl") {
+            
             if oldSchool != school {
                 postSchool(school, clas: clas, oldSchool: oldSchool)
             }
             else {
-                if let oldClas = defaults.valueForKey("class") as? String {
-                    if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true &&
+                if let oldClas = defaults.stringForKey("class") {
+                    if defaults.boolForKey("isUrlRight") == true &&
                         clas != oldClas {
                         dataController.postProperty(clas, school: school)
                         dataController.deleteProperty(oldClas, school: school)
                     }
                 }
                 else {
-                    if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true {
+                    if defaults.boolForKey("isUrlRight") == true {
                         dataController.postProperty(clas, school: school)
                     }
                 }
@@ -275,7 +275,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 self.showMark("Povedlo se")
             }
         }
-            
+        
         else {
             postSchool(school, clas: clas, oldSchool: "")
         }
@@ -283,8 +283,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-        self.defaults.setValue(clas, forKey: "class")
-        self.defaults.setValue(school, forKey: "schoolUrl")
+        defaults.setValue(clas, forKey: "class")
+        defaults.setValue(school, forKey: "schoolUrl")
         
         textField.endEditing(true)
         return false
@@ -295,7 +295,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
 
         //When school changes, clas should as well (change of properties ...)
-        if let oldClas = defaults.valueForKey("class") as? String {
+        if let oldClas = defaults.stringForKey("class") {
             dataController.deleteProperty(oldClas, school: oldSchool)
         }
         
