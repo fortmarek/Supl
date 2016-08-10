@@ -18,11 +18,9 @@ class SuplUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-   //     if #available(iOS 9.0, *) {
-   //         XCUIApplication().launch()
-   //     } else {
-            // Fallback on earlier versions
-   //     }
+        
+        XCUIApplication().launch()
+        
     }
     
     override func tearDown() {
@@ -33,6 +31,32 @@ class SuplUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        setupSnapshot(XCUIApplication())
+        
+        XCUIApplication().navigationBars["Supl"].buttons["Settings"].tap()
+        
+        snapshot("settings")
+        
+        _ = self.expectationForPredicate(
+            NSPredicate(format: "self.count = 1"),
+            evaluatedWithObject: XCUIApplication().tables,
+            handler: nil)
+        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        
+        let cells = XCUIApplication().tables.cells
+        XCTAssertEqual(cells.count, 6)
+        
+        cells.elementBoundByIndex(4).tap()
+        
+        XCUIApplication().buttons["DALŠÍ"].tap()
+        XCUIApplication().buttons["DALŠÍ"].tap()
+        XCUIApplication().buttons["DALŠÍ"].tap()
+        
+        snapshot("walkthrough_login")
+        
+    
     }
+    
     
 }

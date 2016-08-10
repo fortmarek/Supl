@@ -29,10 +29,10 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F84C7FA61B7A8BA7006ADCE3"
+               BlueprintIdentifier = "F89E24731C7B842F00551394"
                BuildableName = "SuplTests.xctest"
                BlueprintName = "SuplTests"
                ReferencedContainer = "container:Supl.xcodeproj">

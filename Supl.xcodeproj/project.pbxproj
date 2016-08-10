@@ -28,6 +28,7 @@
 		F8A001A71D5768D200794B8A /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A001A61D5768D200794B8A /* SchoolCell.swift */; };
 		F8A001A91D5768E100794B8A /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A001A81D5768E100794B8A /* ClassCell.swift */; };
 		F8A842FA1D3ED382001A5CB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A842F91D3ED382001A5CB8 /* WelcomeViewController.swift */; };
+		F8D93B3B1D5A7EEC002FB186 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D93B3A1D5A7EEC002FB186 /* SnapshotHelper.swift */; };
 		F8ECB3D01C2D804A00BA319A /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ECB3CF1C2D804A00BA319A /* NotificationCell.swift */; };
 		F8ECB3D21C2DAEE100BA319A /* UrlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ECB3D11C2DAEE100BA319A /* UrlCell.swift */; };
 		F8F6C83D1C710271007A25EF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6C83C1C710271007A25EF /* NotificationViewController.swift */; };
@@ -73,8 +74,6 @@
 		F84C7F9D1B7A8BA7006ADCE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F84C7FA01B7A8BA7006ADCE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F84C7FA21B7A8BA7006ADCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F84C7FAB1B7A8BA7006ADCE3 /* SuplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuplTests.swift; sourceTree = "<group>"; };
-		F84C7FAD1B7A8BA7006ADCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F84C7FB21B7A8BA7006ADCE3 /* SuplUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuplUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84C7FB61B7A8BA7006ADCE3 /* SuplUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuplUITests.swift; sourceTree = "<group>"; };
 		F84C7FB81B7A8BA7006ADCE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		F8A001A81D5768E100794B8A /* ClassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		F8A842F91D3ED382001A5CB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F8ABFBA61BF3EBA9000E1CCE /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F8D93B3A1D5A7EEC002FB186 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		F8ECB3CF1C2D804A00BA319A /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		F8ECB3D11C2DAEE100BA319A /* UrlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlCell.swift; sourceTree = "<group>"; };
 		F8F6C83C1C710271007A25EF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				F84C7F921B7A8BA7006ADCE3 /* Supl */,
-				F84C7FAA1B7A8BA7006ADCE3 /* SuplTests */,
 				F84C7FB51B7A8BA7006ADCE3 /* SuplUITests */,
 				F89E24751C7B842F00551394 /* SuplTests */,
 				F84C7F911B7A8BA7006ADCE3 /* Products */,
@@ -183,18 +182,10 @@
 			path = Supl;
 			sourceTree = "<group>";
 		};
-		F84C7FAA1B7A8BA7006ADCE3 /* SuplTests */ = {
-			isa = PBXGroup;
-			children = (
-				F84C7FAB1B7A8BA7006ADCE3 /* SuplTests.swift */,
-				F84C7FAD1B7A8BA7006ADCE3 /* Info.plist */,
-			);
-			path = SuplTests;
-			sourceTree = "<group>";
-		};
 		F84C7FB51B7A8BA7006ADCE3 /* SuplUITests */ = {
 			isa = PBXGroup;
 			children = (
+				F8D93B3A1D5A7EEC002FB186 /* SnapshotHelper.swift */,
 				F84C7FB61B7A8BA7006ADCE3 /* SuplUITests.swift */,
 				F84C7FB81B7A8BA7006ADCE3 /* Info.plist */,
 			);
@@ -466,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F84C7FB71B7A8BA7006ADCE3 /* SuplUITests.swift in Sources */,
+				F8D93B3B1D5A7EEC002FB186 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
