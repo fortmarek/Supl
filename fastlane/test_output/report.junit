@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites tests='1' failures='1'>
+  <testsuite name='SuplUITests.SuplUITests' tests='1' failures='1'>
+    <testcase classname='SuplUITests.SuplUITests' name='testExample'>
+      <failure message='UI Testing Failure - No matches found for NavigationBar'>SuplUITests/SuplUITests.swift:37</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
