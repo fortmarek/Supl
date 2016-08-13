@@ -10,6 +10,6 @@ and the app automatically notifies him when a new change appears.</p>
 
 I am open to any contributions, just clone the repository and code in!
 
-# Ahoj! (sorry English speakers, now comes the weird language of the Czech Republic)
+## Ahoj! (sorry English speakers, now comes the weird language of the Czech Republic)
 
 Jsi student a chceš se podílet na vývojí aplikace? Super, stačí aplikaci odsud "zklonovat" a můžeš začít!
