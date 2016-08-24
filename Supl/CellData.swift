@@ -43,6 +43,9 @@ extension ViewController {
         
         switchChange(cell, suplItem: suplItem, change: change)
         
+        addGroupForProfessors(suplItem.group, subjectLabel: cell.subjectLabel)
+        
+        
         return cell
     }
     
@@ -99,11 +102,8 @@ extension ViewController {
             }
                 
             else {
-                guard
-                    let clasUsual = suplItem.professorForChange,
-                    let group = suplItem.group
-                else {break}
-                cell.infoLabel.text = clasUsual + " · " + group
+                guard let clasUsual = suplItem.professorForChange else {break}
+                cell.infoLabel.text = clasUsual
             }
         }
     }
@@ -146,6 +146,17 @@ extension ViewController {
         
     }
     
+    private func addGroupForProfessors(group: String?, subjectLabel: UILabel) {
+        guard
+            let group = group,
+            let labelText = subjectLabel.text
+            where defaults.integerForKey("segmentIndex") == 1
+            else {return}
+        
+        subjectLabel.text = labelText + " · " + group
+        
+        
+    }
     
     
     
