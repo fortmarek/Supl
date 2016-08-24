@@ -15,7 +15,7 @@ class User(Resource):
         c, conn = connection()
         json = {}
         json['clas_changes'] = []
-        json['professors'] = {}
+        json['prof_changes'] = []
         clas_sql = "SELECT `clas_id` FROM `user_properties` WHERE `user_id`=%s AND `clas_id` IS NOT NULL"
         c.execute(clas_sql, (user_id))
         clas_ids = [clas_id[0] for clas_id in c.fetchall()]
@@ -56,20 +56,22 @@ class User(Resource):
             sql = "SELECT * FROM `professor_changes` WHERE `professor_id`=%s ORDER BY date, hour"
             c.execute(sql, (prof_id))
             prof_changes = c.fetchall()
-            prof_json = {}
             for change in prof_changes:
-                date = change[1].strftime('%d.%m %y')
-                if not date in prof_json.keys():
-                    prof_json[date] = {}
                 change_json = {}
-                change_json['change'] = change[3]
-                change_json['subject'] = change[4]
-                change_json['clas'] = change[5]
-                change_json['schoolroom'] = change[6]
-                change_json['reason'] = change[7]
-                hour = change[2]
-                prof_json[date][hour] = change_json
-            json['professors'][prof_name] = prof_json
+                change_json['prof_name'] = prof_name
+                change_json['change_id'] = change[0]
+                change_json['date'] = change[1].strftime('%d.%m %y')
+                change_json['properties'] = {}
+                property_json = {}
+                property_json['hour'] = change[2]
+                property_json['change'] = change[3].replace(' ', '')
+                property_json['subject'] = change[4]
+                property_json['clas'] = change[5]
+                property_json['schoolroom'] = change[6]
+                property_json['professor_for_change'] = change[7]
+                property_json['professor_usual'] = ""
+                change_json['properties'] = property_json
+                json['prof_changes'].append(change_json)
 
         conn.close()
         return jsonify(json)
@@ -212,7 +214,7 @@ class Prof(Resource):
     def delete(self):
         c, conn = connection()
         args = parser.parse_args()
-        prof = args['prof']
+        prof = args['prof'].encode('utf-8')
         school = args['school']
         user = args['user']
         sql = "SELECT `professor_id` FROM `professors` WHERE `professor`=%s AND `school`=%s"

@@ -54,7 +54,7 @@ def compare_changes(changes, clas_id, date, should_compare):
     if len(old_changes) == 0:
         for change in changes:
             if should_compare:
-                notification.send_notifications(clas_id)
+                notification.send_notifications(clas_id, 'clas_id')
             supl_to_db(clas_id, change)
 
     for change in old_changes:
@@ -66,7 +66,7 @@ def compare_changes(changes, clas_id, date, should_compare):
         if i == len(changes) - 1:
             supl_to_db(clas_id, changes[i])
             if len(old_changes) > len(changes) and should_compare:
-                notification.send_notifications(clas_id)
+                notification.send_notifications(clas_id, 'clas_id')
             delete(clas_id, date, change_id)
             break
         else:
@@ -74,7 +74,7 @@ def compare_changes(changes, clas_id, date, should_compare):
 
         if not supl.is_supl_same(change, changes[i]):
             if should_compare:
-                notification.send_notifications(clas_id)
+                notification.send_notifications(clas_id, 'clas_id')
             if i < len(changes):
                 for change in changes[i + 1:]:
                     supl_to_db(clas_id, change)

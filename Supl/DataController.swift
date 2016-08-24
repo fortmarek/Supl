@@ -161,10 +161,23 @@ class DataController {
     }
     
     func getChanges(json:JSON) {
-        for (_, subJson) in json["clas_changes"] {
+        
+        let segmentIndex = getSegmentIndex()
+        
+        var userJson = json
+        
+        if segmentIndex == 0 {
+            userJson = userJson["clas_changes"]
+        }
+        else {
+            userJson = userJson["prof_changes"]
+        }
+
+        
+        for (_, subJson) in userJson {
             guard let strDate = subJson["date"].string else {continue}
             let date = strDate.stringToDate()
-            //TODO: Only for testing!
+            //Only for testing!
             //guard date.isBeforeToday() else {continue}
             
             let day = date.getDateForm()

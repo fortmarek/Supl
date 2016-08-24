@@ -197,7 +197,11 @@ class ViewController: UITableViewController, DataControllerDelegate {
             else {
                 cell.infoLabel.text = professor
             }
-            
+        }
+        
+        // Change is for professors
+        else if defaults.integerForKey("segmentIndex") == 1 {
+            cell.infoLabel.text = suplItem.professorForChange
         }
         
         if let group = suplItem.group where group != " " {

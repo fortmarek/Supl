@@ -62,7 +62,7 @@ def compare_changes(changes, prof_id, date, should_compare):
     if len(old_changes) == 0:
         for change in changes:
             if should_compare:
-                notification.send_notifications(prof_id)
+                notification.send_notifications(prof_id, 'professor_id')
             change_to_db(prof_id, change)
 
     for change in old_changes:
@@ -73,7 +73,7 @@ def compare_changes(changes, prof_id, date, should_compare):
         if i == len(changes) - 1:
             change_to_db(prof_id, changes[i])
             if len(old_changes) > len(changes) and should_compare:
-                notification.send_notifications(prof_id)
+                notification.send_notifications(prof_id, 'professor_id')
             delete(prof_id, date, change_id)
             break
         else:
@@ -81,7 +81,7 @@ def compare_changes(changes, prof_id, date, should_compare):
 
         if not professor.is_change_same(change, changes[i]):
             if should_compare:
-                notification.send_notifications(prof_id)
+                notification.send_notifications(prof_id, 'professor_id')
             if i < len(changes):
                 for change in changes[i + 1:]:
                     change_to_db(prof_id, change)

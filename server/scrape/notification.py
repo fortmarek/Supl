@@ -5,11 +5,11 @@ from dbconnect import connection
 import config
 
 
-def get_tokens(clas_id):
+def get_tokens(id, property_type):
     c, conn = connection()
     tokens = []
-    sql = "SELECT `user_id` FROM `user_properties` WHERE `clas_id`=%s"
-    c.execute(sql, (clas_id))
+    sql = "SELECT `user_id` FROM `user_properties` WHERE %s =%%s" % (property_type,)
+    c.execute(sql, (id))
     users = c.fetchall()
     for user in users:
         token_sql = "SELECT `token` FROM `users` WHERE `user_id`=%s"
@@ -26,13 +26,13 @@ def response_listener(error_response):
     file.close()
 
 
-def send_notifications(clas_id):
+def send_notifications(id, property_type):
     apns = APNs(use_sandbox=True, cert_file=config.CERT, key_file=config.CERT)
     message = unicode('Změna rozvrhu', 'utf-8')
     payload = Payload(alert=message, sound="default", badge=0)
     apns.gateway_server.register_response_listener(response_listener)
 
-    tokens = get_tokens(clas_id)
+    tokens = get_tokens(id, property_type)
 
     for token in tokens:
         should_notify = True
