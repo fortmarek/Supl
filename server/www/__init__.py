@@ -66,7 +66,7 @@ class User(Resource):
                 property_json['hour'] = change[2]
                 property_json['change'] = change[3].replace(' ', '')
                 property_json['subject'] = change[4]
-                property_json['clas'] = change[5]
+                property_json['group'] = change[5]
                 property_json['schoolroom'] = change[6]
                 property_json['professor_for_change'] = change[7]
                 property_json['professor_usual'] = ""
