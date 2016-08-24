@@ -16,11 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
     var window: UIWindow?
     
-    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+    
         let defaults = NSUserDefaults.standardUserDefaults()
+
         if defaults.stringForKey("userId") == nil {
             guard let userId = UIDevice.currentDevice().identifierForVendor else {return true}
             let id = userId.UUIDString

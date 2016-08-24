@@ -56,6 +56,7 @@ class DataController {
     
         if segmentIndex == 0 {
             Alamofire.request(.DELETE, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : property, "user" : userId])
+            
         }
         
         else {

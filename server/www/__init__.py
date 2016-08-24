@@ -91,7 +91,7 @@ parser.add_argument('key', type=str)
 parser.add_argument('user', type=str)
 parser.add_argument('clas', type=str)
 parser.add_argument('token', type=str)
-parser.add_argument('prof', type=str)
+parser.add_argument('prof')
 
 class Notification(Resource):
     def post(self, user_id):
@@ -186,9 +186,6 @@ class Prof(Resource):
         c, conn = connection()
         args = parser.parse_args()
         prof = args['prof'].encode('utf-8')
-        file = open('/home/scrape/log-apache.txt', 'a')
-        file.write("%s\n" % prof)
-        file.close()
         school = args['school']
         user = args['user']
         sql = "SELECT `professor_id` FROM `professors` WHERE `professor`=%s AND `school`=%s"

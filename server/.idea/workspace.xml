@@ -12,18 +12,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/supl$supl.coverage" NAME="supl Coverage Results" MODIFIED="1462471949707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scripts" />
     <SUITE FILE_PATH="coverage/supl$tests__1_.coverage" NAME="tests (1) Coverage Results" MODIFIED="1469092228369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/supl$manage.coverage" NAME="manage Coverage Results" MODIFIED="1462472513282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/supl$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1463735524676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scrape" />
-    <SUITE FILE_PATH="coverage/supl$admin.coverage" NAME="admin Coverage Results" MODIFIED="1462472017981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api" />
     <SUITE FILE_PATH="coverage/supl$models.coverage" NAME="models Coverage Results" MODIFIED="1462471892707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api" />
-    <SUITE FILE_PATH="coverage/supl$tests.coverage" NAME="tests Coverage Results" MODIFIED="1463735529685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scrape" />
-    <SUITE FILE_PATH="coverage/supl$scrape__1_.coverage" NAME="scrape (1) Coverage Results" MODIFIED="1463420541757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scripts" />
-    <SUITE FILE_PATH="coverage/supl$test.coverage" NAME="test Coverage Results" MODIFIED="1463866741534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/supl$supl.coverage" NAME="supl Coverage Results" MODIFIED="1462471949707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scripts" />
     <SUITE FILE_PATH="coverage/supl$views.coverage" NAME="views Coverage Results" MODIFIED="1463085940182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api" />
+    <SUITE FILE_PATH="coverage/supl$scrape__1_.coverage" NAME="scrape (1) Coverage Results" MODIFIED="1463420541757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scripts" />
+    <SUITE FILE_PATH="coverage/supl$admin.coverage" NAME="admin Coverage Results" MODIFIED="1462472017981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api" />
+    <SUITE FILE_PATH="coverage/supl$tests.coverage" NAME="tests Coverage Results" MODIFIED="1463735529685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scrape" />
+    <SUITE FILE_PATH="coverage/supl$scrape.coverage" NAME="scrape Coverage Results" MODIFIED="1463735524676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/supl_api/scrape" />
+    <SUITE FILE_PATH="coverage/supl$test.coverage" NAME="test Coverage Results" MODIFIED="1463866741534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/supl$manage.coverage" NAME="manage Coverage Results" MODIFIED="1462472513282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -44,52 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#47#96#0" expanded="true" />
-                <marker date="1470670686000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
-                <marker date="1470670686000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
-                <marker date="1470670686000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
-                <marker date="1470670686000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
-                <marker date="1470670686000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
-                <marker date="1470670686000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
-                <marker date="1470670686000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
-                <marker date="1470670686000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
-                <marker date="1470670686000" expanded="true" signature="4100:4155" ph="SELECT * FRO... users" />
-                <marker date="1470670686000" expanded="true" signature="4254:4302" ph="UPDATE `user... " />
-                <marker date="1470670686000" expanded="true" signature="4477:4528" ph="SELECT * FRO... users" />
-                <marker date="1470670686000" expanded="true" signature="4836:4904" ph="SELECT `clas... classes" />
-                <marker date="1470670686000" expanded="true" signature="5036:5106" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470670686000" expanded="true" signature="5259:5326" ph="INSERT INTO `temporary_classes`... " />
-                <marker date="1470670686000" expanded="true" signature="6092:6160" ph="SELECT `clas... classes" />
-                <marker date="1470670686000" expanded="true" signature="6292:6362" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470670686000" expanded="true" signature="6831:6885" ph="SELECT * FRO... missing_value" />
-                <marker date="1470670686000" expanded="true" signature="6984:7035" ph="INSERT INTO missing_value... " />
-                <marker date="1470670686000" expanded="true" signature="7157:7211" ph="SELECT * FRO... missing_value" />
-                <marker date="1470670686000" expanded="true" signature="7310:7362" ph="DELETE FROM " />
-                <marker date="1470670686000" expanded="true" signature="7759:7835" ph="SELECT `clas... classes" />
-                <marker date="1470670686000" expanded="true" signature="7967:8040" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470670686000" expanded="true" signature="8193:8263" ph="INSERT INTO `temporary_classes`... " />
-                <marker date="1470670686000" expanded="true" signature="8918:8994" ph="SELECT `clas... classes" />
-                <marker date="1470670686000" expanded="true" signature="9126:9199" ph="SELECT * FRO... temporary_classes" />
-                <marker date="1470670686000" expanded="true" signature="9667:9726" ph="SELECT * FRO... missing_value" />
-                <marker date="1470670686000" expanded="true" signature="9825:9881" ph="INSERT INTO missing_value... " />
-                <marker date="1470670686000" expanded="true" signature="10003:10062" ph="SELECT * FRO... missing_value" />
-                <marker date="1470670686000" expanded="true" signature="10161:10218" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="supl.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/supl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -100,14 +58,72 @@
       <file leaf-file-name="scrape.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3345">
-              <caret line="229" column="8" selection-start-line="229" selection-start-column="8" selection-end-line="231" selection-end-column="20" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
+                <element signature="e#20#49#0" expanded="true" />
                 <marker date="1469357817000" expanded="true" signature="2189:2219" ph="SELECT `scho... schools" />
                 <marker date="1469357817000" expanded="true" signature="2399:2447" ph="SELECT `scho... schools" />
                 <marker date="1469357817000" expanded="true" signature="2542:2586" ph="INSERT INTO `schools`... " />
                 <marker date="1469357817000" expanded="true" signature="4585:4604" ph="SELECT `date... missing_value" />
                 <marker date="1469357817000" expanded="true" signature="4893:4924" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scrape/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1464518263000" expanded="true" signature="308:363" ph="SELECT `clas... user_classes" />
+                <marker date="1464518263000" expanded="true" signature="503:545" ph="SELECT * FRO... changes" />
+                <marker date="1464518263000" expanded="true" signature="820:900" ph="SELECT `clas... classes" />
+                <marker date="1464518263000" expanded="true" signature="1001:1062" ph="INSERT INTO `classes`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="27" />
+              <folding>
+                <element signature="e#47#96#0" expanded="true" />
+                <marker date="1472024044000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
+                <marker date="1472024044000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
+                <marker date="1472024044000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
+                <marker date="1472024044000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
+                <marker date="1472024044000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
+                <marker date="1472024044000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
+                <marker date="1472024044000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
+                <marker date="1472024044000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
+                <marker date="1472024044000" expanded="true" signature="4090:4145" ph="SELECT * FRO... users" />
+                <marker date="1472024044000" expanded="true" signature="4244:4292" ph="UPDATE `user... " />
+                <marker date="1472024044000" expanded="true" signature="4467:4518" ph="SELECT * FRO... users" />
+                <marker date="1472024044000" expanded="true" signature="4826:4894" ph="SELECT `clas... classes" />
+                <marker date="1472024044000" expanded="true" signature="5026:5096" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1472024044000" expanded="true" signature="5249:5316" ph="INSERT INTO `temporary_classes`... " />
+                <marker date="1472024044000" expanded="true" signature="6082:6150" ph="SELECT `clas... classes" />
+                <marker date="1472024044000" expanded="true" signature="6282:6352" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1472024044000" expanded="true" signature="6821:6875" ph="SELECT * FRO... missing_value" />
+                <marker date="1472024044000" expanded="true" signature="6974:7025" ph="INSERT INTO missing_value... " />
+                <marker date="1472024044000" expanded="true" signature="7147:7201" ph="SELECT * FRO... missing_value" />
+                <marker date="1472024044000" expanded="true" signature="7300:7352" ph="DELETE FROM " />
+                <marker date="1472024044000" expanded="true" signature="7638:7714" ph="SELECT `prof... professors" />
+                <marker date="1472024044000" expanded="true" signature="7846:7919" ph="SELECT * FRO... temporary_professors" />
+                <marker date="1472024044000" expanded="true" signature="8072:8142" ph="INSERT INTO `temporary_professors`... " />
+                <marker date="1472024044000" expanded="true" signature="8797:8873" ph="SELECT `clas... classes" />
+                <marker date="1472024044000" expanded="true" signature="9005:9078" ph="SELECT * FRO... temporary_classes" />
+                <marker date="1472024044000" expanded="true" signature="9546:9605" ph="SELECT * FRO... missing_value" />
+                <marker date="1472024044000" expanded="true" signature="9704:9760" ph="INSERT INTO missing_value... " />
+                <marker date="1472024044000" expanded="true" signature="9882:9941" ph="SELECT * FRO... missing_value" />
+                <marker date="1472024044000" expanded="true" signature="10040:10097" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -126,7 +142,7 @@
       <file leaf-file-name="classes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
+            <state relative-caret-position="676">
               <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -157,16 +173,6 @@
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -272,7 +278,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="800" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -352,6 +358,68 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="supl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scrape" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Project Files">
@@ -440,68 +508,6 @@
       <pane id="Scratches">
         <subPane />
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="supl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scrape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -509,7 +515,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PycharmProjects/mysite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
@@ -914,28 +920,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="803" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2013889" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2013889" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946298" sideWeight="0.49710566" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27724138" sideWeight="0.50289434" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2013889" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27724138" sideWeight="0.50289434" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="manage.py@supl" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946298" sideWeight="0.49710566" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1056,19 +1062,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/__init__.py">
+    <entry file="file://$PROJECT_DIR$/www/apns.py" />
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/apns.py" />
     <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3345">
-          <caret line="229" column="8" selection-start-line="229" selection-start-column="8" selection-end-line="231" selection-end-column="20" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
+            <element signature="e#20#49#0" expanded="true" />
             <marker date="1469357817000" expanded="true" signature="2189:2219" ph="SELECT `scho... schools" />
             <marker date="1469357817000" expanded="true" signature="2399:2447" ph="SELECT `scho... schools" />
             <marker date="1469357817000" expanded="true" signature="2542:2586" ph="INSERT INTO `schools`... " />
@@ -1078,17 +1086,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tests.py">
+    <entry file="file://$PROJECT_DIR$/scrape/supl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/notification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#62#0" expanded="true" />
+            <marker date="1469100092000" expanded="true" signature="191:213" ph="SELECT `user... user_" />
+            <marker date="1469100092000" expanded="true" signature="191:249" ph="SELECT `user... user_properties" />
+            <marker date="1469100092000" expanded="true" signature="350:396" ph="SELECT `toke... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dbconnect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/dbconnect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape/classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
+        <state relative-caret-position="676">
           <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1110,93 +1153,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dbconnect.py">
+    <entry file="file://$PROJECT_DIR$/tests/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1464518263000" expanded="true" signature="308:363" ph="SELECT `clas... user_classes" />
+            <marker date="1464518263000" expanded="true" signature="503:545" ph="SELECT * FRO... changes" />
+            <marker date="1464518263000" expanded="true" signature="820:900" ph="SELECT `clas... classes" />
+            <marker date="1464518263000" expanded="true" signature="1001:1062" ph="INSERT INTO `classes`... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="301">
+          <caret line="189" column="27" selection-start-line="189" selection-start-column="27" selection-end-line="189" selection-end-column="27" />
           <folding>
             <element signature="e#47#96#0" expanded="true" />
-            <marker date="1470670686000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
-            <marker date="1470670686000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
-            <marker date="1470670686000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
-            <marker date="1470670686000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
-            <marker date="1470670686000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
-            <marker date="1470670686000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
-            <marker date="1470670686000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
-            <marker date="1470670686000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
-            <marker date="1470670686000" expanded="true" signature="4100:4155" ph="SELECT * FRO... users" />
-            <marker date="1470670686000" expanded="true" signature="4254:4302" ph="UPDATE `user... " />
-            <marker date="1470670686000" expanded="true" signature="4477:4528" ph="SELECT * FRO... users" />
-            <marker date="1470670686000" expanded="true" signature="4836:4904" ph="SELECT `clas... classes" />
-            <marker date="1470670686000" expanded="true" signature="5036:5106" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470670686000" expanded="true" signature="5259:5326" ph="INSERT INTO `temporary_classes`... " />
-            <marker date="1470670686000" expanded="true" signature="6092:6160" ph="SELECT `clas... classes" />
-            <marker date="1470670686000" expanded="true" signature="6292:6362" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470670686000" expanded="true" signature="6831:6885" ph="SELECT * FRO... missing_value" />
-            <marker date="1470670686000" expanded="true" signature="6984:7035" ph="INSERT INTO missing_value... " />
-            <marker date="1470670686000" expanded="true" signature="7157:7211" ph="SELECT * FRO... missing_value" />
-            <marker date="1470670686000" expanded="true" signature="7310:7362" ph="DELETE FROM " />
-            <marker date="1470670686000" expanded="true" signature="7759:7835" ph="SELECT `clas... classes" />
-            <marker date="1470670686000" expanded="true" signature="7967:8040" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470670686000" expanded="true" signature="8193:8263" ph="INSERT INTO `temporary_classes`... " />
-            <marker date="1470670686000" expanded="true" signature="8918:8994" ph="SELECT `clas... classes" />
-            <marker date="1470670686000" expanded="true" signature="9126:9199" ph="SELECT * FRO... temporary_classes" />
-            <marker date="1470670686000" expanded="true" signature="9667:9726" ph="SELECT * FRO... missing_value" />
-            <marker date="1470670686000" expanded="true" signature="9825:9881" ph="INSERT INTO missing_value... " />
-            <marker date="1470670686000" expanded="true" signature="10003:10062" ph="SELECT * FRO... missing_value" />
-            <marker date="1470670686000" expanded="true" signature="10161:10218" ph="DELETE FROM " />
+            <marker date="1472024044000" expanded="true" signature="511:595" ph="SELECT `clas... user_properties" />
+            <marker date="1472024044000" expanded="true" signature="753:820" ph="SELECT * FRO... changes" />
+            <marker date="1472024044000" expanded="true" signature="937:989" ph="SELECT `clas... classes" />
+            <marker date="1472024044000" expanded="true" signature="2006:2100" ph="SELECT `prof... user_properties" />
+            <marker date="1472024044000" expanded="true" signature="2269:2329" ph="SELECT `prof... professors" />
+            <marker date="1472024044000" expanded="true" signature="2438:2515" ph="SELECT * FRO... professor_changes" />
+            <marker date="1472024044000" expanded="true" signature="3358:3398" ph="SELECT * FRO... users" />
+            <marker date="1472024044000" expanded="true" signature="3491:3534" ph="INSERT INTO `users`... " />
+            <marker date="1472024044000" expanded="true" signature="4090:4145" ph="SELECT * FRO... users" />
+            <marker date="1472024044000" expanded="true" signature="4244:4292" ph="UPDATE `user... " />
+            <marker date="1472024044000" expanded="true" signature="4467:4518" ph="SELECT * FRO... users" />
+            <marker date="1472024044000" expanded="true" signature="4826:4894" ph="SELECT `clas... classes" />
+            <marker date="1472024044000" expanded="true" signature="5026:5096" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1472024044000" expanded="true" signature="5249:5316" ph="INSERT INTO `temporary_classes`... " />
+            <marker date="1472024044000" expanded="true" signature="6082:6150" ph="SELECT `clas... classes" />
+            <marker date="1472024044000" expanded="true" signature="6282:6352" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1472024044000" expanded="true" signature="6821:6875" ph="SELECT * FRO... missing_value" />
+            <marker date="1472024044000" expanded="true" signature="6974:7025" ph="INSERT INTO missing_value... " />
+            <marker date="1472024044000" expanded="true" signature="7147:7201" ph="SELECT * FRO... missing_value" />
+            <marker date="1472024044000" expanded="true" signature="7300:7352" ph="DELETE FROM " />
+            <marker date="1472024044000" expanded="true" signature="7638:7714" ph="SELECT `prof... professors" />
+            <marker date="1472024044000" expanded="true" signature="7846:7919" ph="SELECT * FRO... temporary_professors" />
+            <marker date="1472024044000" expanded="true" signature="8072:8142" ph="INSERT INTO `temporary_professors`... " />
+            <marker date="1472024044000" expanded="true" signature="8797:8873" ph="SELECT `clas... classes" />
+            <marker date="1472024044000" expanded="true" signature="9005:9078" ph="SELECT * FRO... temporary_classes" />
+            <marker date="1472024044000" expanded="true" signature="9546:9605" ph="SELECT * FRO... missing_value" />
+            <marker date="1472024044000" expanded="true" signature="9704:9760" ph="INSERT INTO missing_value... " />
+            <marker date="1472024044000" expanded="true" signature="9882:9941" ph="SELECT * FRO... missing_value" />
+            <marker date="1472024044000" expanded="true" signature="10040:10097" ph="DELETE FROM " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/supl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/notification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1469100092000" expanded="true" signature="191:213" ph="SELECT `user... user_" />
-            <marker date="1469100092000" expanded="true" signature="191:249" ph="SELECT `user... user_properties" />
-            <marker date="1469100092000" expanded="true" signature="350:396" ph="SELECT `toke... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/dbconnect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
