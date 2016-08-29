@@ -1,2 +1,1 @@
-Odteď můžou aplikaci používat nejen studenti, ale také profesoři!
-
+- Oprava verze pro profesory

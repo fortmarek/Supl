@@ -116,7 +116,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             guard let _ = footer.textLabel else {return}
             footer.textLabel!.font = UIFont().getFont(14, weight: .Light)
             footer.textLabel!.textAlignment = .Center
-            footer.textLabel!.text = "Verze 2.1\nVytvořil Marek Fořt"
+            footer.textLabel!.text = "Verze 2.1.1\nVytvořil Marek Fořt"
         }
         
     }

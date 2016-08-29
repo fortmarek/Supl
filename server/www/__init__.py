@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, json, render_template
 from flask_restful import Resource, Api, abort, reqparse
 from templates.dbconnect import connection
 import requests
 from bs4 import BeautifulSoup
+import io
 
 app = Flask(__name__, static_url_path="", static_folder="static")
 api = Api(app)
@@ -274,6 +275,8 @@ class School(Resource):
         return {"message" : "Povedlo se"}
 
 
+
+
 api.add_resource(User, '/users/<string:user_id>')
 api.add_resource(School, '/schools')
 api.add_resource(Clas, '/classes')
@@ -281,11 +284,28 @@ api.add_resource(Prof, '/professors')
 api.add_resource(Notification, '/users/<string:user_id>/notification')
 
 
-# THIS IS FOR PORTFOLIO (I'M SAVING MYSELF SOME TIME AND RESOURCES AND MONEY   ...
+
+# THIS IS FOR KLOZET (I'M SAVING MYSELF SOME TIME AND RESOURCES AND MONEY)   ...
+
+class Toilets(Resource):
+    def get(self):
+        file = open('/home/klozet/wc.json', 'r')
+        js = json.loads(file.read())
+        file.close()
+        return js
+
+
+api.add_resource(Toilets, '/klozet')
+
+# THIS IS FOR PORTFOLIO (I'M SAVING MYSELF SOME TIME AND RESOURCES AND MONEY)   ...
 
 @app.route('/')
 def html():
     return render_template('main.html')
+
+
+
+
 
 
 

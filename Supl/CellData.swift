@@ -121,8 +121,8 @@ extension ViewController {
     
     private func addGroup(group: String?, subjectLabel: UILabel) {
         //Capitalize group, check it's not empty
-        guard let capitalizedGroup = group?.uppercaseString where group != " " else {return}
-        
+        guard let capitalizedGroup = group?.uppercaseString where group != " " && group != "" else {return}
+
         //Adding group in () after subject
         guard let labelText = subjectLabel.text where defaults.integerForKey("segmentIndex") == 0 else {return}
         subjectLabel.text = labelText + " (" + capitalizedGroup + ")"
