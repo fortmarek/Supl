@@ -1,1 +1,1 @@
-- Oprava verze pro profesory
+- Oprava bugu, kdy se zobrazily závorky pro skupinu, která ale neexistovala
