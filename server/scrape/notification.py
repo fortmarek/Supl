@@ -45,7 +45,7 @@ def send_notifications(id, property_type):
                 if line.rstrip().find(token) != -1:
                     should_notify = False
                     break
-        if should_notify:
+        if should_notify and token != 'NULL':
             file = open('/home/scrape/log-file.txt', 'a')
             file.write("Sent to %s\n" % token)
             file.close()
