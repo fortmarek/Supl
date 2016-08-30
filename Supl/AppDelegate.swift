@@ -18,10 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
     
         let defaults = NSUserDefaults.standardUserDefaults()
-
+        
         if defaults.stringForKey("userId") == nil {
             guard let userId = UIDevice.currentDevice().identifierForVendor else {return true}
             let id = userId.UUIDString
@@ -29,31 +28,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             Alamofire.request(.POST, "http://139.59.144.155/users/\(id)")
         }
         
+        
+        if defaults.boolForKey("doesNotNeedFix") == false && UIApplication.sharedApplication().isRegisteredForRemoteNotifications() {
+            registerForPushNotifications()
+            defaults.setBool(true, forKey: "doesNotNeedFix")
+        }
+        
+        
         //MARK: Walkthrough
         
-        if defaults.boolForKey("wasOpened") {
-            //Actually == true but it's easier this way
-            if defaults.boolForKey("firstLaunch2.1") == false {
-                self.registerForPushNotifications()
-                defaults.setBool(true, forKey: "firstLaunch2.1")
-            }
-            else {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("Navigation")
-                
-                //defaults.setBool(false, forKey: "wasOpened")
-                
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                appDelegate.window?.rootViewController = vc
-            }
-        }
-        else {
+        if defaults.boolForKey("wasOpened") == false {
+        
             if defaults.valueForKey("schoolUrl") == nil && defaults.valueForKey("class") == nil {
                 
                 let storyboard = UIStoryboard(name: "Walkthrough", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("ContainerVC")
                 
                 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
                 appDelegate.window?.rootViewController = vc
             }
             defaults.setBool(true, forKey: "wasOpened")

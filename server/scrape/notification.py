@@ -57,7 +57,7 @@ def send_notifications(id, property_type):
 
             identifier = random.getrandbits(32)
             frame.add_item(token, payload, identifier, expiry, priority)
-            
+
     if should_notify:
         print(frame)
-        apns.gateway_server.send_notification_multiple(frame)
+        #apns.gateway_server.send_notification_multiple(frame)

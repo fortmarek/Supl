@@ -123,6 +123,11 @@ def data(html, student_tables, dates, school, should_compare):
             compare_changes(changes, clas_id, dates[tables_count], should_compare)
             tables_count += 1
 
+def delete_dates_not_present(dates):
+    dates_tuple = tuple(dates)
+    c, conn = connection()
+    delete = "DELETE FROM `changes` WHERE `clas_id`=%s AND `date`=%s"
+
 
 def clas_to_db(clas_name, school):
     c, conn = connection()
