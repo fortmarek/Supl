@@ -3,6 +3,8 @@
 from apns import APNs, Frame, Payload
 from dbconnect import connection
 import config
+import time
+import random
 
 
 def get_tokens(id, property_type):
@@ -15,24 +17,27 @@ def get_tokens(id, property_type):
         token_sql = "SELECT `token` FROM `users` WHERE `user_id`=%s"
         c.execute(token_sql, (user))
         token = c.fetchone()[0]
-        if token != None:
+        if token != None or token != 'NULL':
             tokens.append(token)
     conn.close()
     return tokens
 
-def response_listener(error_response):
-    file = open('/home/scrape/log-file.txt', 'a')
-    file.write("client get error-response: " + str(error_response))
-    file.close()
 
 
 def send_notifications(id, property_type):
-    apns = APNs(use_sandbox=True, cert_file=config.CERT, key_file=config.CERT)
+
+    # Frame for sending multiple notifications
+    frame = Frame()
+    expiry = time.time() + 3600
+    priority = 10
+
+    apns = APNs(use_sandbox=True, cert_file=config.CERT, enhanced=True)
     message = unicode('Změna rozvrhu', 'utf-8')
-    payload = Payload(alert=message, sound="default", badge=0)
-    apns.gateway_server.register_response_listener(response_listener)
+    payload = Payload(alert=message, sound="default", badge=0, mutable_content=True)
 
     tokens = get_tokens(id, property_type)
+
+    should_notify = False
 
     for token in tokens:
         should_notify = True
@@ -49,8 +54,10 @@ def send_notifications(id, property_type):
             file = open('/home/scrape/log-file.txt', 'a')
             file.write("Sent to %s\n" % token)
             file.close()
-            apns.gateway_server.send_notification(token, payload)
 
-
-
-
+            identifier = random.getrandbits(32)
+            frame.add_item(token, payload, identifier, expiry, priority)
+            
+    if should_notify:
+        print(frame)
+        apns.gateway_server.send_notification_multiple(frame)

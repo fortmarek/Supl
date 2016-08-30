@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             defaults.setBool(true, forKey: "wasOpened")
             //defaults.setBool(false, forKey: "wasOpened")
         }
-    
         
         let cache = NSURLCache(memoryCapacity: 8 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         NSURLCache.setSharedURLCache(cache)
@@ -69,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "didRegister")
         let token = deviceToken.description.replaceString(["<", ">"," "])
         self.postToken(token)
     }

@@ -175,13 +175,13 @@
       <file leaf-file-name="notification.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrape/notification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+            <state relative-caret-position="598">
+              <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
               <folding>
                 <element signature="e#25#62#0" expanded="true" />
-                <marker date="1472499750000" expanded="true" signature="201:223" ph="SELECT `user... user_" />
-                <marker date="1472499750000" expanded="true" signature="201:254" ph="SELECT `user... user_properties" />
-                <marker date="1472499750000" expanded="true" signature="369:415" ph="SELECT `toke... users" />
+                <marker date="1472566293000" expanded="true" signature="227:249" ph="SELECT `user... user_" />
+                <marker date="1472566293000" expanded="true" signature="227:280" ph="SELECT `user... user_properties" />
+                <marker date="1472566293000" expanded="true" signature="395:441" ph="SELECT `toke... users" />
               </folding>
             </state>
           </provider>
@@ -406,6 +406,32 @@
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="External Dependencies">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="/">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Users">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="marekfort">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Development">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
@@ -1200,13 +1226,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape/notification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+        <state relative-caret-position="598">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
           <folding>
             <element signature="e#25#62#0" expanded="true" />
-            <marker date="1472499750000" expanded="true" signature="201:223" ph="SELECT `user... user_" />
-            <marker date="1472499750000" expanded="true" signature="201:254" ph="SELECT `user... user_properties" />
-            <marker date="1472499750000" expanded="true" signature="369:415" ph="SELECT `toke... users" />
+            <marker date="1472566293000" expanded="true" signature="227:249" ph="SELECT `user... user_" />
+            <marker date="1472566293000" expanded="true" signature="227:280" ph="SELECT `user... user_properties" />
+            <marker date="1472566293000" expanded="true" signature="395:441" ph="SELECT `toke... users" />
           </folding>
         </state>
       </provider>

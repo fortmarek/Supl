@@ -1,5 +1,7 @@
 *.pem
 *.ipa 
 *.zip
+*.p12
+*.pkey
 Preview.html
 culprits.txt
