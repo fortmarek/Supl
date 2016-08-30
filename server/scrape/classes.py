@@ -122,11 +122,19 @@ def data(html, student_tables, dates, school, should_compare):
             changes = get_class_data(clas, table, dates[tables_count])
             compare_changes(changes, clas_id, dates[tables_count], should_compare)
             tables_count += 1
+        delete_dates_not_present(clas_id, dates)
 
-def delete_dates_not_present(dates):
-    dates_tuple = tuple(dates)
+def delete_dates_not_present(clas_id, dates):
     c, conn = connection()
-    delete = "DELETE FROM `changes` WHERE `clas_id`=%s AND `date`=%s"
+    select = "SELECT `date` FROM `changes` WHERE `clas_id`=%s"
+    c.execute(select, (clas_id))
+    (all_dates) = c.fetchall()[0]
+    for date in all_dates:
+        if date not in dates:
+            delete = "DELETE FROM `changes` WHERE `clas_id`=%s AND `date`=%s"
+            c.execute(delete, (clas_id, date))
+    conn.commit()
+    conn.close()
 
 
 def clas_to_db(clas_name, school):

@@ -1,1 +1,1 @@
-- Oprava bugu, kdy se zobrazily závorky pro skupinu, která ale neexistovala
+- Oprava notifikací
