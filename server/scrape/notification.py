@@ -40,7 +40,12 @@ def send_notifications(id, property_type):
     should_notify = False
 
     for token in tokens:
+
+        if token == 'NULL' or token == None:
+            continue
+
         should_notify = True
+
         for line in reversed(list(open('/home/scrape/log-file.txt'))):
             try:
                 # Finds the start of session
@@ -50,7 +55,7 @@ def send_notifications(id, property_type):
                 if line.rstrip().find(token) != -1:
                     should_notify = False
                     break
-        if should_notify and token != 'NULL':
+        if should_notify:
             file = open('/home/scrape/log-file.txt', 'a')
             file.write("Sent to %s\n" % token)
             file.close()

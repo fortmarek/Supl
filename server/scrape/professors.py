@@ -130,21 +130,6 @@ def data(html, professor_tables, dates, school, should_compare):
             prof_changes += changes
             compare_changes(prof_changes, professor_id, dates[tables_count], should_compare)
             tables_count += 1
-        # TODO: Fix if date is relevant
-        delete_dates_not_present(professor_id, dates)
-
-
-def delete_dates_not_present(prof_id, dates):
-    c, conn = connection()
-    select = "SELECT `date` FROM `professor_changes` WHERE `professor_id`=%s"
-    c.execute(select, (prof_id))
-    (all_dates) = c.fetchall()[0]
-    for date in all_dates:
-        if date not in dates:
-            delete = "DELETE FROM `professor_changes` WHERE `professor_id`=%s AND `date`=%s"
-            c.execute(delete, (prof_id, date))
-    conn.commit()
-    conn.close()
 
 
 def prof_to_db(prof_name, school):

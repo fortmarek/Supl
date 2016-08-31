@@ -8,6 +8,8 @@ import date_module
 import classes
 import professors
 import traceback
+from datetime import datetime
+from compiler.ast import flatten
 
 def get_html(link):
     # TODO: Install SSL Certificate Before Production
@@ -149,29 +151,38 @@ def get_data(html, school, should_compare):
         class_changes = classes.data(html, student_tables, dates, school, should_compare)
     if len(dates) != 0 and len(professor_tables) != 0:
         professor_changes = professors.data(html, professor_tables, dates, school, should_compare)
-    return (class_changes, professor_changes)
+    return dates
 
 
-def refresh_data():
+def delete_dates_not_present_for_professors(dates, school):
     c, conn = connection()
 
-    for table in ('professor_changes', 'changes'):
-        sql = "SELECT `date` FROM %s" % (table,)
-        c.execute(sql)
+    select = "SELECT DISTINCT professor_changes.date FROM professor_changes, professors WHERE professors.school=%s" \
+             " AND professor_changes.professor_id = professors.professor_id"
+    c.execute(select, (school))
+    all_dates = [date[0] for date in c.fetchall()]
+    dates = flatten(dates)
+    for date in all_dates:
+        if date.date() not in dates:
+            delete = "DELETE professor_changes FROM professor_changes, professors WHERE professors.school=%s" \
+                     " AND professor_changes.date=%s"
+            c.execute(delete, (school, date))
+    conn.commit()
+    conn.close()
 
-        dates = []
-        for change in c.fetchall():
-            if not change[0] in dates:
-                dates.append(change[0])
+def delete_dates_not_present_for_clases(dates, school):
+    c, conn = connection()
 
-        for date in dates:
-            if not date_module.is_date_relevant(date.date()):
-                delete = "DELETE FROM %s WHERE `date`=%%s" % (table,)
-                c.execute(delete, (date))
-
-
-
-
+    select = "SELECT DISTINCT changes.date FROM changes, classes WHERE classes.school=%s" \
+             " AND changes.clas_id = classes.clas_id"
+    c.execute(select, (school))
+    all_dates = [date[0] for date in c.fetchall()]
+    dates = flatten(dates)
+    for date in all_dates:
+        if date.date() not in dates:
+            delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
+                     " AND changes.date=%s"
+            c.execute(delete, (school, date))
     conn.commit()
     conn.close()
 
@@ -184,15 +195,22 @@ def get_school_data(school, should_compare):
     if html.text == "":
         return
 
+    # Dates that are relevant and exist on the web
+    current_dates = []
+
     # Changes not displayed on the initial html
     if html.find('a') == None:
         # Get individual links where the changes are stored and iterate through them
         links_list = get_links(html, school)
         for link in links_list:
             html = get_html(link)
-            get_data(html, school, should_compare)
+            dates = get_data(html, school, should_compare)
+            current_dates.append(dates)
     else:
-        get_data(html, school, should_compare)
+        dates = get_data(html, school, should_compare)
+        current_dates.append(dates)
+    delete_dates_not_present_for_professors(current_dates, school)
+    delete_dates_not_present_for_clases(current_dates, school)
 
 def check_school(school):
     if not is_school_in_db(school):
@@ -215,8 +233,6 @@ if __name__ == "__main__":
         file = open('/home/scrape/log-file.txt', 'w')
         file.write("Run %d\n" % number)
         file.close()
-
-    refresh_data()
 
     schools = get_schools()
 
