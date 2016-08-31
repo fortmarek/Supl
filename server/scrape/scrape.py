@@ -9,6 +9,7 @@ import classes
 import professors
 import traceback
 from compiler.ast import flatten
+import notification
 
 def get_html(link):
     # TODO: Install SSL Certificate Before Production
@@ -164,7 +165,16 @@ def delete_dates_not_present_for_professors(dates, school):
     all_dates = [date[0] for date in c.fetchall()]
     dates = flatten(dates)
     for date in all_dates:
+        
         if date.date() not in dates:
+
+            # Notify when deleting the changes is relevant for notification
+            if date_module.is_date_relevant(date.date()):
+                sql = "SELECT `professor_ud` FROM `professor_changes` WHERE `school`=%s AND `date`=%s"
+                c.execute(sql, (school, date.strftime('%Y-%m-%d')))
+                for prof_id in c.fetchall():
+                    notification.send_notifications(prof_id[0], 'professor_id')
+
             delete = "DELETE professor_changes FROM professor_changes, professors WHERE professors.school=%s" \
                      " AND professor_changes.date=%s"
             c.execute(delete, (school, date))
@@ -185,10 +195,13 @@ def delete_dates_not_present_for_clases(dates, school):
             # Notify when deleting the changes is relevant for notification
             if date_module.is_date_relevant(date.date()):
                 sql = "SELECT `clas_id` FROM `changes` WHERE `school`=%s AND `date`=%s"
-                c.execute(sql, (school, date.strftime('%Y-%m-%d')))
+                c.execute(sql, (school, date))
+                for clas_id in c.fetchall():
+                    notification.send_notifications(clas_id[0], 'clas_id')
 
             delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
                      " AND changes.date=%s"
+            c.execute(delete, (school, date))
     conn.commit()
     conn.close()
 
