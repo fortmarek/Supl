@@ -8,7 +8,6 @@ import date_module
 import classes
 import professors
 import traceback
-from datetime import datetime
 from compiler.ast import flatten
 
 def get_html(link):
@@ -62,6 +61,8 @@ def get_final_link(basic_link, suffix):
 def get_individual_links(html, basic_link):
     dates = []
     individual_links = []
+    if html == False:
+        return []
     for string_date in html.find_all('option'):
         date = date_module.get_date(string_date)
         if date_module.is_date_relevant(date):
@@ -180,9 +181,14 @@ def delete_dates_not_present_for_clases(dates, school):
     dates = flatten(dates)
     for date in all_dates:
         if date.date() not in dates:
+
+            # Notify when deleting the changes is relevant for notification
+            if date_module.is_date_relevant(date.date()):
+                sql = "SELECT `clas_id` FROM `changes` WHERE `school`=%s AND `date`=%s"
+                c.execute(sql, (school, date.strftime('%Y-%m-%d')))
+
             delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
                      " AND changes.date=%s"
-            c.execute(delete, (school, date))
     conn.commit()
     conn.close()
 

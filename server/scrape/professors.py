@@ -63,6 +63,7 @@ def compare_changes(changes, prof_id, date, should_compare):
         for change in changes:
             if should_compare:
                 notification.send_notifications(prof_id, 'professor_id')
+                should_compare = False
             change_to_db(prof_id, change)
 
     for change in old_changes:
@@ -82,6 +83,7 @@ def compare_changes(changes, prof_id, date, should_compare):
         if not professor.is_change_same(change, changes[i]):
             if should_compare:
                 notification.send_notifications(prof_id, 'professor_id')
+                should_compare = False
             if i < len(changes):
                 for change in changes[i + 1:]:
                     change_to_db(prof_id, change)
@@ -124,11 +126,10 @@ def data(html, professor_tables, dates, school, should_compare):
         prof_to_db(prof_name, school)
         professor_id = get_prof_id(prof_name, school)
         tables_count = 0
-        prof_changes = []
+
         for table in professor_tables:
             changes = get_prof_data(professor, table, dates[tables_count])
-            prof_changes += changes
-            compare_changes(prof_changes, professor_id, dates[tables_count], should_compare)
+            compare_changes(changes, professor_id, dates[tables_count], should_compare)
             tables_count += 1
 
 

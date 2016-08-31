@@ -10,7 +10,7 @@ import random
 def get_tokens(id, property_type):
     c, conn = connection()
     tokens = []
-    sql = "SELECT `user_id` FROM `user_properties` WHERE %s =%%s" % (property_type,)
+    sql = "SELECT DISTINCT `user_id` FROM `user_properties` WHERE %s =%%s" % (property_type,)
     c.execute(sql, (id))
     users = c.fetchall()
     for user in users:
@@ -36,7 +36,6 @@ def send_notifications(id, property_type):
     payload = Payload(alert=message, sound="default", badge=0, mutable_content=True)
 
     tokens = get_tokens(id, property_type)
-
     should_notify = False
 
     for token in tokens:
@@ -64,5 +63,4 @@ def send_notifications(id, property_type):
             frame.add_item(token, payload, identifier, expiry, priority)
 
     if should_notify:
-        pass
-        #apns.gateway_server.send_notification_multiple(frame)
+        apns.gateway_server.send_notification_multiple(frame)
