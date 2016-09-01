@@ -120,7 +120,8 @@ def data(html, student_tables, dates, school, should_compare):
         tables_count = 0
         for table in student_tables:
             changes = get_class_data(clas, table, dates[tables_count])
-            compare_changes(changes, clas_id, dates[tables_count], should_compare)
+            if len(changes) > 0:
+                compare_changes(changes, clas_id, dates[tables_count], should_compare)
             tables_count += 1
 
 

@@ -96,21 +96,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scrape.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scrape.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+              <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
               <folding>
                 <element signature="e#20#49#0" expanded="true" />
-                <marker date="1472668063000" expanded="true" signature="2282:2312" ph="SELECT `scho... schools" />
-                <marker date="1472668063000" expanded="true" signature="2492:2540" ph="SELECT `scho... schools" />
-                <marker date="1472668063000" expanded="true" signature="2635:2679" ph="INSERT INTO `schools`... " />
-                <marker date="1472668063000" expanded="true" signature="4637:4816" ph="SELECT DISTI... professor_changes" />
-                <marker date="1472668063000" expanded="true" signature="5159:5237" ph="SELECT `prof... professor_changes" />
-                <marker date="1472668063000" expanded="true" signature="5455:5597" ph="DELETE FROM " />
-                <marker date="1472668063000" expanded="true" signature="5779:5909" ph="SELECT DISTI... changes" />
-                <marker date="1472668063000" expanded="true" signature="6243:6306" ph="SELECT `clas... changes" />
+                <marker date="1472739201000" expanded="true" signature="2282:2312" ph="SELECT `scho... schools" />
+                <marker date="1472739201000" expanded="true" signature="2492:2540" ph="SELECT `scho... schools" />
+                <marker date="1472739201000" expanded="true" signature="2635:2679" ph="INSERT INTO `schools`... " />
+                <marker date="1472739201000" expanded="true" signature="4637:4816" ph="SELECT DISTI... professor_changes" />
+                <marker date="1472739201000" expanded="true" signature="5150:5228" ph="SELECT `prof... professor_changes" />
+                <marker date="1472739201000" expanded="true" signature="5446:5588" ph="DELETE FROM " />
+                <marker date="1472739201000" expanded="true" signature="5770:5900" ph="SELECT DISTI... changes" />
+                <marker date="1472739201000" expanded="true" signature="6234:6297" ph="SELECT `clas... changes" />
               </folding>
             </state>
           </provider>
@@ -128,27 +128,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="classes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrape/classes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="56" column="36" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <marker date="1472639739000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
-                <marker date="1472639739000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
-                <marker date="1472639739000" expanded="true" signature="1578:1620" ph="SELECT * FRO... changes" />
-                <marker date="1472639739000" expanded="true" signature="1578:1631" ph="SELECT * FRO... changes" />
-                <marker date="1472639739000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
-                <marker date="1472639739000" expanded="true" signature="2002:2069" ph="SELECT `chan... changes" />
-                <marker date="1472639739000" expanded="true" signature="2959:3035" ph="DELETE FROM " />
-                <marker date="1472639739000" expanded="true" signature="4384:4475" ph="SELECT `clas... classes" />
-                <marker date="1472639739000" expanded="true" signature="4581:4642" ph="INSERT INTO `classes`... " />
-                <marker date="1472639739000" expanded="true" signature="4738:4816" ph="SELECT `clas... temporary_classes" />
-                <marker date="1472639739000" expanded="true" signature="5054:5112" ph="SELECT `user... temp_properties" />
-                <marker date="1472639739000" expanded="true" signature="5248:5316" ph="INSERT INTO `user_properties`... " />
-                <marker date="1472639739000" expanded="true" signature="5399:5447" ph="DELETE FROM " />
-                <marker date="1472639739000" expanded="true" signature="5522:5590" ph="DELETE FROM " />
+                <marker date="1472740708000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
+                <marker date="1472740708000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
+                <marker date="1472740708000" expanded="true" signature="1578:1620" ph="SELECT * FRO... changes" />
+                <marker date="1472740708000" expanded="true" signature="1578:1631" ph="SELECT * FRO... changes" />
+                <marker date="1472740708000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
+                <marker date="1472740708000" expanded="true" signature="2002:2069" ph="SELECT `chan... changes" />
+                <marker date="1472740708000" expanded="true" signature="2959:3035" ph="DELETE FROM " />
+                <marker date="1472740708000" expanded="true" signature="4421:4512" ph="SELECT `clas... classes" />
+                <marker date="1472740708000" expanded="true" signature="4618:4679" ph="INSERT INTO `classes`... " />
+                <marker date="1472740708000" expanded="true" signature="4775:4853" ph="SELECT `clas... temporary_classes" />
+                <marker date="1472740708000" expanded="true" signature="5091:5149" ph="SELECT `user... temp_properties" />
+                <marker date="1472740708000" expanded="true" signature="5285:5353" ph="INSERT INTO `user_properties`... " />
+                <marker date="1472740708000" expanded="true" signature="5436:5484" ph="DELETE FROM " />
+                <marker date="1472740708000" expanded="true" signature="5559:5627" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -157,7 +157,7 @@
       <file leaf-file-name="professors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/professors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="120">
               <caret line="64" column="38" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="38" />
               <folding>
                 <element signature="e#47#63#0" expanded="true" />
@@ -261,10 +261,10 @@
         <option value="$PROJECT_DIR$/scrape/port.py" />
         <option value="$PROJECT_DIR$/scrape/date_module.py" />
         <option value="$PROJECT_DIR$/www/__init__.py" />
-        <option value="$PROJECT_DIR$/scrape/classes.py" />
         <option value="$PROJECT_DIR$/scrape/professors.py" />
         <option value="$PROJECT_DIR$/scrape/notification.py" />
         <option value="$PROJECT_DIR$/scrape/scrape.py" />
+        <option value="$PROJECT_DIR$/scrape/classes.py" />
       </list>
     </option>
   </component>
@@ -1197,9 +1197,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+          <folding>
+            <element signature="e#20#49#0" expanded="true" />
+            <marker date="1472739201000" expanded="true" signature="2282:2312" ph="SELECT `scho... schools" />
+            <marker date="1472739201000" expanded="true" signature="2492:2540" ph="SELECT `scho... schools" />
+            <marker date="1472739201000" expanded="true" signature="2635:2679" ph="INSERT INTO `schools`... " />
+            <marker date="1472739201000" expanded="true" signature="4637:4816" ph="SELECT DISTI... professor_changes" />
+            <marker date="1472739201000" expanded="true" signature="5150:5228" ph="SELECT `prof... professor_changes" />
+            <marker date="1472739201000" expanded="true" signature="5446:5588" ph="DELETE FROM " />
+            <marker date="1472739201000" expanded="true" signature="5770:5900" ph="SELECT DISTI... changes" />
+            <marker date="1472739201000" expanded="true" signature="6234:6297" ph="SELECT `clas... changes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scrape/professors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="120">
           <caret line="64" column="38" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="38" />
           <folding>
             <element signature="e#47#63#0" expanded="true" />
@@ -1221,42 +1239,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape/classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="56" column="36" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="36" />
+        <state relative-caret-position="180">
+          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-            <marker date="1472639739000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
-            <marker date="1472639739000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
-            <marker date="1472639739000" expanded="true" signature="1578:1620" ph="SELECT * FRO... changes" />
-            <marker date="1472639739000" expanded="true" signature="1578:1631" ph="SELECT * FRO... changes" />
-            <marker date="1472639739000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
-            <marker date="1472639739000" expanded="true" signature="2002:2069" ph="SELECT `chan... changes" />
-            <marker date="1472639739000" expanded="true" signature="2959:3035" ph="DELETE FROM " />
-            <marker date="1472639739000" expanded="true" signature="4384:4475" ph="SELECT `clas... classes" />
-            <marker date="1472639739000" expanded="true" signature="4581:4642" ph="INSERT INTO `classes`... " />
-            <marker date="1472639739000" expanded="true" signature="4738:4816" ph="SELECT `clas... temporary_classes" />
-            <marker date="1472639739000" expanded="true" signature="5054:5112" ph="SELECT `user... temp_properties" />
-            <marker date="1472639739000" expanded="true" signature="5248:5316" ph="INSERT INTO `user_properties`... " />
-            <marker date="1472639739000" expanded="true" signature="5399:5447" ph="DELETE FROM " />
-            <marker date="1472639739000" expanded="true" signature="5522:5590" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="167" column="8" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
-          <folding>
-            <element signature="e#20#49#0" expanded="true" />
-            <marker date="1472668063000" expanded="true" signature="2282:2312" ph="SELECT `scho... schools" />
-            <marker date="1472668063000" expanded="true" signature="2492:2540" ph="SELECT `scho... schools" />
-            <marker date="1472668063000" expanded="true" signature="2635:2679" ph="INSERT INTO `schools`... " />
-            <marker date="1472668063000" expanded="true" signature="4637:4816" ph="SELECT DISTI... professor_changes" />
-            <marker date="1472668063000" expanded="true" signature="5159:5237" ph="SELECT `prof... professor_changes" />
-            <marker date="1472668063000" expanded="true" signature="5455:5597" ph="DELETE FROM " />
-            <marker date="1472668063000" expanded="true" signature="5779:5909" ph="SELECT DISTI... changes" />
-            <marker date="1472668063000" expanded="true" signature="6243:6306" ph="SELECT `clas... changes" />
+            <marker date="1472740708000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
+            <marker date="1472740708000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
+            <marker date="1472740708000" expanded="true" signature="1578:1620" ph="SELECT * FRO... changes" />
+            <marker date="1472740708000" expanded="true" signature="1578:1631" ph="SELECT * FRO... changes" />
+            <marker date="1472740708000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
+            <marker date="1472740708000" expanded="true" signature="2002:2069" ph="SELECT `chan... changes" />
+            <marker date="1472740708000" expanded="true" signature="2959:3035" ph="DELETE FROM " />
+            <marker date="1472740708000" expanded="true" signature="4421:4512" ph="SELECT `clas... classes" />
+            <marker date="1472740708000" expanded="true" signature="4618:4679" ph="INSERT INTO `classes`... " />
+            <marker date="1472740708000" expanded="true" signature="4775:4853" ph="SELECT `clas... temporary_classes" />
+            <marker date="1472740708000" expanded="true" signature="5091:5149" ph="SELECT `user... temp_properties" />
+            <marker date="1472740708000" expanded="true" signature="5285:5353" ph="INSERT INTO `user_properties`... " />
+            <marker date="1472740708000" expanded="true" signature="5436:5484" ph="DELETE FROM " />
+            <marker date="1472740708000" expanded="true" signature="5559:5627" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

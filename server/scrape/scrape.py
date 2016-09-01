@@ -165,9 +165,8 @@ def delete_dates_not_present_for_professors(dates, school):
     all_dates = [date[0] for date in c.fetchall()]
     dates = flatten(dates)
     for date in all_dates:
-        
-        if date.date() not in dates:
 
+        if date.date() not in dates:
             # Notify when deleting the changes is relevant for notification
             if date_module.is_date_relevant(date.date()):
                 sql = "SELECT `professor_ud` FROM `professor_changes` WHERE `school`=%s AND `date`=%s"
