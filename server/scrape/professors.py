@@ -129,7 +129,8 @@ def data(html, professor_tables, dates, school, should_compare):
 
         for table in professor_tables:
             changes = get_prof_data(professor, table, dates[tables_count])
-            compare_changes(changes, professor_id, dates[tables_count], should_compare)
+            if len(changes) > 0:
+                compare_changes(changes, professor_id, dates[tables_count], should_compare)
             tables_count += 1
 
 

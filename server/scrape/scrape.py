@@ -169,8 +169,9 @@ def delete_dates_not_present_for_professors(dates, school):
         if date.date() not in dates:
             # Notify when deleting the changes is relevant for notification
             if date_module.is_date_relevant(date.date()):
-                sql = "SELECT `professor_ud` FROM `professor_changes` WHERE `school`=%s AND `date`=%s"
-                c.execute(sql, (school, date.strftime('%Y-%m-%d')))
+                sql = "SELECT professor_changes.professor_id FROM professor_changes, professors WHERE professor_changes.date=%s" \
+                      " AND professors.school=%s"
+                c.execute(sql, (date,school))
                 for prof_id in c.fetchall():
                     notification.send_notifications(prof_id[0], 'professor_id')
 
@@ -189,12 +190,12 @@ def delete_dates_not_present_for_clases(dates, school):
     all_dates = [date[0] for date in c.fetchall()]
     dates = flatten(dates)
     for date in all_dates:
-        if date.date() not in dates:
 
+        if date.date() not in dates:
             # Notify when deleting the changes is relevant for notification
             if date_module.is_date_relevant(date.date()):
-                sql = "SELECT `clas_id` FROM `changes` WHERE `school`=%s AND `date`=%s"
-                c.execute(sql, (school, date))
+                sql = "SELECT changes.clas_id FROM changes, classes WHERE changes.date=%s AND classes.school=%s"
+                c.execute(sql, (date, school))
                 for clas_id in c.fetchall():
                     notification.send_notifications(clas_id[0], 'clas_id')
 
