@@ -15,6 +15,11 @@ def is_date_present(date):
 
     if today.date() > date:
         return False
+    elif today.date() == date:
+        if today.hour > 18:
+            return False
+        else:
+            return True
     else:
         return True
 

@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             defaults.setBool(true, forKey: "updateValuesNeeded")
         }
         
-        
+        // TODO: Delete properties (in case of reinstalling)
         //MARK: Walkthrough
         
         if defaults.boolForKey("wasOpened") == false {

@@ -181,8 +181,8 @@ def delete_dates_not_present_for_clases(dates, school):
     c.execute(select, (school))
     all_dates = [date[0] for date in c.fetchall()]
     dates = flatten(dates)
-    for date in all_dates:
 
+    for date in all_dates:
         if date.date() not in dates:
             delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
                      " AND changes.date=%s"

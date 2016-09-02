@@ -1,1 +1,1 @@
-- Oprava notifikací
+- Oprava přechodu ze starších verzí
