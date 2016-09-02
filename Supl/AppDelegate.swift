@@ -28,10 +28,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             Alamofire.request(.POST, "http://139.59.144.155/users/\(id)")
         }
         
-        
+        //Fix for notifications - 2.1.3
         if defaults.boolForKey("doesNotNeedFix") == false && UIApplication.sharedApplication().isRegisteredForRemoteNotifications() {
             registerForPushNotifications()
             defaults.setBool(true, forKey: "doesNotNeedFix")
+        }
+        
+        //Fix for duplicating properties in dataabse - 2.1.4
+        if defaults.boolForKey("updateValuesNeeded") == false {
+            let dataController = DataController()
+            if let clas = defaults.stringForKey("class"),
+                let school = defaults.stringForKey("schoolUrl") {
+            dataController.postSchool(school, completion: {
+                result in
+                if result == "Povedlo se" {
+                    defaults.setBool(true, forKey: "isUrlRight")
+                    dataController.postProperty(clas, school: school)
+                }
+                else {
+                    defaults.setBool(false, forKey: "isUrlRight")
+                }
+                })
+            }
+            
+            defaults.setBool(true, forKey: "updateValuesNeeded")
         }
         
         

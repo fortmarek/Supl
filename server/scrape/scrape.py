@@ -66,7 +66,7 @@ def get_individual_links(html, basic_link):
         return []
     for string_date in html.find_all('option'):
         date = date_module.get_date(string_date)
-        if date_module.is_date_relevant(date):
+        if date_module.is_date_present(date):
             final_link = get_final_link(basic_link, string_date['value'])
             individual_links.append(final_link)
         # Dates are from newest to oldest => in this case it means there is no chance of relevant date
@@ -106,7 +106,7 @@ def is_school_in_db(school):
 
 def get_links(html, link):
     frame = html.find('frame', attrs={'name': 'surrmmdd'})
-    src = ""
+
     try:
         src = frame['src']
     except TypeError:
@@ -167,14 +167,6 @@ def delete_dates_not_present_for_professors(dates, school):
     for date in all_dates:
 
         if date.date() not in dates:
-            # Notify when deleting the changes is relevant for notification
-            if date_module.is_date_relevant(date.date()):
-                sql = "SELECT professor_changes.professor_id FROM professor_changes, professors WHERE professor_changes.date=%s" \
-                      " AND professors.school=%s"
-                c.execute(sql, (date,school))
-                for prof_id in c.fetchall():
-                    notification.send_notifications(prof_id[0], 'professor_id')
-
             delete = "DELETE professor_changes FROM professor_changes, professors WHERE professors.school=%s" \
                      " AND professor_changes.date=%s"
             c.execute(delete, (school, date))
@@ -192,13 +184,6 @@ def delete_dates_not_present_for_clases(dates, school):
     for date in all_dates:
 
         if date.date() not in dates:
-            # Notify when deleting the changes is relevant for notification
-            if date_module.is_date_relevant(date.date()):
-                sql = "SELECT changes.clas_id FROM changes, classes WHERE changes.date=%s AND classes.school=%s"
-                c.execute(sql, (date, school))
-                for clas_id in c.fetchall():
-                    notification.send_notifications(clas_id[0], 'clas_id')
-
             delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
                      " AND changes.date=%s"
             c.execute(delete, (school, date))

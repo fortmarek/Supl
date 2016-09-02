@@ -61,6 +61,7 @@ extension NotificationsDelegate {
     
     func postToken(token: String) {
         guard let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId") else {return}
+        
         Alamofire.request(.POST, "http://139.59.144.155/users/\(userId)/notification",
                           parameters: ["token" : token])
     }

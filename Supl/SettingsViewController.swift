@@ -116,7 +116,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             guard let _ = footer.textLabel else {return}
             footer.textLabel!.font = UIFont().getFont(14, weight: .Light)
             footer.textLabel!.textAlignment = .Center
-            footer.textLabel!.text = "Verze 2.1.2\nVytvořil Marek Fořt"
+            footer.textLabel!.text = "Verze 2.1.4\nVytvořil Marek Fořt"
         }
         
     }
@@ -279,8 +279,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         else {
             postSchool(school, clas: clas, oldSchool: "")
         }
-        
-        
         
         
         defaults.setValue(clas, forKey: "class")

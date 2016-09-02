@@ -9,6 +9,16 @@ def get_date(date):
     return date
 
 # I.E. is the date in the past?
+
+def is_date_present(date):
+    today = datetime.now()
+
+    if today.date() > date:
+        return False
+    else:
+        return True
+
+
 def is_date_relevant(date):
     # converted_date = datetime.strptime("30.4.2016", '%d.%m.%Y')
     today = datetime.now()
@@ -33,7 +43,7 @@ def get_dates(html, index):
     for string_date in html.find_all('p', class_='textlarge_' + index):
         date = get_date(string_date)
 
-        if is_date_relevant(date):
+        if is_date_present(date):
             dates.append(date)
         else:
             old_dates_count += 1
