@@ -114,7 +114,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="date_module.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="date_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/date_module.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
@@ -186,16 +186,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notification.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="notification.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrape/notification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+            <state relative-caret-position="388">
+              <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
               <folding>
                 <element signature="e#25#62#0" expanded="true" />
-                <marker date="1472850058000" expanded="true" signature="227:258" ph="SELECT `user... user_" />
-                <marker date="1472850058000" expanded="true" signature="227:289" ph="SELECT `user... user_properties" />
-                <marker date="1472850058000" expanded="true" signature="404:450" ph="SELECT `toke... users" />
+                <marker date="1472910299000" expanded="true" signature="227:258" ph="SELECT `user... user_" />
+                <marker date="1472910299000" expanded="true" signature="227:289" ph="SELECT `user... user_properties" />
+                <marker date="1472910299000" expanded="true" signature="404:450" ph="SELECT `toke... users" />
               </folding>
             </state>
           </provider>
@@ -260,9 +260,9 @@
         <option value="$PROJECT_DIR$/www/__init__.py" />
         <option value="$PROJECT_DIR$/scrape/classes.py" />
         <option value="$PROJECT_DIR$/scrape/professors.py" />
-        <option value="$PROJECT_DIR$/scrape/notification.py" />
         <option value="$PROJECT_DIR$/scrape/date_module.py" />
         <option value="$PROJECT_DIR$/scrape/scrape.py" />
+        <option value="$PROJECT_DIR$/scrape/notification.py" />
       </list>
     </option>
   </component>
@@ -1208,19 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/notification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="66" column="9" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1472850058000" expanded="true" signature="227:258" ph="SELECT `user... user_" />
-            <marker date="1472850058000" expanded="true" signature="227:289" ph="SELECT `user... user_properties" />
-            <marker date="1472850058000" expanded="true" signature="404:450" ph="SELECT `toke... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrape/supl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1253,6 +1240,19 @@
           <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/notification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+          <folding>
+            <element signature="e#25#62#0" expanded="true" />
+            <marker date="1472910299000" expanded="true" signature="227:258" ph="SELECT `user... user_" />
+            <marker date="1472910299000" expanded="true" signature="227:289" ph="SELECT `user... user_properties" />
+            <marker date="1472910299000" expanded="true" signature="404:450" ph="SELECT `toke... users" />
           </folding>
         </state>
       </provider>
