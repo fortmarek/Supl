@@ -16,9 +16,12 @@ def get_tokens(id, property_type):
     for user in users:
         token_sql = "SELECT `token` FROM `users` WHERE `user_id`=%s"
         c.execute(token_sql, (user))
-        token = c.fetchone()[0]
-        if token != None or token != 'NULL':
-            tokens.append(token)
+        try:
+            token = c.fetchone()[0]
+            if token != None or token != 'NULL':
+                tokens.append(token)
+        except TypeError:
+            continue
     conn.close()
     return tokens
 

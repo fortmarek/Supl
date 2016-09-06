@@ -303,6 +303,10 @@ api.add_resource(Toilets, '/klozet')
 def html():
     return render_template('main.html')
 
+@app.route('/korunka')
+def korunka():
+    return render_template('korunka/main_server.html')
+
 
 
 

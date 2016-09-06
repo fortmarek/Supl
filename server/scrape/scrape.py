@@ -9,7 +9,7 @@ import classes
 import professors
 import traceback
 from compiler.ast import flatten
-import notification
+import time
 
 def get_html(link):
     # TODO: Install SSL Certificate Before Production
@@ -208,6 +208,8 @@ def get_school_data(school, should_compare):
         links_list = get_links(html, school)
         for link in links_list:
             html = get_html(link)
+            if html == False or html.text == "":
+                continue
             dates = get_data(html, school, should_compare)
             current_dates.append(dates)
     else:
@@ -220,9 +222,10 @@ def check_school(school):
     if not is_school_in_db(school):
         get_school_data(school, False)
 
-# Mark session => notifications will not be sent twice
 
-if __name__ == "__main__":
+def run_scrape():
+
+
     number = 0
     for line in reversed(list(open('/home/scrape/log-file.txt'))):
         try:
@@ -242,6 +245,9 @@ if __name__ == "__main__":
 
     try:
         for school in schools:
+        # for i in range(0, 5):
+            # school = 'http://old.gym-rce.cz/suplov.htm'
+
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")
@@ -250,6 +256,23 @@ if __name__ == "__main__":
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("%s\n" % traceback.format_exc())
         file.close()
+
+# Mark session => notifications will not be sent twice
+
+if __name__ == "__main__":
+
+    try:
+        line = open('/home/scrape/log-file.txt').readlines()[-1]
+        # Check that the last job finished - don't want any concurrent jobs
+        should_run_scrape = line.find('Run') == -1 and line.find('Sent') == -1
+        if should_run_scrape:
+            run_scrape()
+    except IndexError:
+        run_scrape()
+
+
+
+    last_line = reversed(list(open('/home/scrape/log-file.txt')))
 
 
 
