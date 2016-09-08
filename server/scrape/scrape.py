@@ -167,8 +167,9 @@ def delete_dates_not_present_for_professors(dates, school):
     for date in all_dates:
 
         if date.date() not in dates:
-            delete = "DELETE professor_changes FROM professor_changes, professors WHERE professors.school=%s" \
-                     " AND professor_changes.date=%s"
+
+            delete = "DELETE professor_changes FROM professor_changes JOIN professors ON professor_changes.professor_id = professor.professor_id" \
+                     " WHERE professors.school=%s AND professor_changes.date=%s"
             c.execute(delete, (school, date))
     conn.commit()
     conn.close()
@@ -183,9 +184,11 @@ def delete_dates_not_present_for_clases(dates, school):
     dates = flatten(dates)
 
     for date in all_dates:
+
         if date.date() not in dates:
-            delete = "DELETE changes FROM changes, classes WHERE classes.school=%s" \
+            delete = "DELETE changes FROM changes JOIN classes ON changes.clas_id = classes.clas_id WHERE classes.school=%s" \
                      " AND changes.date=%s"
+
             c.execute(delete, (school, date))
     conn.commit()
     conn.close()
@@ -224,8 +227,6 @@ def check_school(school):
 
 
 def run_scrape():
-
-
     number = 0
     for line in reversed(list(open('/home/scrape/log-file.txt'))):
         try:
@@ -245,8 +246,8 @@ def run_scrape():
 
     try:
         for school in schools:
-        # for i in range(0, 5):
-            # school = 'http://old.gym-rce.cz/suplov.htm'
+        #for i in range(0, 10):
+        #    school = 'http://rozvrhy.szspraha1.cz/suplovani/suplov.htm'
 
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
@@ -260,19 +261,7 @@ def run_scrape():
 # Mark session => notifications will not be sent twice
 
 if __name__ == "__main__":
-
-    try:
-        line = open('/home/scrape/log-file.txt').readlines()[-1]
-        # Check that the last job finished - don't want any concurrent jobs
-        should_run_scrape = line.find('Run') == -1 and line.find('Sent') == -1
-        if should_run_scrape:
-            run_scrape()
-    except IndexError:
-        run_scrape()
-
-
-
-    last_line = reversed(list(open('/home/scrape/log-file.txt')))
+    run_scrape()
 
 
 

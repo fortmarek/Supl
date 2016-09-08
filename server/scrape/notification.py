@@ -66,5 +66,5 @@ def send_notifications(id, property_type):
             frame.add_item(token, payload, identifier, expiry, priority)
 
     if should_notify:
-        # pass
-        apns.gateway_server.send_notification_multiple(frame)
+        pass
+        # apns.gateway_server.send_notification_multiple(frame)
