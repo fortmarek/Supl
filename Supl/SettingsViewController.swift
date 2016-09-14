@@ -241,7 +241,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func saveData(_ textField: UITextField) -> Bool {
         DispatchQueue.main.async(execute: {
-            SwiftSpinner.show("Načítání")
+            SwiftSpinner.show("Načítaní")
         })
         
         var school = String()

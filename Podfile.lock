@@ -5,21 +5,20 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
-  - SwiftSpinner (from `https://github.com/icanzilb/SwiftSpinner`, tag `1.0.0`)
+  - SwiftSpinner (from `https://github.com/fortmarek/SwiftSpinner`)
   - SwiftyJSON (from `https://github.com/acegreen/SwiftyJSON`, commit `8971384559780e631b041ac91b16734a396d4c14`)
 
 EXTERNAL SOURCES:
   SwiftSpinner:
-    :git: https://github.com/icanzilb/SwiftSpinner
-    :tag: 1.0.0
+    :git: https://github.com/fortmarek/SwiftSpinner
   SwiftyJSON:
     :commit: 8971384559780e631b041ac91b16734a396d4c14
     :git: https://github.com/acegreen/SwiftyJSON
 
 CHECKOUT OPTIONS:
   SwiftSpinner:
-    :git: https://github.com/icanzilb/SwiftSpinner
-    :tag: 1.0.0
+    :commit: b71d2fb738932fd3191707657ad0b3ec4c9434c0
+    :git: https://github.com/fortmarek/SwiftSpinner
   SwiftyJSON:
     :commit: 8971384559780e631b041ac91b16734a396d4c14
     :git: https://github.com/acegreen/SwiftyJSON
@@ -29,6 +28,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: 73a548a3ceb3b9e3f56afcbc2372fae5adaa9b8e
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 67640e5352255f2d26916793dec9e0e96fb5c177
+PODFILE CHECKSUM: 9eb717ec2d34a9d37bf9046c6a47cbe3d3395b47
 
 COCOAPODS: 1.0.1
