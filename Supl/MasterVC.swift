@@ -18,8 +18,8 @@ class MasterVC: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let pageVC = segue.destinationViewController as? PageVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pageVC = segue.destination as? PageVC {
             self.pageVC = pageVC
         }
     }
@@ -35,7 +35,7 @@ class MasterVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapNextButton(sender: UIButton) {
+    @IBAction func didTapNextButton(_ sender: UIButton) {
         pageVC?.scrollToNextViewController()
     }
 
@@ -43,12 +43,12 @@ class MasterVC: UIViewController {
 
 extension MasterVC: PageVCDelegate {
     
-    func pageVC(tutorialPageViewController: PageVC,
+    func pageVC(_ tutorialPageViewController: PageVC,
         didUpdatePageCount count: Int) {
             pageController.numberOfPages = count
     }
     
-    func pageVC(tutorialPageViewController: PageVC,
+    func pageVC(_ tutorialPageViewController: PageVC,
         didUpdatePageIndex index: Int) {
             pageController.currentPage = index
     }

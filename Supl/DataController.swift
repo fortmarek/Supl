@@ -22,65 +22,65 @@ class DataController {
     
     var datesArray = [String]()
     var suplArray = [[suplStruct]]()
-    var daysArray = [NSDate]()
+    var daysArray = [Date]()
     var weekArray = [String]()
     
     var delegate: DataControllerDelegate?
-    let userId = NSUserDefaults.standardUserDefaults().valueForKey("userId")
+    let userId = UserDefaults.standard.value(forKey: "userId")
 
     
     
-    func postSchool(school: String, completion: (result: String) -> ()) {
+    func postSchool(_ school: String, completion: @escaping (_ result: String) -> ()) {
         
-        Alamofire.request(.POST, "http://139.59.144.155/schools", parameters: ["school" : school])
+        Alamofire.request("http://139.59.144.155/schools", method: .post, parameters: ["school" : school])
             .responseJSON{ response in
                 guard let resp = response.response else {return}
                 if resp.statusCode == 200 {
-                     completion(result: "Povedlo se")
+                     completion("Povedlo se")
                 }
                 else {
                     guard let data = response.data else {return}
                     let json = JSON(data: data)
-                    let result = String(json["message"])
+                    let result = String(describing: json["message"])
                     
-                    completion(result: result)
+                    completion(result)
                 }
         }
     }
     
-    func deleteProperty(property: String, school: String) {
+    func deleteProperty(_ property: String, school: String) {
         guard let userId = self.userId else {return}
         
         
         let segmentIndex = getSegmentIndex()
     
         if segmentIndex == 0 {
-            Alamofire.request(.DELETE, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : property, "user" : userId])
+            let _ = Alamofire.request("http://139.59.144.155/classes", method: .delete, parameters: ["school" : school, "clas" : property, "user" : userId])
             
         }
         
         else {
-            Alamofire.request(.DELETE, "http://139.59.144.155/professors", parameters: ["school" : school, "prof" : property, "user" : userId])
+            let _ = Alamofire.request("http://139.59.144.155/professors", method: .delete, parameters: ["school" : school, "prof" : property, "user" : userId])
         }
     }
     
-    func postProperty(property: String, school: String) {
+    func postProperty(_ property: String, school: String) {
         guard let userId = self.userId else {return}
         
         let segmentIndex = getSegmentIndex()
         
         if segmentIndex == 0 {
-            Alamofire.request(.POST, "http://139.59.144.155/classes", parameters: ["school" : school, "clas" : property, "user" : userId])
+            let _ = Alamofire.request("http://139.59.144.155/classes", method: .post, parameters: ["school" : school, "clas" : property, "user" : userId])
         }
         
         else {
-            Alamofire.request(.POST, "http://139.59.144.155/professors", parameters: ["school" : school, "prof" : property, "user" : userId])
+            let _ = Alamofire.request("http://139.59.144.155/professors", method: .post, parameters: ["school" : school, "prof" : property, "user" : userId])
         }
     }
     
     func getSegmentIndex() -> Int {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        guard let segmentIndex = defaults.valueForKey("segmentIndex") as? Int else {
+        let defaults = UserDefaults.standard
+        guard let segmentIndex = defaults.value(forKey: "segmentIndex") as? Int else {
             return 0
         }
         
@@ -95,7 +95,7 @@ class DataController {
         
         resetData()
         
-        Alamofire.request(.GET, "http://139.59.144.155/users/\(userId)")
+        Alamofire.request("http://139.59.144.155/users/\(userId)")
             .responseJSON { response in
                 
                 guard let data = response.data else {return}
@@ -117,7 +117,7 @@ class DataController {
         }
     }
     
-    func getSupl(json: JSON) -> suplStruct {
+    func getSupl(_ json: JSON) -> suplStruct {
         var supl = suplStruct()
         
         let change = getProperty(json, property: "change")
@@ -160,7 +160,7 @@ class DataController {
         
     }
     
-    func getChanges(json:JSON) {
+    func getChanges(_ json:JSON) {
         
         let segmentIndex = getSegmentIndex()
         
@@ -188,7 +188,7 @@ class DataController {
             }
             
             //Used to insert into suplArray accordingly to date
-            guard let dayIndex = datesArray.indexOf(day) else {continue}
+            guard let dayIndex = datesArray.index(of: day) else {continue}
             
             let supl = getSupl(subJson["properties"])
             suplArray[dayIndex].append(supl)
@@ -196,7 +196,7 @@ class DataController {
         }
     }
     
-    func getProperty(json: JSON, property: String) -> String {
+    func getProperty(_ json: JSON, property: String) -> String {
         guard let str = json[property].string else {return ""}
         return str
     }

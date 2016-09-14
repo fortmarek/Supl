@@ -16,10 +16,10 @@ class SafariViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        openSafariButton.backgroundColor = UIColor.clearColor()
+        openSafariButton.backgroundColor = UIColor.clear
         openSafariButton.layer.cornerRadius = 25
         openSafariButton.layer.borderWidth = 1
-        openSafariButton.layer.borderColor = UIColor.whiteColor().CGColor
+        openSafariButton.layer.borderColor = UIColor.white.cgColor
         
         let heightPageVC = CGFloat(55) //55 is height of PageVC elements
         var bottomOfButton = openSafariButton.frame.origin.y + openSafariButton.frame.height
@@ -40,10 +40,10 @@ class SafariViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func openSafariButtonTapped(sender: UIButton) {
-        let safariUrl = NSURL(string:"http://old.gjk.cz/suplovani.php")
+    @IBAction func openSafariButtonTapped(_ sender: UIButton) {
+        let safariUrl = URL(string:"http://old.gjk.cz/suplovani.php")
         if let url = safariUrl {
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.shared.openURL(url)
         }
     }
 

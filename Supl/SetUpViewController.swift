@@ -20,7 +20,7 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
     @IBOutlet weak var suplLabel: UILabel!
     @IBOutlet weak var emailButton: UIButton!
 
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     var constraint = CGFloat(0)
     var schoolOrigin = CGFloat(0)
     
@@ -28,33 +28,33 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         super.viewDidLoad()
                 
         //Keyboard Notifications
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardNotification(_:)), name:UIKeyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(_:)), name:NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 
         
         //Keyboard Editing ends when tapped outside of textfield
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        if let clasString = defaults.valueForKey("class") as? String where clasString != "" {
+        if let clasString = defaults.value(forKey: "class") as? String , clasString != "" {
             classTextField.text = clasString
         }
         
-        if let schoolString = defaults.valueForKey("schoolUrl") as? String where schoolString != "" {
+        if let schoolString = defaults.value(forKey: "schoolUrl") as? String , schoolString != "" {
             schoolTextField.text = schoolString
         }
         
-        if let segmentIndex = defaults.valueForKey("segmentIndex") as? Int {
+        if let segmentIndex = defaults.value(forKey: "segmentIndex") as? Int {
             professorStudentSegment.selectedSegmentIndex = segmentIndex
         }
         
-        professorStudentSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-        schoolTextField.addTarget(self, action: #selector(goToNextField), forControlEvents: .EditingDidEndOnExit)
-        classTextField.addTarget(self, action: #selector(saveData), forControlEvents: .EditingDidEndOnExit)
+        professorStudentSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        schoolTextField.addTarget(self, action: #selector(goToNextField), for: .editingDidEndOnExit)
+        classTextField.addTarget(self, action: #selector(saveData), for: .editingDidEndOnExit)
         
-        getStartedButton.backgroundColor = UIColor.clearColor()
+        getStartedButton.backgroundColor = UIColor.clear
         getStartedButton.layer.cornerRadius = 5
         getStartedButton.layer.borderWidth = 1
-        getStartedButton.layer.borderColor = UIColor(hue: 0, saturation: 0, brightness: 1.0, alpha: 1.0).CGColor
+        getStartedButton.layer.borderColor = UIColor(hue: 0, saturation: 0, brightness: 1.0, alpha: 1.0).cgColor
 
         let height = self.view.frame.size.height
         let yButton = emailButton.frame.origin.y
@@ -71,18 +71,18 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLayoutSubviews() {
         initTextField("http://old.gjk.cz/suplovani.php", textField: schoolTextField)
         if professorStudentSegment.selectedSegmentIndex == 0 {
             initTextField("R6.A", textField: classTextField)
-            classTextField.autocapitalizationType = .AllCharacters
+            classTextField.autocapitalizationType = .allCharacters
         }
         else {
             initTextField("Příjmení jméno", textField: classTextField)
-            classTextField.autocapitalizationType = .Words
+            classTextField.autocapitalizationType = .words
         }
         
     }
@@ -92,42 +92,42 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func getStartedButtonTapped(sender: UIButton) {
-        saveData()
+    @IBAction func getStartedButtonTapped(_ sender: UIButton) {
+        let _ = saveData()
     }
     
     func segmentChanged() {
         
         if professorStudentSegment.selectedSegmentIndex == 0 {
             initTextField("R6.A", textField: classTextField)
-            classTextField.autocapitalizationType = .AllCharacters
+            classTextField.autocapitalizationType = .allCharacters
         }
         
         else {
             initTextField("Příjmení Jméno", textField: classTextField)
-            classTextField.autocapitalizationType = .Words
+            classTextField.autocapitalizationType = .words
         }
 
     }
     
-    func initTextField(placeholder: String, textField: UITextField) {
+    func initTextField(_ placeholder: String, textField: UITextField) {
         //Placeholder
         let attributes = [NSForegroundColorAttributeName : UIColor(hue: 0, saturation: 0.0, brightness: 1.0, alpha: 0.6)]
         let attributedString = NSAttributedString(string: placeholder, attributes: attributes)
         textField.attributedPlaceholder = attributedString
         
-        textField.borderStyle = .RoundedRect
+        textField.borderStyle = .roundedRect
     }
     
     func saveData() -> Bool {
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             SwiftSpinner.show("Načítání")
         })
         
         
         guard
-            let school = schoolTextField.text where school != "",
-            var clas = classTextField.text where clas != ""
+            let school = schoolTextField.text , school != "",
+            var clas = classTextField.text , clas != ""
         else {
             showMark("Vyplňte všechna pole")
             return false
@@ -137,26 +137,26 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         let dataController = DataController()
         
-        if let oldSchool = defaults.stringForKey("schoolUrl") {
+        if let oldSchool = defaults.string(forKey: "schoolUrl") {
             if oldSchool != school {
                 postSchool(school, clas: clas, oldSchool: oldSchool)
             }
             else {
-                if let oldClas = defaults.stringForKey("class") {
-                    let segmentIndex = defaults.integerForKey("segmentIndex")
-                    if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true &&
+                if let oldClas = defaults.string(forKey: "class") {
+                    let segmentIndex = defaults.integer(forKey: "segmentIndex")
+                    if let isUrlRight = defaults.value(forKey: "isUrlRight") as? Bool , isUrlRight == true &&
                         clas != oldClas {
                         dataController.postProperty(clas, school: school)
                         dataController.deleteProperty(oldClas, school: school)
                     }
                     else if segmentIndex != professorStudentSegment.selectedSegmentIndex {
                         dataController.deleteProperty(clas, school: school)
-                        self.defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
+                        self.defaults.set(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
                         dataController.postProperty(clas, school: school)
                     }
                 }
                 else {
-                    if let isUrlRight = defaults.valueForKey("isUrlRight") as? Bool where isUrlRight == true {
+                    if let isUrlRight = defaults.value(forKey: "isUrlRight") as? Bool , isUrlRight == true {
                         dataController.postProperty(clas, school: school)
                     }
                 }
@@ -173,55 +173,55 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         
         defaults.setValue(clas, forKey: "class")
         defaults.setValue(school, forKey: "schoolUrl")
-        defaults.setInteger(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
+        defaults.set(professorStudentSegment.selectedSegmentIndex, forKey: "segmentIndex")
         
         return false
     }
     
-    func postSchool(school: String, clas: String, oldSchool: String) {
+    func postSchool(_ school: String, clas: String, oldSchool: String) {
         let dataController = DataController()
         
         
         //When school changes, clas should as well (change of properties ...)
-        if let oldClas = defaults.valueForKey("class") as? String {
+        if let oldClas = defaults.value(forKey: "class") as? String {
             dataController.deleteProperty(oldClas, school: oldSchool)
         }
         
         dataController.postSchool(school, completion: {
             result in
             if result == "Povedlo se" {
-                self.defaults.setBool(true, forKey: "isUrlRight")
+                self.defaults.set(true, forKey: "isUrlRight")
                 dataController.postProperty(clas, school: school)
             }
             else {
-                self.defaults.setBool(false, forKey: "isUrlRight")
+                self.defaults.set(false, forKey: "isUrlRight")
             }
             self.showMark(result)
         })
         
     }
     
-    func showMark(message: String) {
-        dispatch_async(dispatch_get_main_queue(), {
+    func showMark(_ message: String) {
+        DispatchQueue.main.async(execute: {
             SwiftSpinner.show(message, animated: false)
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
                 SwiftSpinner.hide()
                 if message == "Povedlo se" {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewControllerWithIdentifier("Navigation")
-                    self.presentViewController(vc, animated: true, completion: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "Navigation")
+                    self.present(vc, animated: true, completion: nil)
                 }
             }
             
         })
     }
     
-    func keyboardNotification(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else {return}
+    func keyboardNotification(_ notification: Notification) {
+        guard let userInfo = (notification as NSNotification).userInfo else {return}
         
-        let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     
         let frameHeight = self.view.frame.height
         let keyboardVerticalPosition = endFrame.origin.y
@@ -234,7 +234,7 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
             emailButtonBottomLayout?.constant = schoolOrigin - 20 + constraint
         }
         
-        UIView.animateWithDuration(NSTimeInterval(0), animations: { self.view.layoutIfNeeded() })
+        UIView.animate(withDuration: TimeInterval(0), animations: { self.view.layoutIfNeeded() })
     }
     
     func dismissKeyboard() {
@@ -245,7 +245,7 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
         classTextField.becomeFirstResponder()
     }
     
-    @IBAction func emailButtonTapped(sender: UIButton) {
+    @IBAction func emailButtonTapped(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -260,35 +260,35 @@ class SetUpViewController: UIViewController, MFMailComposeViewControllerDelegate
             }
             mail.setMessageBody("<p>Mám problémy s přihlášením. Zadal jsem url \(url) a třídu \(clas), ale nepodařilo se mi přihlásit.</p>", isHTML: true)
             
-            presentViewController(mail, animated: true, completion: nil)
+            present(mail, animated: true, completion: nil)
         } else {
             // show failure alert
             presentAlert()
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func presentAlert() {
         // Push notifications are disabled in setting by user.
-        let alertController = UIAlertController(title: "Mail", message: "V nastavení účtů si zapněte 'Pošta'", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Mail", message: "V nastavení účtů si zapněte 'Pošta'", preferredStyle: .alert)
         
-        let settingsAction = UIAlertAction(title: "Nastavení", style: .Default) { (_) -> Void in
-            let settingsUrl = NSURL(string: "prefs:root=ACCOUNT_SETTINGS")
+        let settingsAction = UIAlertAction(title: "Nastavení", style: .default) { (_) -> Void in
+            let settingsUrl = URL(string: "prefs:root=ACCOUNT_SETTINGS")
             if let url = settingsUrl {
-                UIApplication.sharedApplication().openURL(url)
+                UIApplication.shared.openURL(url)
             }
         }
         
         alertController.addAction(settingsAction)
         
-        let cancelAction = UIAlertAction(title: "Zrušit", style: .Default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Zrušit", style: .default, handler: nil)
         alertController.addAction(cancelAction)
         
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     

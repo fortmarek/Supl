@@ -39,9 +39,9 @@ class PageVC: UIPageViewController {
     }
     
     
-    private func newVC (name: String) -> UIViewController {
+    fileprivate func newVC (_ name: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Walkthrough", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier(name)
+        let vc = storyboard.instantiateViewController(withIdentifier: name)
         return vc
     }
     
@@ -52,14 +52,14 @@ class PageVC: UIPageViewController {
         
         if let visibleViewController = viewControllers?.first,
             let nextViewController = pageViewController(self,
-                viewControllerAfterViewController: visibleViewController) {
+                viewControllerAfter: visibleViewController) {
                     scrollToViewController(nextViewController)
         }
     }
     
-    private func scrollToViewController(viewController: UIViewController) {
+    fileprivate func scrollToViewController(_ viewController: UIViewController) {
         setViewControllers([viewController],
-            direction: .Forward,
+            direction: .forward,
             animated: true,
             completion: { (finished) -> Void in
                 // Setting the view controller programmatically does not fire
@@ -72,9 +72,9 @@ class PageVC: UIPageViewController {
     /**
      Notifies '_tutorialDelegate' that the current page index was updated.
      */
-    private func notifyTutorialDelegateOfNewIndex() {
+    fileprivate func notifyTutorialDelegateOfNewIndex() {
         if let firstViewController = viewControllers?.first,
-            let index = pageArray.indexOf(firstViewController) {
+            let index = pageArray.index(of: firstViewController) {
                 pageDelegate?.pageVC(self, didUpdatePageIndex: index)
         }
     }
@@ -84,9 +84,9 @@ class PageVC: UIPageViewController {
 // MARK: UIPageViewControllerDataSource
 
 extension PageVC: UIPageViewControllerDataSource {
-    func pageViewController(pageViewController: UIPageViewController,
-        viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = pageArray.indexOf(viewController) else {
+    func pageViewController(_ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController) -> UIViewController? {
+            guard let viewControllerIndex = pageArray.index(of: viewController) else {
                 return nil
             }
             
@@ -103,9 +103,9 @@ extension PageVC: UIPageViewControllerDataSource {
             return pageArray[previousIndex]
     }
     
-    func pageViewController(pageViewController: UIPageViewController,
-        viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-            guard let viewControllerIndex = pageArray.indexOf(viewController) else {
+    func pageViewController(_ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController) -> UIViewController? {
+            guard let viewControllerIndex = pageArray.index(of: viewController) else {
                 return nil
             }
             
@@ -128,7 +128,7 @@ extension PageVC: UIPageViewControllerDataSource {
 
 
 extension PageVC: UIPageViewControllerDelegate {
-    func pageViewController(pageViewController: UIPageViewController,
+    func pageViewController(_ pageViewController: UIPageViewController,
         didFinishAnimating finished: Bool,
         previousViewControllers: [UIViewController],
         transitionCompleted completed: Bool) {
@@ -143,7 +143,7 @@ protocol PageVCDelegate {
      - parameter tutorialPageViewController: the TutorialPageViewController instance
      - parameter count: the total number of pages.
      */
-    func pageVC(tutorialPageViewController: PageVC,
+    func pageVC(_ tutorialPageViewController: PageVC,
         didUpdatePageCount count: Int)
     
     /**
@@ -152,7 +152,7 @@ protocol PageVCDelegate {
      - parameter tutorialPageViewController: the TutorialPageViewController instance
      - parameter index: the index of the currently visible page.
      */
-    func pageVC(tutorialPageViewController: PageVC,
+    func pageVC(_ tutorialPageViewController: PageVC,
         didUpdatePageIndex index: Int)
     
 }

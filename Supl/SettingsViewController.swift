@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     var delegate: SwitchDelegate?
     
@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         // Do any additional setup after loading the view.
         
-        let font = UIFont().getFont(20, weight: .Medium)
+        let font = UIFont().getFont(20, weight: .medium)
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font]
         
         self.tableView.allowsSelection = true
@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         
         var school = String()
         var clas = String()
@@ -60,41 +60,41 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 2 {
-            if indexPath.row == 0 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 2 {
+            if (indexPath as NSIndexPath).row == 0 {
                 emailButtonTapped()
             }
-            else if indexPath.row == 1 {
+            else if (indexPath as NSIndexPath).row == 1 {
                 startWalkthrough()
             }
                 
             else {
 
-                guard  let appStoreLink = NSURL(string: "https://appsto.re/cz/fuvb-.i") else {return}
+                guard  let appStoreLink = URL(string: "https://appsto.re/cz/fuvb-.i") else {return}
                 
                 let myText = "Jednoduše kontroluj změny ve svém rozvrhu!"
-                let myObjects = [myText, appStoreLink]
+                let myObjects = [myText, appStoreLink] as [Any]
                 let activityVC = UIActivityViewController(activityItems: myObjects, applicationActivities: nil)
-                activityVC.excludedActivityTypes = [UIActivityTypeAddToReadingList]
-                presentViewController(activityVC, animated: true, completion: nil)
+                activityVC.excludedActivityTypes = [UIActivityType.addToReadingList]
+                present(activityVC, animated: true, completion: nil)
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor(white: 0, alpha: 0.5)
         let header = view as! UITableViewHeaderFooterView
         guard let _ = header.textLabel else {return}
-        header.textLabel!.font = UIFont().getFont(14, weight: .Light)
+        header.textLabel!.font = UIFont().getFont(14, weight: .light)
         
         if section == 0 {
             header.textLabel!.text = "Uživatel"
@@ -107,25 +107,25 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return ""
     }
-    func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if section == 2 {
             let footer = view as! UITableViewHeaderFooterView
             guard let _ = footer.textLabel else {return}
-            footer.textLabel!.font = UIFont().getFont(14, weight: .Light)
-            footer.textLabel!.textAlignment = .Center
+            footer.textLabel!.font = UIFont().getFont(14, weight: .light)
+            footer.textLabel!.textAlignment = .center
             footer.textLabel!.text = "Verze 2.1.4\nVytvořil Marek Fořt"
         }
         
     }
     
-    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return ""
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if tableView.frame.height < 429 {
             return (tableView.frame.height - 6 * 55) / 3
         }
@@ -135,7 +135,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if section == 2 {
             return 50
@@ -147,7 +147,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
             return 1
@@ -158,49 +158,49 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        if indexPath.section == 0 {
+        if (indexPath as NSIndexPath).section == 0 {
         
-            switch indexPath.row {
+            switch (indexPath as NSIndexPath).row {
             case 0:
                 
-                guard let cell = self.tableView.dequeueReusableCellWithIdentifier("schoolCell") as? SchoolCell
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "schoolCell") as? SchoolCell
                     else {return UITableViewCell()}
-                cell.textField.addTarget(self, action: #selector(saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                cell.textField.addTarget(self, action: #selector(saveData(_:)), for: .editingDidEndOnExit)
                 
                 return cell
                 
             default:
                 
-                guard let cell = self.tableView.dequeueReusableCellWithIdentifier("classCell") as? ClassCell
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "classCell") as? ClassCell
                     else {return UITableViewCell()}
                 
-                cell.textField.addTarget(self, action: #selector(saveData(_:)), forControlEvents: .EditingDidEndOnExit)
+                cell.textField.addTarget(self, action: #selector(saveData(_:)), for: .editingDidEndOnExit)
                 
                 return cell
             }
         }
             
-        else if indexPath.section == 1 {
-            guard let cell = self.tableView.dequeueReusableCellWithIdentifier("notificationCell") as? NotificationCell
+        else if (indexPath as NSIndexPath).section == 1 {
+            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "notificationCell") as? NotificationCell
                 else {return UITableViewCell()}
             cell.delegate = self
             self.delegate = cell
             return cell
         }
         else {
-            if indexPath.row == 2 {
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("shareCell") as? UrlCell
+            if (indexPath as NSIndexPath).row == 2 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "shareCell") as? UrlCell
                     else {return UITableViewCell()}
                 return cell
             }
                 
             else {
-                guard let cell = self.tableView.dequeueReusableCellWithIdentifier("urlCell") as? UrlCell
+                guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "urlCell") as? UrlCell
                     else {return UITableViewCell()}
                 
-                if indexPath.row == 1 {
+                if (indexPath as NSIndexPath).row == 1 {
                     cell.infoLabel.text = "Tutoriál"
                     return cell
                 }
@@ -216,12 +216,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func showMark(message: String) {
-        dispatch_async(dispatch_get_main_queue(), {
+    func showMark(_ message: String) {
+        DispatchQueue.main.async(execute: {
             SwiftSpinner.show(message, animated: false)
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delayTime) {
                 SwiftSpinner.hide()
             }
             
@@ -239,8 +239,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return (school, clas)
     }
     
-    func saveData(textField: UITextField) -> Bool {
-        dispatch_async(dispatch_get_main_queue(), {
+    func saveData(_ textField: UITextField) -> Bool {
+        DispatchQueue.main.async(execute: {
             SwiftSpinner.show("Načítání")
         })
         
@@ -253,21 +253,21 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let dataController = DataController()
         
-        if let oldSchool = defaults.stringForKey("schoolUrl") {
+        if let oldSchool = defaults.string(forKey: "schoolUrl") {
             
             if oldSchool != school {
                 postSchool(school, clas: clas, oldSchool: oldSchool)
             }
             else {
-                if let oldClas = defaults.stringForKey("class") {
-                    if defaults.boolForKey("isUrlRight") == true &&
+                if let oldClas = defaults.string(forKey: "class") {
+                    if defaults.bool(forKey: "isUrlRight") == true &&
                         clas != oldClas {
                         dataController.postProperty(clas, school: school)
                         dataController.deleteProperty(oldClas, school: school)
                     }
                 }
                 else {
-                    if defaults.boolForKey("isUrlRight") == true {
+                    if defaults.bool(forKey: "isUrlRight") == true {
                         dataController.postProperty(clas, school: school)
                     }
                 }
@@ -288,23 +288,23 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return false
     }
     
-    func postSchool(school: String, clas: String, oldSchool: String) {
+    func postSchool(_ school: String, clas: String, oldSchool: String) {
         let dataController = DataController()
         
 
         //When school changes, clas should as well (change of properties ...)
-        if let oldClas = defaults.stringForKey("class") {
+        if let oldClas = defaults.string(forKey: "class") {
             dataController.deleteProperty(oldClas, school: oldSchool)
         }
         
         dataController.postSchool(school, completion: {
             result in
             if result == "Povedlo se" {
-                self.defaults.setBool(true, forKey: "isUrlRight")
+                self.defaults.set(true, forKey: "isUrlRight")
                 dataController.postProperty(clas, school: school)
             }
             else {
-                self.defaults.setBool(false, forKey: "isUrlRight")
+                self.defaults.set(false, forKey: "isUrlRight")
             }
             self.showMark(result)
         })
@@ -312,14 +312,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func presentAlert(title: String, message: String, url: String) {
+    func presentAlert(_ title: String, message: String, url: String) {
         // Push notifications are disabled in setting by user.
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let settingsAction = UIAlertAction(title: "Nastavení", style: .Default) { (_) -> Void in
-            let settingsUrl = NSURL(string: url)
+        let settingsAction = UIAlertAction(title: "Nastavení", style: .default) { (_) -> Void in
+            let settingsUrl = URL(string: url)
             if let url = settingsUrl {
-                UIApplication.sharedApplication().openURL(url)
+                UIApplication.shared.openURL(url)
             }
         }
         
@@ -327,18 +327,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         if url.contains("prefs") == false {
-            let cancelAction = UIAlertAction(title: "Zrušit", style: .Default) { (_) -> Void in
+            let cancelAction = UIAlertAction(title: "Zrušit", style: .default) { (_) -> Void in
                 self.delegate?.switchOff()
             }
             alertController.addAction(cancelAction)
         }
         else {
-            let cancelAction = UIAlertAction(title: "Zrušit", style: .Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Zrušit", style: .default, handler: nil)
             alertController.addAction(cancelAction)
         }
         
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func emailButtonTapped() {
@@ -360,7 +360,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             mail.setMessageBody("<p>Mám problémy s přihlášením. Zadal jsem url \(school) a třídu \(clas), ale nepodařilo se mi přihlásit.</p>", isHTML: true)
             
-            presentViewController(mail, animated: true, completion: nil)
+            present(mail, animated: true, completion: nil)
         }
             //TODO - handle the possibility that the user doesn't use the native mail client
         else {
@@ -369,14 +369,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     func startWalkthrough() {
         let storyboard = UIStoryboard(name: "Walkthrough", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("ContainerVC")
-        presentViewController(vc, animated: true, completion: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ContainerVC")
+        present(vc, animated: true, completion: nil)
     }
     
 }

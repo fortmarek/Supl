@@ -13,15 +13,15 @@ import UIKit
 extension UIFont {
     
     enum FontWeight {
-        case Light, Medium, Semibold, Regular
+        case light, medium, semibold, regular
     }
     
-    private func getOldFont(size: CGFloat, weight: FontWeight) -> UIFont {
+    fileprivate func getOldFont(_ size: CGFloat, weight: FontWeight) -> UIFont {
         switch weight {
-        case .Light:
+        case .light:
             guard let font = UIFont(name: "HelveticaNeue-Thin", size: size) else {return UIFont()}
             return font
-        case .Medium:
+        case .medium:
             guard let font = UIFont(name: "HelveticaNeue-Light", size: size) else {return UIFont()}
             return font
         default:
@@ -31,20 +31,20 @@ extension UIFont {
     }
     
     @available(iOS 8.2, *)
-    private func getNewFont (size: CGFloat, weight: FontWeight) -> UIFont {
+    fileprivate func getNewFont (_ size: CGFloat, weight: FontWeight) -> UIFont {
         switch weight {
-        case .Light:
-            return UIFont.systemFontOfSize(size, weight: UIFontWeightLight)
-        case .Semibold:
-            return UIFont.systemFontOfSize(size, weight: UIFontWeightSemibold)
-        case .Regular:
-            return UIFont.systemFontOfSize(size)
+        case .light:
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightLight)
+        case .semibold:
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightSemibold)
+        case .regular:
+            return UIFont.systemFont(ofSize: size)
         default:
-            return UIFont.systemFontOfSize(size, weight: UIFontWeightMedium)
+            return UIFont.systemFont(ofSize: size, weight: UIFontWeightMedium)
         }
     }
     
-    func getFont(size: CGFloat, weight: FontWeight) -> UIFont {
+    func getFont(_ size: CGFloat, weight: FontWeight) -> UIFont {
         if #available (iOS 8.2, *) {
             return getNewFont(size, weight: weight)
         }
@@ -57,24 +57,24 @@ extension UIFont {
 
 extension UIView {
     
-    func setConstraints(item: AnyObject, attribute: NSLayoutAttribute, constant: CGFloat) {
-        let horizontalConstraint = NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .Equal, toItem: self, attribute: attribute, multiplier: 1, constant: constant)
+    func setConstraints(_ item: AnyObject, attribute: NSLayoutAttribute, constant: CGFloat) {
+        let horizontalConstraint = NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: constant)
         self.addConstraint(horizontalConstraint)
         
-        let verticalConstraint = NSLayoutConstraint(item: item, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: item, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
         self.addConstraint(verticalConstraint)
         
-        let widthConstraint = NSLayoutConstraint(item: item, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: item.frame.width)
+        let widthConstraint = NSLayoutConstraint(item: item, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: item.frame.width)
         self.addConstraint(widthConstraint)
         
-        let heightConstraint = NSLayoutConstraint(item: item, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: item.frame.height)
+        let heightConstraint = NSLayoutConstraint(item: item, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: item.frame.height)
         self.addConstraint(heightConstraint)
     }
     
 }
 
 extension Array {
-    func ref (i:Int) -> Element? {
+    func ref (_ i:Int) -> Element? {
         return 0 <= i && i < count ? self[i] : nil
     }
 }
@@ -82,26 +82,26 @@ extension Array {
 extension String {
     
     var removeExcessiveSpaces: String {
-        let components = self.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let components = self.components(separatedBy: CharacterSet.whitespaces)
         let filtered = components.filter({!$0.isEmpty})
-        return filtered.joinWithSeparator(" ")
+        return filtered.joined(separator: " ")
     }
     
-    func replaceString (stringArray: [String]) -> String {
+    func replaceString (_ stringArray: [String]) -> String {
         var result = self
         for i in 0 ..< stringArray.count {
             let stringToReplace = stringArray[i]
-            result = result.stringByReplacingOccurrencesOfString(stringToReplace, withString: "")
+            result = result.replacingOccurrences(of: stringToReplace, with: "")
         }
         return result
     }
     
-    func compareDate () -> (date: NSDate?, isNotBeforeToday: Bool) {
+    func compareDate () -> (date: Date?, isNotBeforeToday: Bool) {
         let comparedDate = self.stringToDate()
-        let today = NSDate().dateByAddingTimeInterval(-60*60*24*1)
+        let today = Date().addingTimeInterval(-60*60*24*1)
         let compare = today.compare(comparedDate)
-        if compare == .OrderedDescending {
-            return (NSDate(), false)
+        if compare == .orderedDescending {
+            return (Date(), false)
         }
         
         //Pokud je supl z minulosti, není potřeba ho dávat do feedu
@@ -111,8 +111,8 @@ extension String {
         }
     }
     
-    func contains(find: String) -> Bool{
-        return self.rangeOfString(find) != nil
+    func contains(_ find: String) -> Bool{
+        return self.range(of: find) != nil
     }
     
     func getDate() -> String {
@@ -129,21 +129,21 @@ extension String {
         return stringDate
     }
     
-    func stringToDate() -> NSDate {
-        let formatter = NSDateFormatter()
+    func stringToDate() -> Date {
+        let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        let date = formatter.dateFromString(self)
-        guard let finalDate = date else {return NSDate()}
+        let date = formatter.date(from: self)
+        guard let finalDate = date else {return Date()}
         return finalDate
     }
 }
 
-extension NSDate {
+extension Date {
     
     func isBeforeToday() -> Bool {
-        let today = NSDate().dateByAddingTimeInterval(-60*60*24*1)
+        let today = Date().addingTimeInterval(-60*60*24*1)
         let compare = today.compare(self)
-        if compare == .OrderedDescending {
+        if compare == .orderedDescending {
             return false
         }
         else {
@@ -151,15 +151,15 @@ extension NSDate {
         }
     }
     
-    func daysFrom(date:NSDate) -> Int {
-        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let myComponents = myCalendar.components(.Day, fromDate: date, toDate: self, options: [])
-        return myComponents.day
+    func daysFrom(_ date:Date) -> Int {
+        let myCalendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let myComponents = (myCalendar as NSCalendar).components(.day, from: date, to: self, options: [])
+        return myComponents.day!
     }
     
     func getDateForm() -> String {
         
-        let today = NSDate().dateByAddingTimeInterval(-60*60*24*1)
+        let today = Date().addingTimeInterval(-60*60*24*1)
         let result = self.daysFrom(today)
         
         //var week = ""
@@ -183,9 +183,9 @@ extension NSDate {
             //If the result > 5, it means that the change is more than a week away - and so there are not any duplicates of Monday etc., we must show the whole date
             
         else if result > 5 {
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "d.M.yyyy"
-            let dateString = dateFormatter.stringFromDate(self)
+            let dateString = dateFormatter.string(from: self)
             
             let weekDay = self.getWeekDay()
             
@@ -201,9 +201,9 @@ extension NSDate {
     }
     
     func getWeekDay() -> String {
-        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let myComponents = myCalendar.components(.Weekday, fromDate: self)
-        let weekDay = myComponents.weekday
+        let myCalendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let myComponents = (myCalendar as NSCalendar).components(.weekday, from: self)
+        guard let weekDay = myComponents.weekday else {return ""}
         
         switch weekDay {
         case 1:
@@ -226,9 +226,9 @@ extension NSDate {
     }
     
     func dateToString() -> String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        let date = formatter.stringFromDate(self)
+        let date = formatter.string(from: self)
         return date
     }
     

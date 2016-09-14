@@ -17,16 +17,16 @@ class SchoolCell: UITableViewCell, UITextFieldDelegate {
         // Initialization code
         
         textField.delegate = self
-        self.selectionStyle = .None
+        self.selectionStyle = .none
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        guard let schoolUrl = defaults.valueForKey("schoolUrl") as? String else {return}
+        let defaults = UserDefaults.standard
+        guard let schoolUrl = defaults.value(forKey: "schoolUrl") as? String else {return}
         textField.text = schoolUrl
         
         
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

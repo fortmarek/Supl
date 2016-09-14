@@ -249,12 +249,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F84C7FBB1B7A8BA7006ADCE3 /* Build configuration list for PBXNativeTarget "Supl" */;
 			buildPhases = (
-				7B79AB71A7E1399670FFE4D9 /* 📦 Check Pods Manifest.lock */,
+				7B79AB71A7E1399670FFE4D9 /* [CP] Check Pods Manifest.lock */,
 				F84C7F8C1B7A8BA7006ADCE3 /* Sources */,
 				F84C7F8D1B7A8BA7006ADCE3 /* Frameworks */,
 				F84C7F8E1B7A8BA7006ADCE3 /* Resources */,
-				B3C284AE37E4DD78F950BA83 /* 📦 Embed Pods Frameworks */,
-				C4C9DD4FB097480AD5978A97 /* 📦 Copy Pods Resources */,
+				B3C284AE37E4DD78F950BA83 /* [CP] Embed Pods Frameworks */,
+				C4C9DD4FB097480AD5978A97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +314,7 @@
 					F84C7F8F1B7A8BA7006ADCE3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = QH95ER52SG;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -325,10 +326,12 @@
 					};
 					F84C7FB11B7A8BA7006ADCE3 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = F84C7F8F1B7A8BA7006ADCE3;
 					};
 					F89E24731C7B842F00551394 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = F84C7F8F1B7A8BA7006ADCE3;
 					};
 				};
@@ -382,14 +385,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B79AB71A7E1399670FFE4D9 /* 📦 Check Pods Manifest.lock */ = {
+		7B79AB71A7E1399670FFE4D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,14 +400,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B3C284AE37E4DD78F950BA83 /* 📦 Embed Pods Frameworks */ = {
+		B3C284AE37E4DD78F950BA83 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,14 +415,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Supl/Pods-Supl-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4C9DD4FB097480AD5978A97 /* 📦 Copy Pods Resources */ = {
+		C4C9DD4FB097480AD5978A97 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,7 +609,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Supl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.Supl;
@@ -614,6 +617,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supl/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -630,7 +634,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = Supl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.Supl;
@@ -638,6 +642,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Supl/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -649,6 +654,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.SuplUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Supl;
 				USES_XCTRUNNER = YES;
 			};
@@ -661,6 +667,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.SuplUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Supl;
 				USES_XCTRUNNER = YES;
 			};
@@ -676,6 +683,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.SuplTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supl.app/Supl";
 			};
 			name = Debug;
@@ -690,6 +698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = marekfort.SuplTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supl.app/Supl";
 			};
 			name = Release;

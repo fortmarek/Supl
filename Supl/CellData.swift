@@ -11,16 +11,16 @@ import UIKit
 
 
 extension ViewController {
-    func cellsWithSuplArray (array: [suplStruct], indexPath: NSIndexPath) -> UITableViewCell {
+    func cellsWithSuplArray (_ array: [suplStruct], indexPath: IndexPath) -> UITableViewCell {
         
         guard
-            let cell = tableView.dequeueReusableCellWithIdentifier("suplCell") as? SuplCell,
-            let suplItem = array.ref(indexPath.row),
+            let cell = tableView.dequeueReusableCell(withIdentifier: "suplCell") as? SuplCell,
+            let suplItem = array.ref((indexPath as NSIndexPath).row),
             let change = suplItem.change
             else {return UITableViewCell()}
         
         cell.infoLabel.text = ""
-        cell.avsLabel.hidden = true
+        cell.avsLabel.isHidden = true
         
         setSubjectLabel(suplItem.subject, group: suplItem.group, subjectLabel: cell.subjectLabel)
         
@@ -30,8 +30,8 @@ extension ViewController {
         
         if let hour = suplItem.hour {
             
-            let fontBig = UIFont().getFont(18, weight: .Medium)
-            let fontSmall = UIFont().getFont(14, weight: .Medium)
+            let fontBig = UIFont().getFont(18, weight: .medium)
+            let fontSmall = UIFont().getFont(14, weight: .medium)
             let myMutableString = NSMutableAttributedString(string: hour, attributes: [NSFontAttributeName: fontBig])
             
             let location = hour.characters.count - 3
@@ -50,7 +50,7 @@ extension ViewController {
     }
     
     
-    private func switchChange(cell: SuplCell, suplItem: suplStruct, change: String) {
+    fileprivate func switchChange(_ cell: SuplCell, suplItem: suplStruct, change: String) {
         //Determining the type of change - different images and other aspects for different changes
         
         switch change {
@@ -77,7 +77,7 @@ extension ViewController {
         case "AvŠ":
             guard let avs = suplItem.avs else {break}
             cell.avsLabel.text = "\(avs)"
-            cell.avsLabel.hidden = false
+            cell.avsLabel.isHidden = false
             cell.avsLabel.textColor = UIColor(red: 0.19, green: 0.36, blue: 0.60, alpha: 1.0)
             cell.changeImage.image = UIImage(named: "AvS")
             cell.subjectLabel.text = ""
@@ -95,7 +95,7 @@ extension ViewController {
             cell.subjectLabel.textColor = UIColor(red: 0.92, green: 0.28, blue: 0.23, alpha: 1.0)
             cell.changeImage.image = UIImage(named: "Cancel")
             
-            if defaults.integerForKey("segmentIndex") == 0 {
+            if defaults.integer(forKey: "segmentIndex") == 0 {
                 guard
                     let usualProfessor = suplItem.professorUsual else {break}
                 cell.infoLabel.text = usualProfessor
@@ -108,7 +108,7 @@ extension ViewController {
         }
     }
     
-    private func setSubjectLabel(subject: String?, group: String?, subjectLabel: UILabel) {
+    fileprivate func setSubjectLabel(_ subject: String?, group: String?, subjectLabel: UILabel) {
         if let subject = subject {
             subjectLabel.text = subject
         }
@@ -119,25 +119,25 @@ extension ViewController {
         addGroup(group, subjectLabel: subjectLabel)
     }
     
-    private func addGroup(group: String?, subjectLabel: UILabel) {
+    fileprivate func addGroup(_ group: String?, subjectLabel: UILabel) {
         //Capitalize group, check it's not empty
-        guard let capitalizedGroup = group?.uppercaseString where group != " " && group != "" else {return}
+        guard let capitalizedGroup = group?.uppercased() , group != " " && group != "" else {return}
 
         //Adding group in () after subject
-        guard let labelText = subjectLabel.text where defaults.integerForKey("segmentIndex") == 0 else {return}
+        guard let labelText = subjectLabel.text , defaults.integer(forKey: "segmentIndex") == 0 else {return}
         subjectLabel.text = labelText + " (" + capitalizedGroup + ")"
     }
     
-    private func  setInfoLabel(schoolroom: String?, professorForChange: String?, infoLabel: UILabel, change: String) {
+    fileprivate func  setInfoLabel(_ schoolroom: String?, professorForChange: String?, infoLabel: UILabel, change: String) {
         // Schoolroom is not empty and change is not změna (infoLabel then consists of schoolroom only)
-        if let schoolroom = schoolroom where schoolroom != " " && change != "změna" {
+        if let schoolroom = schoolroom , schoolroom != " " && change != "změna" {
             infoLabel.text = schoolroom
         }
         
-        guard let professor = professorForChange where professor != " " && change != "supluje" && change != "spojí"
+        guard let professor = professorForChange , professor != " " && change != "supluje" && change != "spojí"
             else {return }
         
-        if let labelText = infoLabel.text where labelText != "" {
+        if let labelText = infoLabel.text , labelText != "" {
             infoLabel.text = labelText + " · " + professor
         }
         else {
@@ -146,11 +146,11 @@ extension ViewController {
         
     }
     
-    private func addGroupForProfessors(group: String?, subjectLabel: UILabel) {
+    fileprivate func addGroupForProfessors(_ group: String?, subjectLabel: UILabel) {
         guard
             let group = group,
             let labelText = subjectLabel.text
-            where defaults.integerForKey("segmentIndex") == 1
+            , defaults.integer(forKey: "segmentIndex") == 1
             else {return}
         
         subjectLabel.text = labelText + " · " + group

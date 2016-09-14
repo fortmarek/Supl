@@ -13,35 +13,35 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         textField.delegate = self
-        self.selectionStyle = .None
-        textField.keyboardType = .Default
+        self.selectionStyle = .none
+        textField.keyboardType = .default
         textForTextfield()
         
-        textField.addTarget(self, action: #selector(refreshPlaceholder), forControlEvents: .EditingDidEndOnExit)
+        textField.addTarget(self, action: #selector(refreshPlaceholder), for: .editingDidEndOnExit)
         
-        segmentController.addTarget(self, action: #selector(segmentChanged(_:)), forControlEvents: .ValueChanged)
-        guard let segmentIndex = defaults.valueForKey("segmentIndex") as? Int else {return}
+        segmentController.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
+        guard let segmentIndex = defaults.value(forKey: "segmentIndex") as? Int else {return}
         segmentController.selectedSegmentIndex = segmentIndex
         
         getPlaceholder()
         
     }
     
-    func segmentChanged(segmentController: UISegmentedControl) {
+    func segmentChanged(_ segmentController: UISegmentedControl) {
         getPlaceholder()
         
         guard
-            let clas = defaults.valueForKey("class") as? String,
-            let school = defaults.valueForKey("schoolUrl") as? String
+            let clas = defaults.value(forKey: "class") as? String,
+            let school = defaults.value(forKey: "schoolUrl") as? String
             else {
-                defaults.setInteger(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
+                defaults.set(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
                 return
         }
         let dataController = DataController()
@@ -49,12 +49,12 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
         //Before setting segmentIndex delete the property and then post it again with the new segmentIndex
         
         dataController.deleteProperty(clas, school: school)
-        defaults.setInteger(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
+        defaults.set(segmentController.selectedSegmentIndex, forKey: "segmentIndex")
         dataController.postProperty(clas, school: school)
     }
     
     func refreshPlaceholder() {
-        if let clas = textField.text?.removeExcessiveSpaces where clas == "" {
+        if let clas = textField.text?.removeExcessiveSpaces , clas == "" {
             textField.text = ""
             getPlaceholder()
         }
@@ -62,7 +62,7 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
     
     func textForTextfield() {
         //Placeholder if class is not set
-        guard let classString = defaults.valueForKey("class") as? String else {return}
+        guard let classString = defaults.value(forKey: "class") as? String else {return}
         
         getPlaceholder()
         textField.text = classString.removeExcessiveSpaces
@@ -70,12 +70,12 @@ class ClassCell: UITableViewCell, UITextFieldDelegate {
     
     func getPlaceholder() {
         if segmentController.selectedSegmentIndex == 0 {
-            textField.autocapitalizationType = .AllCharacters
+            textField.autocapitalizationType = .allCharacters
             textField.attributedPlaceholder = NSAttributedString(string: "R6.A")
         }
         
         else {
-            textField.autocapitalizationType = .Words
+            textField.autocapitalizationType = .words
             textField.attributedPlaceholder = NSAttributedString(string: "Příjmení Jméno")
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NotificationsCellDelegate {
-    func presentAlert(title: String, message: String, url: String)
+    func presentAlert(_ title: String, message: String, url: String)
 }
 
 class NotificationCell: UITableViewCell, NotificationsDelegate, SwitchDelegate {
@@ -23,27 +23,27 @@ class NotificationCell: UITableViewCell, NotificationsDelegate, SwitchDelegate {
         // Initialization code
         
         
-        cellSwitch.addTarget(self, action: #selector(NotificationCell.switchIsChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        self.selectionStyle = .None
-        cellSwitch.on = areNotificationsAllowed()
+        cellSwitch.addTarget(self, action: #selector(NotificationCell.switchIsChanged(_:)), for: UIControlEvents.valueChanged)
+        self.selectionStyle = .none
+        cellSwitch.isOn = areNotificationsAllowed()
 
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func switchIsChanged(sender: UISwitch) {
-        if cellSwitch.on {
+    func switchIsChanged(_ sender: UISwitch) {
+        if cellSwitch.isOn {
     
             guard
-            let notificationType = UIApplication.sharedApplication().currentUserNotificationSettings()
+            let notificationType = UIApplication.shared.currentUserNotificationSettings
                 else {return}
             
-            if let askedPermission = NSUserDefaults.standardUserDefaults().valueForKey("askedPermission") as? Bool where askedPermission == true {
-                if notificationType.types == UIUserNotificationType.None {
+            if let askedPermission = UserDefaults.standard.value(forKey: "askedPermission") as? Bool , askedPermission == true {
+                if notificationType.types == UIUserNotificationType() {
                     delegate?.presentAlert("Oznámení", message: "Oznámení musíte zapnout v nastavení", url: UIApplicationOpenSettingsURLString)
                 }
             }
@@ -56,8 +56,8 @@ class NotificationCell: UITableViewCell, NotificationsDelegate, SwitchDelegate {
     }
     
     func areNotificationsAllowed() -> Bool {
-        let application = UIApplication.sharedApplication()
-        if application.isRegisteredForRemoteNotifications() {
+        let application = UIApplication.shared
+        if application.isRegisteredForRemoteNotifications {
             return true
         }
         else {
@@ -66,7 +66,7 @@ class NotificationCell: UITableViewCell, NotificationsDelegate, SwitchDelegate {
     }
     
     func switchOff(){
-        cellSwitch.on = false
+        cellSwitch.isOn = false
     }
     
     

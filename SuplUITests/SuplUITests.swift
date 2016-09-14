@@ -38,16 +38,16 @@ class SuplUITests: XCTestCase {
         
         snapshot("settings")
         
-        _ = self.expectationForPredicate(
-            NSPredicate(format: "self.count = 1"),
-            evaluatedWithObject: XCUIApplication().tables,
+        _ = self.expectation(
+            for: NSPredicate(format: "self.count = 1"),
+            evaluatedWith: XCUIApplication().tables,
             handler: nil)
-        self.waitForExpectationsWithTimeout(5.0, handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
         
         let cells = XCUIApplication().tables.cells
         XCTAssertEqual(cells.count, 6)
         
-        cells.elementBoundByIndex(4).tap()
+        cells.element(boundBy: 4).tap()
         
         XCUIApplication().buttons["DALŠÍ"].tap()
         XCUIApplication().buttons["DALŠÍ"].tap()
