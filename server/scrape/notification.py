@@ -30,9 +30,9 @@ def get_tokens(id, property_type):
 def send_notifications(id, property_type):
 
     # Frame for sending multiple notifications
-    frame = Frame()
-    expiry = time.time() + 3600
-    priority = 10
+    # frame = Frame()
+    # expiry = time.time() + 3600
+    # priority = 10
 
     apns = APNs(use_sandbox=True, cert_file=config.CERT, enhanced=True)
     message = unicode('Změna rozvrhu', 'utf-8')
@@ -62,8 +62,9 @@ def send_notifications(id, property_type):
             file.write("Sent to %s\n" % token)
             file.close()
 
-            identifier = random.getrandbits(32)
-            frame.add_item(token, payload, identifier, expiry, priority)
+            apns.gateway_server.send_notification(token, payload)
+            # identifier = random.getrandbits(32)
+            # frame.add_item(token, payload, identifier, expiry, priority)
 
     if should_notify:
         pass

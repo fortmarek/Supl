@@ -1,1 +1,1 @@
-- Oprava přechodu ze starších verzí
+- Oprava načítání nové školy/třídy
