@@ -12,7 +12,6 @@ def get_date(date):
 
 def is_date_present(date):
     today = datetime.now()
-
     if today.date() > date:
         return False
     elif today.date() == date:
