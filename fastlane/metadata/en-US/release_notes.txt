@@ -1,1 +1,2 @@
-- Oprava načítání nové školy/třídy
+- Oprava třídy v nastavení při stáhnutí aplikace
+- Oprava tokenů pro notifikace
