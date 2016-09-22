@@ -58,12 +58,17 @@ def compare_changes(changes, clas_id, date, should_compare):
             supl_to_db(clas_id, change)
 
     if len(old_changes) != len(changes):
+        sql = "SELECT `change_id` FROM `changes` ORDER BY `change_id` DESC LIMIT 1"
+        c.execute(sql)
+        (change_id) = c.fetchone()
+
         if should_compare:
             notification.send_notifications(clas_id, 'clas_id')
         for change in changes:
             supl_to_db(clas_id, change)
-            delete(clas_id, date, change_id)
-            return
+
+        delete(clas_id, date, change_id)
+        return
 
 
     for change in old_changes:

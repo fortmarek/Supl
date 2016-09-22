@@ -66,6 +66,19 @@ def compare_changes(changes, prof_id, date, should_compare):
                 should_compare = False
             change_to_db(prof_id, change)
 
+    if len(old_changes) != len(changes):
+        sql = "SELECT `change_id` FROM `professor_changes` ORDER BY `change_id` DESC LIMIT 1"
+        c.execute(sql)
+        (change_id) = c.fetchone()
+
+        if should_compare:
+            notification.send_notifications(prof_id, 'professor_id')
+        for change in changes:
+            change_to_db(prof_id, change)
+
+        delete(prof_id, date, change_id)
+        return
+
     for change in old_changes:
         if i == 0:
             sql = "SELECT `change_id` FROM `professor_changes` ORDER BY `change_id` DESC LIMIT 1"
