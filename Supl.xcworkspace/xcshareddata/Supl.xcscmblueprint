@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "078EB2583A00CBFD071E7FB49CF9D2AC18AABAED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "078EB2583A00CBFD071E7FB49CF9D2AC18AABAED" : 0,
+    "2709C42698BAA774AEC383BFEDB0A8DB200911A8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7B56F8F9-ABA8-4787-8EEB-A1E9AAF8293A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "078EB2583A00CBFD071E7FB49CF9D2AC18AABAED" : "supl\/",
+    "2709C42698BAA774AEC383BFEDB0A8DB200911A8" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Supl",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Supl.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fortmarek\/supl.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "078EB2583A00CBFD071E7FB49CF9D2AC18AABAED"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fortmarek\/Course.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2709C42698BAA774AEC383BFEDB0A8DB200911A8"
+    }
+  ]
+}
