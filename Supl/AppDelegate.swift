@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
         let defaults = UserDefaults.standard
         
+        if defaults.bool(forKey: "askedPermission") {
+            registerForPushNotifications()
+        }
+        
         if defaults.string(forKey: "userId") == nil {
             guard let userId = UIDevice.current.identifierForVendor else {return true}
             let id = userId.uuidString
@@ -79,7 +83,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let token = deviceToken.description.replaceString(["<", ">"," "])
+        //Convert token data to string
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        
         self.postToken(token)
     }
     

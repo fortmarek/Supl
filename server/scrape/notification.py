@@ -43,7 +43,7 @@ def send_notifications(id, property_type):
 
     for token in tokens:
 
-        if token == 'NULL' or token == None:
+        if token == 'NULL' or token == None or token == '32bytes':
             continue
 
         should_notify = True
