@@ -51,12 +51,6 @@ def compare_changes(changes, clas_id, date, should_compare):
     change_id = 0
     old_changes = c.fetchall()
 
-    if len(old_changes) == 0:
-        for change in changes:
-            if should_compare:
-                notification.send_notifications(clas_id, 'clas_id')
-            supl_to_db(clas_id, change)
-
     if len(old_changes) != len(changes):
         sql = "SELECT `change_id` FROM `changes` ORDER BY `change_id` DESC LIMIT 1"
         c.execute(sql)
