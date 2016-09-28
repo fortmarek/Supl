@@ -246,9 +246,9 @@ def run_scrape():
     schools = get_schools()
 
     try:
-        #for school in schools:
-        for i in range(0, 1):
-            school = 'http://old.gjk.cz/suplovani.php'
+        for school in schools:
+        # for i in range(0, 1):
+           # school = 'http://old.gjk.cz/suplovani.php'
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")

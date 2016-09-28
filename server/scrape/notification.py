@@ -6,7 +6,6 @@ import config
 import time
 import random
 
-
 def get_tokens(id, property_type):
     c, conn = connection()
     tokens = []
@@ -26,6 +25,10 @@ def get_tokens(id, property_type):
     return tokens
 
 
+def response_listener(error_response):
+    file = open('/home/scrape/log-file.txt', 'a')
+    file.write("Failed with: %s\n" % error_response)
+    file.close()
 
 def send_notifications(id, property_type):
 
@@ -39,7 +42,6 @@ def send_notifications(id, property_type):
     payload = Payload(alert=message, sound="default", badge=0, mutable_content=True)
 
     tokens = get_tokens(id, property_type)
-    should_notify = False
 
     for token in tokens:
 
@@ -57,6 +59,7 @@ def send_notifications(id, property_type):
                 if line.rstrip().find(token) != -1:
                     should_notify = False
                     break
+
         if should_notify:
             file = open('/home/scrape/log-file.txt', 'a')
             file.write("Sent to %s\n" % token)
@@ -66,6 +69,6 @@ def send_notifications(id, property_type):
             identifier = random.getrandbits(32)
             frame.add_item(token, payload, identifier, expiry, priority)
 
-    if should_notify:
-        #pass
-        apns.gateway_server.send_notification_multiple(frame)
+    apns.gateway_server.register_response_listener(response_listener)
+    apns.gateway_server.send_notification_multiple(frame)
+
