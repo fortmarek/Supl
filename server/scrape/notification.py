@@ -34,7 +34,7 @@ def send_notifications(id, property_type):
 
     # Frame for sending multiple notifications
     frame = Frame()
-    expiry = time.time() + 3600
+    expiry = int(time.time()) + (60 * 60) # 1 hour
     priority = 10
 
     apns = APNs(use_sandbox=True, cert_file=config.CERT, enhanced=True)
