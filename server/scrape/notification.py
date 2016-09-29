@@ -33,9 +33,9 @@ def response_listener(error_response):
 def send_notifications(id, property_type):
 
     # Frame for sending multiple notifications
-    frame = Frame()
-    expiry = int(time.time()) + (60 * 60) # 1 hour
-    priority = 10
+    # frame = Frame()
+    # expiry = int(time.time()) + (60 * 60) # 1 hour
+    # priority = 10
 
     apns = APNs(use_sandbox=True, cert_file=config.CERT, enhanced=True)
     message = unicode('Změna rozvrhu', 'utf-8')
@@ -65,10 +65,12 @@ def send_notifications(id, property_type):
             file.write("Sent to %s\n" % token)
             file.close()
 
-            # apns.gateway_server.send_notification(token, payload)
+            apns.gateway_server.send_notification(token, payload)
             identifier = random.getrandbits(32)
-            frame.add_item(token, payload, identifier, expiry, priority)
+            #frame.add_item('c8a31f47c7b598bb3173c61e9243afd5cbea0530b5a0f96469c3def3b3d9c0b5', payload, identifier, expiry, priority)
+            #frame.add_item(token, payload, identifier,
+            #               expiry, priority)
 
-    apns.gateway_server.register_response_listener(response_listener)
-    apns.gateway_server.send_notification_multiple(frame)
+    #apns.gateway_server.register_response_listener(response_listener)
+    #apns.gateway_server.send_notification_multiple(frame)
 
