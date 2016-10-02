@@ -33,12 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             _ = Alamofire.request("http://139.59.144.155/users/\(id)", method: .post)
         }
         
-        //Fix for notifications - 2.1.3
-        if defaults.bool(forKey: "doesNotNeedFix") == false && UIApplication.shared.isRegisteredForRemoteNotifications {
-            registerForPushNotifications()
-            defaults.set(true, forKey: "doesNotNeedFix")
-        }
-        
         //Fix for duplicating properties in dataabse - 2.1.4
         if defaults.bool(forKey: "updateValuesNeeded") == false {
             let dataController = DataController()
