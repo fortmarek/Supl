@@ -21,16 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
         let defaults = UserDefaults.standard
         
-        
-        if UIApplication.shared.isRegisteredForRemoteNotifications {
-            registerForPushNotifications()
-        }
-        
         if defaults.string(forKey: "userId") == nil {
             guard let userId = UIDevice.current.identifierForVendor else {return true}
             let id = userId.uuidString
             defaults.setValue(id, forKey: "userId")
-            _ = Alamofire.request("http://139.59.144.155/users/\(id)", method: .post)
+            let _ = Alamofire.request("http://139.59.144.155/users/\(id)", method: .post)
+        }
+        
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            registerForPushNotifications()
         }
         
         //Fix for duplicating properties in dataabse - 2.1.4
@@ -80,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         //Convert token data to string
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        
+    
         self.postToken(token)
     }
     

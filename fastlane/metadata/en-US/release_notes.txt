@@ -1,2 +1,1 @@
-- Oprava třídy v nastavení při stáhnutí aplikace
 - Oprava tokenů pro notifikace
