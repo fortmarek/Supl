@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
         let defaults = UserDefaults.standard
         
-        if defaults.bool(forKey: "askedPermission") {
+        
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
             registerForPushNotifications()
         }
         
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
             guard let userId = UIDevice.current.identifierForVendor else {return true}
             let id = userId.uuidString
             defaults.setValue(id, forKey: "userId")
-            let _ = Alamofire.request("http://139.59.144.155/users/\(id)", method: .post)
+            _ = Alamofire.request("http://139.59.144.155/users/\(id)", method: .post)
         }
         
         //Fix for notifications - 2.1.3
