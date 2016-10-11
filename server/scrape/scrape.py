@@ -250,6 +250,7 @@ def run_scrape():
         # for i in range(0, 1):
         #    school = 'http://old.gjk.cz/suplovani.php'
             get_school_data(school, True)
+            print(school)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")
         file.close()

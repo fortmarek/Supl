@@ -260,7 +260,7 @@ class School(Resource):
             text = r.text
             html = BeautifulSoup(text, 'html.parser')
             title = html.title
-            if title.text.encode('ascii', 'ignore').find("Bakali") == -1:
+            if title.text.encode('ascii', 'ignore').find("Bakali - Supl") == -1:
                 conn.close()
                 abort(400, message="URL není z Bakaláři")
         except:

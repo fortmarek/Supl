@@ -95,10 +95,10 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="XDu-nI-nJJ"/>
                                             <exclude reference="8UO-DV-Uki"/>
                                             <exclude reference="D6D-p9-PSK"/>
                                             <exclude reference="sO8-oF-TxP"/>
+                                            <exclude reference="XDu-nI-nJJ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -256,9 +256,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="uEj-eJ-CwO"/>
                                                     <exclude reference="6pD-Fc-hbL"/>
                                                     <exclude reference="g6m-dd-Gc3"/>
+                                                    <exclude reference="uEj-eJ-CwO"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
