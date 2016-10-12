@@ -147,13 +147,10 @@ def get_data(html, school, should_compare):
     student_tables = get_tables('tb_supltrid_' + index, old_dates_count, html)
     professor_tables = get_tables('tb_suplucit_' + index, old_dates_count, html)
 
-    class_changes = []
-    professor_changes = []
-
     if len(dates) != 0 and len(student_tables) != 0:
-        class_changes = classes.data(html, student_tables, dates, school, should_compare)
+        classes.data(html, student_tables, dates, school, should_compare)
     if len(dates) != 0 and len(professor_tables) != 0:
-        professor_changes = professors.data(html, professor_tables, dates, school, should_compare)
+        professors.data(html, professor_tables, dates, school, should_compare)
     return dates
 
 
@@ -228,6 +225,8 @@ def check_school(school):
 
 
 def run_scrape():
+    import time
+    timestamp = time.time()
     number = 0
     for line in reversed(list(open('/home/scrape/log-file.txt'))):
         try:
@@ -247,11 +246,9 @@ def run_scrape():
 
     try:
         for school in schools:
-        #for i in range(0, 1):
-        #    school = 'http://sgldbrno.cz/studium/suplovani/suplovuc.htm'
+        # for i in range(0, 1):
+        #    school = 'http://gjk.cz/suplovani.php'
             get_school_data(school, True)
-            print(school)
-        # print("SUCESS")
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")
         file.close()
@@ -259,6 +256,7 @@ def run_scrape():
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("%s\n" % traceback.format_exc())
         file.close()
+
 
 # Mark session => notifications will not be sent twice
 

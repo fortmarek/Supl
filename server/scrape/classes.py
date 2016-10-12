@@ -108,6 +108,7 @@ def get_class_data(clas, table, date):
     # Need to keep this var => there is always name of the class and then the next changes
     # Are marked in the beginning not by the name but by empty string
     isCurrentClas = False
+
     for td in table.find_all('td', width='11%'):
         if td.text == clas:
             isCurrentClas = True
@@ -118,6 +119,7 @@ def get_class_data(clas, table, date):
             class_changes.append(suplObject)
         else:
             isCurrentClas = False
+
     return class_changes
 
 def data(html, student_tables, dates, school, should_compare):
