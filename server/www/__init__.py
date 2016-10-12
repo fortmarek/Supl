@@ -283,20 +283,6 @@ api.add_resource(Clas, '/classes')
 api.add_resource(Prof, '/professors')
 api.add_resource(Notification, '/users/<string:user_id>/notification')
 
-
-
-# THIS IS FOR KLOZET (I'M SAVING MYSELF SOME TIME AND RESOURCES AND MONEY)   ...
-
-class Toilets(Resource):
-    def get(self):
-        file = open('/home/klozet/wc.json', 'r')
-        js = json.loads(file.read())
-        file.close()
-        return js
-
-
-api.add_resource(Toilets, '/klozet')
-
 # THIS IS FOR PORTFOLIO (I'M SAVING MYSELF SOME TIME AND RESOURCES AND MONEY)   ...
 
 @app.route('/')
