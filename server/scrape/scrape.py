@@ -136,6 +136,20 @@ def get_index(html):
         return "3"
 
 
+def fix_tables(html, old_dates_count, index, dates):
+    dates_number = old_dates_count
+    for paragraph in html.body.find_all('p', recursive=False):
+        try:
+            if paragraph['class'][0] == 'textnormal_' + index:
+                dates.pop(dates_number - 1)
+                dates_number -= 1
+                if len(dates) == 0:
+                    return dates
+            if paragraph['class'][0] == 'textlarge_' + index:
+                dates_number += 1
+        except KeyError:
+            continue
+    return dates
 
 def get_data(html, school, should_compare):
     # Indexes in names of CSS classes vary
@@ -146,6 +160,9 @@ def get_data(html, school, should_compare):
 
     student_tables = get_tables('tb_supltrid_' + index, old_dates_count, html)
     professor_tables = get_tables('tb_suplucit_' + index, old_dates_count, html)
+
+    if len(student_tables) != len(dates):
+        dates = fix_tables(html, old_dates_count, index, dates)
 
     if len(dates) != 0 and len(student_tables) != 0:
         classes.data(html, student_tables, dates, school, should_compare)
@@ -246,8 +263,8 @@ def run_scrape():
 
     try:
         for school in schools:
-        # for i in range(0, 1):
-        #    school = 'http://gjk.cz/suplovani.php'
+        #for i in range(0, 1):
+        #    school = 'http://old.gjk.cz/suplovani.php'
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")

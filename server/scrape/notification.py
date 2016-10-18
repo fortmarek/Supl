@@ -66,7 +66,7 @@ def send_notifications(id, property_type):
             file.close()
 
             apns.gateway_server.send_notification(token, payload)
-            identifier = random.getrandbits(32)
+            #identifier = random.getrandbits(32)
             #frame.add_item('c8a31f47c7b598bb3173c61e9243afd5cbea0530b5a0f96469c3def3b3d9c0b5', payload, identifier, expiry, priority)
             #frame.add_item(token, payload, identifier,
             #               expiry, priority)
