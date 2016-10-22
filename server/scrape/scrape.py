@@ -161,7 +161,7 @@ def get_data(html, school, should_compare):
     student_tables = get_tables('tb_supltrid_' + index, old_dates_count, html)
     professor_tables = get_tables('tb_suplucit_' + index, old_dates_count, html)
 
-    if len(student_tables) != len(dates):
+    if len(student_tables) < len(dates):
         dates = fix_tables(html, old_dates_count, index, dates)
 
     if len(dates) != 0 and len(student_tables) != 0:
