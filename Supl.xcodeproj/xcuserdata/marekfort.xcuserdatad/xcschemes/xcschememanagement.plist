@@ -16,6 +16,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>suplSummary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -30,6 +35,11 @@
 			<true/>
 		</dict>
 		<key>F84C7FB11B7A8BA7006ADCE3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F85803211DEC978F00C44492</key>
 		<dict>
 			<key>primary</key>
 			<true/>
