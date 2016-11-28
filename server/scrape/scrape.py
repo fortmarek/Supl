@@ -137,16 +137,21 @@ def get_index(html):
 
 
 def fix_tables(html, old_dates_count, index, dates):
-    dates_number = old_dates_count
+    dates_number = 0
     for paragraph in html.body.find_all('p', recursive=False):
         try:
-            if paragraph['class'][0] == 'textnormal_' + index:
-                dates.pop(dates_number - 1)
+            if paragraph['class'][0] == 'textlarge_' + index:
+                old_dates_count -= 0
+                if old_dates_count <= 0:
+                    dates_number += 1
+
+            if paragraph['class'][0] == 'textnormal_' + index and old_dates_count <= 0:
                 dates_number -= 1
+                dates.pop(dates_number - old_dates_count)
+
                 if len(dates) == 0:
                     return dates
-            if paragraph['class'][0] == 'textlarge_' + index:
-                dates_number += 1
+
         except KeyError:
             continue
     return dates
@@ -265,6 +270,8 @@ def run_scrape():
         for school in schools:
         #for i in range(0, 1):
         #    school = 'http://old.gjk.cz/suplovani.php'
+        #    school = 'http://www.bean.cz/vystupy/suplwww/suplov.htm'
+        #    print(school)
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")
