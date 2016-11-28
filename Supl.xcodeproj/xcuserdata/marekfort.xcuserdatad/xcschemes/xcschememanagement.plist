@@ -14,12 +14,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>supl.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -35,11 +30,6 @@
 			<true/>
 		</dict>
 		<key>F84C7FB11B7A8BA7006ADCE3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F85802F31DEC875400C44492</key>
 		<dict>
 			<key>primary</key>
 			<true/>
