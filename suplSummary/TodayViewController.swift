@@ -9,16 +9,21 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
+class TodayViewController: SuplTable, NCWidgetProviding {
     
-    @IBOutlet weak var tableView: UITableView!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        print("L")
         
+        tableView.allowsSelection = false
+        
+        self.refreshControl = refreshController
+        
+        dataController.delegate = self
+        
+        self.preferredContentSize = CGSize(width: 320, height: 200)
         
     }
     
@@ -33,21 +38,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
+        print("DJ")
         
         completionHandler(NCUpdateResult.newData)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "suplCell") as? SuplCell else {
-                return UITableViewCell()
-        }
-        
-        return cell
-        
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
 }

@@ -8,49 +8,51 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>Pods-Supl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
+		</dict>
+		<key>Pods-suplSummary.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01C90FBB82C319A2AA0E63F9FADD6FC4</key>
+		<key>18395926F1105D4E383F2C777B01136C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>54FFE8251F6689F26C0919E39FBF2F12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A8A7AB50629E38665288698C97832CA5</key>
+		<key>6BDC4B1EC99E571D8F508D057DCAC790</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B6CCBCE0273A3A0D1AB9C77F98AF51BE</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9FFAE8793F49AEA1E470F1494291BA2A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

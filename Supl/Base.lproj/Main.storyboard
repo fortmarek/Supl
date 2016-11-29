@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cTj-o5-Rnw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cTj-o5-Rnw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -104,10 +104,10 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="XDu-nI-nJJ"/>
                                             <exclude reference="8UO-DV-Uki"/>
                                             <exclude reference="D6D-p9-PSK"/>
                                             <exclude reference="sO8-oF-TxP"/>
-                                            <exclude reference="XDu-nI-nJJ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -209,7 +209,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GQh-c2-hok">
-                                                    <rect key="frame" x="14" y="14" width="90" height="29"/>
+                                                    <rect key="frame" x="14" y="13" width="90" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="yTj-9h-py4"/>
                                                     </constraints>
@@ -219,7 +219,7 @@
                                                     </segments>
                                                 </segmentedControl>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="R6.A" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wLH-we-zq3">
-                                                    <rect key="frame" x="119" y="16" width="241" height="24"/>
+                                                    <rect key="frame" x="119" y="15" width="241" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -272,9 +272,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="uEj-eJ-CwO"/>
                                                     <exclude reference="6pD-Fc-hbL"/>
                                                     <exclude reference="g6m-dd-Gc3"/>
-                                                    <exclude reference="uEj-eJ-CwO"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

@@ -67,16 +67,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F84C7F8F1B7A8BA7006ADCE3"
-            BuildableName = "Supl.app"
-            BlueprintName = "Supl"
+            BlueprintIdentifier = "F85803211DEC978F00C44492"
+            BuildableName = "suplSummary.appex"
+            BlueprintName = "suplSummary"
             ReferencedContainer = "container:Supl.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F85803211DEC978F00C44492"
+            BuildableName = "suplSummary.appex"
+            BlueprintName = "suplSummary"
+            ReferencedContainer = "container:Supl.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
