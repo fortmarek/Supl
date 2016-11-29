@@ -14,6 +14,7 @@
 		F82A842C1C6907EC00FF680A /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A842B1C6907EC00FF680A /* PageVC.swift */; };
 		F82A842E1C691FD100FF680A /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A842D1C691FD100FF680A /* MasterVC.swift */; };
 		F836FCA01D6D993E00F3E9A7 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836FC9F1D6D993E00F3E9A7 /* CellData.swift */; };
+		F84B8B981DEE136700DC4872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84C7F9D1B7A8BA7006ADCE3 /* Assets.xcassets */; };
 		F84C7F941B7A8BA7006ADCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F931B7A8BA7006ADCE3 /* AppDelegate.swift */; };
 		F84C7F961B7A8BA7006ADCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F951B7A8BA7006ADCE3 /* ViewController.swift */; };
 		F84C7F991B7A8BA7006ADCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84C7F971B7A8BA7006ADCE3 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		F85803271DEC978F00C44492 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85803261DEC978F00C44492 /* TodayViewController.swift */; };
 		F858032A1DEC978F00C44492 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F85803281DEC978F00C44492 /* MainInterface.storyboard */; };
 		F858032E1DEC978F00C44492 /* suplSummary.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F85803221DEC978F00C44492 /* suplSummary.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F85803341DEC9D2400C44492 /* SuplCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7FC41B7B5A7F006ADCE3 /* SuplCell.swift */; };
 		F88910FD1BFA20370085F807 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88910FC1BFA20370085F807 /* DataController.swift */; };
 		F88911001BFA259A0085F807 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88910FF1BFA259A0085F807 /* Extensions.swift */; };
 		F89E246C1C7B735500551394 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F812E8931BF3E5AD00DFC25B /* libxml2.tbd */; };
@@ -457,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F84B8B981DEE136700DC4872 /* Assets.xcassets in Resources */,
 				F858032A1DEC978F00C44492 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85803271DEC978F00C44492 /* TodayViewController.swift in Sources */,
+				F85803341DEC9D2400C44492 /* SuplCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,6 +897,7 @@
 				F85803311DEC978F00C44492 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F89E247B1C7B842F00551394 /* Build configuration list for PBXNativeTarget "SuplTests" */ = {
 			isa = XCConfigurationList;
