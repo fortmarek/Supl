@@ -15,6 +15,7 @@
 		F82A842E1C691FD100FF680A /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A842D1C691FD100FF680A /* MasterVC.swift */; };
 		F836FCA01D6D993E00F3E9A7 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F836FC9F1D6D993E00F3E9A7 /* CellData.swift */; };
 		F84B8B981DEE136700DC4872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84C7F9D1B7A8BA7006ADCE3 /* Assets.xcassets */; };
+		F84B8B9D1DEE2FBF00DC4872 /* SuplTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84B8B9C1DEE2FBF00DC4872 /* SuplTable.swift */; };
 		F84C7F941B7A8BA7006ADCE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F931B7A8BA7006ADCE3 /* AppDelegate.swift */; };
 		F84C7F961B7A8BA7006ADCE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C7F951B7A8BA7006ADCE3 /* ViewController.swift */; };
 		F84C7F991B7A8BA7006ADCE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84C7F971B7A8BA7006ADCE3 /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 		F82A842D1C691FD100FF680A /* MasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		F8351DDA1BA47C5500995D1A /* Kanna.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kanna.framework; path = "Pods/../build/Debug-iphoneos/Kanna.framework"; sourceTree = "<group>"; };
 		F836FC9F1D6D993E00F3E9A7 /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
+		F84B8B9C1DEE2FBF00DC4872 /* SuplTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuplTable.swift; sourceTree = "<group>"; };
 		F84C7F901B7A8BA7006ADCE3 /* Supl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84C7F931B7A8BA7006ADCE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F84C7F951B7A8BA7006ADCE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,8 @@
 				F82884B91D944A2E00F1A737 /* Supl.entitlements */,
 				F84C7F931B7A8BA7006ADCE3 /* AppDelegate.swift */,
 				F84C7F951B7A8BA7006ADCE3 /* ViewController.swift */,
+				F836FC9F1D6D993E00F3E9A7 /* CellData.swift */,
+				F84B8B9C1DEE2FBF00DC4872 /* SuplTable.swift */,
 				F80D555D1B810ADE0075322B /* SettingsViewController.swift */,
 				F8ECB3D51C2DC83600BA319A /* Cells */,
 				F8F6C83E1C71027B007A25EF /* Walkthrough */,
@@ -254,7 +258,6 @@
 			children = (
 				F811121B1BA730350063C457 /* suplModel.swift */,
 				F88910FC1BFA20370085F807 /* DataController.swift */,
-				F836FC9F1D6D993E00F3E9A7 /* CellData.swift */,
 				F88910FF1BFA259A0085F807 /* Extensions.swift */,
 				F84C7FA21B7A8BA7006ADCE3 /* Info.plist */,
 				F84C7F9D1B7A8BA7006ADCE3 /* Assets.xcassets */,
@@ -536,6 +539,7 @@
 				F811121C1BA730350063C457 /* suplModel.swift in Sources */,
 				F8A001A91D5768E100794B8A /* ClassCell.swift in Sources */,
 				F84C7FC51B7B5A7F006ADCE3 /* SuplCell.swift in Sources */,
+				F84B8B9D1DEE2FBF00DC4872 /* SuplTable.swift in Sources */,
 				F8F6C8401C73BA52007A25EF /* SafariViewController.swift in Sources */,
 				F82A842C1C6907EC00FF680A /* PageVC.swift in Sources */,
 				F8ECB3D21C2DAEE100BA319A /* UrlCell.swift in Sources */,
