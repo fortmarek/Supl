@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class SuplTable: UITableViewController {
+class SuplTable: UITableViewController, DataControllerDelegate {
     let dataController = DataController()
     
     var suplArray = [[suplStruct]]()
@@ -27,6 +27,39 @@ class SuplTable: UITableViewController {
     var arrayOfTextFields = [String]()
     
     let defaults = UserDefaults.standard
+    
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        
+        dataController.getData()
+        //activityIndicator.stopAnimating()
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let suplArraySection = suplArray.ref(section)
+            else {return 0}
+        return suplArraySection.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if suplArray.isEmpty {
+            return UITableViewCell()
+        }
+        else {
+            guard let suplArray = suplArray.ref((indexPath as NSIndexPath).section)
+                else {return UITableViewCell()}
+            return cellsWithSuplArray(suplArray, indexPath: indexPath)
+        }
+    }
+    
+    func refresh (_ sender:AnyObject) {
+        dataController.getData()
+        //refreshController.endRefreshing()
+    }
+    
     
     func stopAnimating() {
         self.activityIndicator.stopAnimating()

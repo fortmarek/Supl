@@ -12,32 +12,15 @@ import CoreData
 // TODO: When user posts a school, server has to react
 
 
-class ViewController: UITableViewController, DataControllerDelegate {
-    let dataController = DataController()
+class ViewController: SuplTable {
     
-    var suplArray = [[suplStruct]]()
-    var datesArray = [String]()
-    var hoursArray = [[String]]()
-    var weekArray = [String]()
-    
-    var refreshController = UIRefreshControl()
-    let activityIndicator = UIActivityIndicatorView()
-    
-    var classNumber = ""
-    var myClass = ""
-    var url = ""
-    
-    let messageLabel = UILabel()
-    var arrayOfTextFields = [String]()
-    
-    let defaults = UserDefaults.standard
-    
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.refreshControl = refreshController
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.refresh(_:)), name:
             NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
@@ -74,16 +57,11 @@ class ViewController: UITableViewController, DataControllerDelegate {
         viewRefreshControl.addTarget(self, action: #selector(ViewController.refresh(_:)), for: UIControlEvents.valueChanged)
         tableView.addSubview(viewRefreshControl)
         
+        
         dataController.delegate = self
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        dataController.getData()
-        //activityIndicator.stopAnimating()
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -135,77 +113,12 @@ class ViewController: UITableViewController, DataControllerDelegate {
         return view
     }
     
-
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let suplArraySection = suplArray.ref(section)
-            else {return 0}
-        return suplArraySection.count
-    }
-    
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if suplArray.isEmpty {
-            return UITableViewCell()
-        }
-        else {
-            guard let suplArray = suplArray.ref((indexPath as NSIndexPath).section)
-                else {return UITableViewCell()}
-            return cellsWithSuplArray(suplArray, indexPath: indexPath)
-        }
-    }
-    
-    func refresh (_ sender:AnyObject) {
-        dataController.getData()
-        //refreshController.endRefreshing()
-    }
-    
-    //MARK: Helper Functions
-    
-    //MARK: Init of the cells
-    
-    
-    
     
     //MARK: Fonts
     enum FontWeight {
         case light, medium, semibold, regular
     }
     
-    //MARK: Protocol funcs
-    
-    func stopAnimating() {
-        self.activityIndicator.stopAnimating()
-        self.refreshController.endRefreshing()
-    }
-    
-    func emptyArray() {
-        self.tableView.separatorStyle = .none
-        self.messageLabel.isHidden = false
-        
-        if defaults.bool(forKey: "isUrlRight") == true {
-            messageLabel.text = "V nejbližší době nemáte žádné změny v rozvrhu"
-        }
-        else {
-            messageLabel.text = "Neplatné url, změňte v nastavení"
-        }
-        
-    }
-    func reloadData() {
-        DispatchQueue.main.async(execute: {
-            self.tableView.reloadData()
-        })
-    }
-    func arrayNotEmpty() {
-        self.tableView.separatorStyle = .singleLine
-        self.messageLabel.isHidden = true
-    }
-    func saveData() {
-        self.suplArray = self.dataController.suplArray
-        self.datesArray = self.dataController.datesArray
-    }
     
     
     

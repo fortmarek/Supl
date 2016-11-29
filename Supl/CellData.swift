@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-extension ViewController {
+extension SuplTable {
     func cellsWithSuplArray (_ array: [suplStruct], indexPath: IndexPath) -> UITableViewCell {
         
         guard
