@@ -88,15 +88,13 @@ class DataController {
     }
     
     func getData() {
-        let shareddDefaults = UserDefaults(suiteName: "group.com.sharedDefaults")
-        shareddDefaults?.synchronize()
-        print(shareddDefaults?.string(forKey: "userId"))
+        
         guard
             let dataDelegate = self.delegate,
             let sharedDefaults = UserDefaults(suiteName: "group.com.sharedDefaults"),
             let userId = sharedDefaults.string(forKey: "userId")
         else {return}
-        print(userId)
+        
         resetData()
         
         Alamofire.request("http://139.59.144.155/users/\(userId)")
