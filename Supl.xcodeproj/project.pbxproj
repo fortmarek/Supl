@@ -125,6 +125,7 @@
 		F85803291DEC978F00C44492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F858032B1DEC978F00C44492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F87C25651DEE3C9100C99A8F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/Supl-czcjrzpwechlvbevpritxqqhvndv/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		F87C256A1DEF9AA000C99A8F /* suplSummary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = suplSummary.entitlements; sourceTree = "<group>"; };
 		F88910FC1BFA20370085F807 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F88910FF1BFA259A0085F807 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F89E24741C7B842F00551394 /* SuplTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuplTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +262,7 @@
 		F85803251DEC978F00C44492 /* suplSummary */ = {
 			isa = PBXGroup;
 			children = (
+				F87C256A1DEF9AA000C99A8F /* suplSummary.entitlements */,
 				F85803261DEC978F00C44492 /* TodayViewController.swift */,
 				F85803281DEC978F00C44492 /* MainInterface.storyboard */,
 				F858032B1DEC978F00C44492 /* Info.plist */,
@@ -410,6 +412,9 @@
 						DevelopmentTeam = QH95ER52SG;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -427,6 +432,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = QH95ER52SG;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F89E24731C7B842F00551394 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -854,6 +864,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = suplSummary/suplSummary.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QH95ER52SG;
@@ -875,6 +886,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = suplSummary/suplSummary.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QH95ER52SG;

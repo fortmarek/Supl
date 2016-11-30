@@ -15,7 +15,6 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("L")
         
         tableView.allowsSelection = false
         
@@ -38,13 +37,21 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-        print("DJ")
         
+        dataController.delegate = self
+        dataController.getData()
         completionHandler(NCUpdateResult.newData)
     }
     
+    /*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "suplCell") else {return UITableViewCell()}
+        return cell
+    }
+ */
     
 }

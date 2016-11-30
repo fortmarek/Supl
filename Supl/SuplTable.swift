@@ -11,6 +11,7 @@ import UIKit
 
 
 class SuplTable: UITableViewController, DataControllerDelegate {
+    
     let dataController = DataController()
     
     var suplArray = [[suplStruct]]()

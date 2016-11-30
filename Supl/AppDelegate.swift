@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     
         let defaults = UserDefaults.standard
         
+        let sharedDefaults = UserDefaults(suiteName: "group.com.sharedDefaults")
+        sharedDefaults?.setValue(defaults.string(forKey: "userId"), forKey: "userId")
+        sharedDefaults?.synchronize()
+        
         if defaults.string(forKey: "userId") == nil {
             guard let userId = UIDevice.current.identifierForVendor else {return true}
             let id = userId.uuidString
