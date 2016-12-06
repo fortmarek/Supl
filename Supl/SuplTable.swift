@@ -29,16 +29,7 @@ class SuplTable: UITableViewController, DataControllerDelegate {
     
     let defaults = UserDefaults.standard
     
- 
-    override func viewDidAppear(_ animated: Bool) {
-        
-        //activityIndicator.stopAnimating()
-        
-    }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let suplArraySection = suplArray.ref(section)

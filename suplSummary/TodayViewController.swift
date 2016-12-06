@@ -22,13 +22,34 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         dataController.delegate = self
         
-        self.preferredContentSize = CGSize(width: 320, height: 200)
+        if #available(iOSApplicationExtension 10.0, *) {
+            extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
+        
+        
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize){
+        if (activeDisplayMode == NCWidgetDisplayMode.compact) {
+            self.preferredContentSize = maxSize;
+        }
+        else {
+            guard (suplArray.count > 0) else {return}
+            let height = CGFloat(suplArray[0].count * 55)
+            self.preferredContentSize = CGSize(width: 0, height: height);
+        }
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -38,12 +59,25 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        dataController.delegate = self
         dataController.getData(completion: {
             completionHandler(NCUpdateResult.newData)
         })
         
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
+        guard let firstDate = datesArray.ref(0) else {return 0}
+        
+        //if firstDate == "Dnes" {
+        if firstDate == "Zítra" {
+            self.reloadInputViews()
+            
+            return 1
+        }
+        else {
+            return 0
+        }
         
     }
     
