@@ -90,7 +90,6 @@ class DataController {
     func getData() {
         
         guard
-            let dataDelegate = self.delegate,
             let sharedDefaults = UserDefaults(suiteName: "group.com.sharedDefaults"),
             let userId = sharedDefaults.string(forKey: "userId")
         else {return}
@@ -105,16 +104,15 @@ class DataController {
                 self.getChanges(json)
 
                 if self.suplArray.isEmpty {
-                    dataDelegate.emptyArray()
+                    self.delegate?.emptyArray()
                 }
                 else {
-                    dataDelegate.arrayNotEmpty()
+                    self.delegate?.arrayNotEmpty()
                 }
     
-                dataDelegate.saveData()
-                dataDelegate.reloadData()
-                guard let dataDelegate = self.delegate else {return}
-                dataDelegate.stopAnimating()
+                self.delegate?.saveData()
+                self.delegate?.reloadData()
+                self.delegate?.stopAnimating()
             
         }
     }
