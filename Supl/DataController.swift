@@ -87,7 +87,7 @@ class DataController {
         return segmentIndex
     }
     
-    func getData() {
+    func getData(completion: @escaping () -> ()) {
         
         guard
             let sharedDefaults = UserDefaults(suiteName: "group.com.sharedDefaults"),
@@ -113,7 +113,8 @@ class DataController {
                 self.delegate?.saveData()
                 self.delegate?.reloadData()
                 self.delegate?.stopAnimating()
-            
+                
+                completion()
         }
     }
     

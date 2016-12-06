@@ -32,7 +32,6 @@ class SuplTable: UITableViewController, DataControllerDelegate {
  
     override func viewDidAppear(_ animated: Bool) {
         
-        dataController.getData()
         //activityIndicator.stopAnimating()
         
     }
@@ -60,7 +59,7 @@ class SuplTable: UITableViewController, DataControllerDelegate {
     }
     
     func refresh (_ sender:AnyObject) {
-        dataController.getData()
+        dataController.getData(completion: {})
         //refreshController.endRefreshing()
     }
     

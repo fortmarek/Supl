@@ -39,8 +39,12 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         dataController.delegate = self
-        dataController.getData()
-        completionHandler(NCUpdateResult.newData)
+        dataController.getData(completion: {
+            completionHandler(NCUpdateResult.newData)
+        })
+        
+        
+        
     }
     
     /*

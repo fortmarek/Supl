@@ -63,6 +63,11 @@ class ViewController: SuplTable {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        dataController.getData(completion: {})
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
