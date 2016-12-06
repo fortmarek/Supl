@@ -87,7 +87,7 @@ extension SuplTable {
             
         case "navíc":
             cell.changeImage.image = UIImage(named: "Plus")
-            cell.subjectLabel.textColor = UIColor(red: 0.92, green: 0.72, blue: 0.23, alpha: 1.0)
+            cell.subjectLabel.textColor = UIColor(red: 0.92, green: 0.22, blue: 0.72, alpha: 1.0)
             cell.changeLabel.text = "\(change)"
         default:
             
