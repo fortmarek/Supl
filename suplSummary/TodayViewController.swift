@@ -27,9 +27,17 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         } else {
             // Fallback on earlier versions
         }
+
         
+        messageLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width - 10, height: 110)
         
+        messageLabel.font = UIFont().getFont(20, weight: .light)
+        messageLabel.textAlignment = .center
+        self.tableView.addSubview(messageLabel)
         
+
+        
+        dump(messageLabel)
         
         
     }
@@ -52,6 +60,15 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         }
     }
     
+    override func emptyArray() {
+        tableView.separatorStyle = .none
+        messageLabel.isHidden = false
+        
+        messageLabel.text = "Žádné změny"
+        
+        
+    }
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
@@ -67,15 +84,16 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        guard let firstDate = datesArray.ref(0) else {return 0}
+        guard let firstDate = datesArray.ref(0) else {emptyArray(); return 0}
         
         //if firstDate == "Dnes" {
-        if firstDate == "Zítra" {
+        if firstDate == "Dnes" {
             self.reloadInputViews()
             
             return 1
         }
         else {
+            emptyArray()
             return 0
         }
         
