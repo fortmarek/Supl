@@ -98,7 +98,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let suplArraySection = suplArray.ref(section)
             else {return 0}
-        if suplArraySection.count >= 2 {
+        if suplArraySection.count > 2 {
             if #available(iOSApplicationExtension 10.0, *) {
                 guard let extensionContext = self.extensionContext else {return 0}
                 if extensionContext.widgetLargestAvailableDisplayMode == NCWidgetDisplayMode.compact {
