@@ -22,9 +22,8 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         dataController.delegate = self
         
-        
+        messageLabel.isHidden = true
         messageLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width - 10, height: 110)
-        
         messageLabel.font = UIFont().getFont(20, weight: .light)
         messageLabel.textAlignment = .center
         self.tableView.addSubview(messageLabel)
@@ -54,7 +53,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         messageLabel.isHidden = false
         
         messageLabel.text = "Žádné změny"
-        
+        print("EMPTY")
         
         if #available(iOSApplicationExtension 10.0, *) {
             guard let extensionContext = self.extensionContext else {return}
@@ -80,15 +79,15 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        guard let firstDate = datesArray.ref(0) else {emptyArray(); return 0}
+        guard let firstDate = datesArray.ref(0) else {return 0}
         
         if firstDate == "Zítra" {
             self.reloadInputViews()
-            
+            messageLabel.isHidden = true
+            print("M")
             return 1
         }
         else {
-            emptyArray()
             return 0
         }
         
@@ -108,16 +107,5 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         }
         return suplArraySection.count
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "suplCell") else {return UITableViewCell()}
-        return cell
-    }
- */
     
 }
