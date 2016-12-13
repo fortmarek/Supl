@@ -22,23 +22,12 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         dataController.delegate = self
         
-        if #available(iOSApplicationExtension 10.0, *) {
-            extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-        } else {
-            // Fallback on earlier versions
-        }
-
         
         messageLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width - 10, height: 110)
         
         messageLabel.font = UIFont().getFont(20, weight: .light)
         messageLabel.textAlignment = .center
         self.tableView.addSubview(messageLabel)
-        
-
-        
-        dump(messageLabel)
-        
         
     }
     
@@ -50,13 +39,13 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     
     @available(iOSApplicationExtension 10.0, *)
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize){
-        if (activeDisplayMode == NCWidgetDisplayMode.compact) {
-            self.preferredContentSize = maxSize;
-        }
-        else {
+        if (activeDisplayMode == NCWidgetDisplayMode.expanded) {
             guard (suplArray.count > 0) else {return}
             let height = CGFloat(suplArray[0].count * 55)
             self.preferredContentSize = CGSize(width: 0, height: height);
+        }
+        else {
+            
         }
     }
     
@@ -66,6 +55,13 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         messageLabel.text = "Žádné změny"
         
+        
+        if #available(iOSApplicationExtension 10.0, *) {
+            guard let extensionContext = self.extensionContext else {return}
+            if extensionContext.widgetLargestAvailableDisplayMode == NCWidgetDisplayMode.expanded {
+                extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.compact
+            }
+        }
         
     }
     
@@ -86,8 +82,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         guard let firstDate = datesArray.ref(0) else {emptyArray(); return 0}
         
-        //if firstDate == "Dnes" {
-        if firstDate == "Dnes" {
+        if firstDate == "Zítra" {
             self.reloadInputViews()
             
             return 1
@@ -97,6 +92,21 @@ class TodayViewController: SuplTable, NCWidgetProviding {
             return 0
         }
         
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let suplArraySection = suplArray.ref(section)
+            else {return 0}
+        if suplArraySection.count >= 2 {
+            if #available(iOSApplicationExtension 10.0, *) {
+                guard let extensionContext = self.extensionContext else {return 0}
+                if extensionContext.widgetLargestAvailableDisplayMode == NCWidgetDisplayMode.compact {
+                    extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
+                }
+            }
+        }
+        return suplArraySection.count
     }
     
     /*
