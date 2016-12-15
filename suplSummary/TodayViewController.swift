@@ -62,7 +62,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         
         if (activeDisplayMode == NCWidgetDisplayMode.expanded) {
-    
+            print("WAT")
             guard (suplArray.count > 0) else {return}
             let height = CGFloat(suplArray[0].count * 55)
             preferredContentSize = CGSize(width: 0, height: height);
@@ -112,24 +112,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
     }
     
-    private func getFileURL() -> URL? {
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
-        
-        let path = documentsDirectory.appendingPathComponent("file.txt")
-        
-        do {
-            try "KKKK".write(to: path, atomically: true, encoding: String.Encoding.utf8)
-        }
-        catch {}
-        
-        do {
-            let text = try String(contentsOf: path, encoding: String.Encoding.utf8)
-            print(text)
-        }
-        catch {}
-        
-        return documentsDirectory
-    }
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
