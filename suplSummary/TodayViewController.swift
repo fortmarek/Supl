@@ -118,7 +118,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         guard let firstDate = datesArray.ref(0) else {return 0}
         
-        if firstDate == "Zítra" {
+        if firstDate == "Dnes" {
             self.reloadInputViews()
             messageLabel.isHidden = true
 
