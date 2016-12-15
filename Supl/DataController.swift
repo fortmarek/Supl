@@ -119,7 +119,7 @@ class DataController {
     }
     
     func getSupl(_ json: JSON) -> suplStruct {
-        var supl = suplStruct()
+        let supl = suplStruct()
         
         let change = getProperty(json, property: "change")
         let hour = getProperty(json, property: "hour")

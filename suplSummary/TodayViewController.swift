@@ -17,6 +17,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         
         tableView.allowsSelection = false
+        tableView.isScrollEnabled = false
         
         self.refreshControl = refreshController
         
@@ -30,6 +31,17 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         let openAppGesture = UITapGestureRecognizer(target: self, action:  #selector(openMain))
         tableView.addGestureRecognizer(openAppGesture)
+        
+        
+        let decoded  = UserDefaults.standard.object(forKey: "suplArray") as! Data
+        guard let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [[suplStruct]] else {return}
+        guard let datesArray = UserDefaults.standard.array(forKey: "datesArray") as? [String] else {return}
+        print(decodedTeams)
+        
+        self.suplArray = decodedTeams
+        self.datesArray = datesArray
+        
+        reloadData()
         
     }
     
@@ -57,6 +69,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         else {
             preferredContentSize = maxSize
         }
+
     }
     
     override func emptyArray() {
@@ -82,6 +95,11 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         dataController.getData(completion: {
+            let data = NSKeyedArchiver.archivedData(withRootObject: self.suplArray)
+            UserDefaults.standard.set(data, forKey: "suplArray")
+            UserDefaults.standard.set(self.datesArray, forKey: "datesArray")
+            
+
             completionHandler(NCUpdateResult.newData)
         })
         
@@ -91,13 +109,14 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         guard let firstDate = datesArray.ref(0) else {return 0}
         
-        if firstDate == "Dnes" {
+        if firstDate == "Zítra" {
             self.reloadInputViews()
             messageLabel.isHidden = true
-            
+
             return 1
         }
         else {
+            emptyArray()
             return 0
         }
         
@@ -111,6 +130,8 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         if suplArraySection.count > 2 {
             if #available(iOSApplicationExtension 10.0, *) {
                 guard let extensionContext = self.extensionContext else {return 0}
+                //Expanded mode not available, return only 2 cells, stay in compact mode
+                
                 if extensionContext.widgetLargestAvailableDisplayMode == NCWidgetDisplayMode.compact {
                     extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
                 }
