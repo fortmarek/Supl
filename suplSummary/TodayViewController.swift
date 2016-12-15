@@ -62,11 +62,11 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         
         if (activeDisplayMode == NCWidgetDisplayMode.expanded) {
-            print("WAT")
+            
             guard (suplArray.count > 0) else {return}
             let height = CGFloat(suplArray[0].count * 55)
-            preferredContentSize = CGSize(width: 0, height: height);
-            reloadInputViews()
+            preferredContentSize = CGSize(width: maxSize.width, height: height)
+            
         }
         else {
             preferredContentSize = maxSize
