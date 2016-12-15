@@ -33,13 +33,15 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         tableView.addGestureRecognizer(openAppGesture)
         
         
-        let decoded  = UserDefaults.standard.object(forKey: "suplArray") as! Data
-        guard let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [[suplStruct]] else {return}
-        guard let datesArray = UserDefaults.standard.array(forKey: "datesArray") as? [String] else {return}
-        print(decodedTeams)
+        //let decoded  = UserDefaults.standard.object(forKey: "suplArray") as! Data
+        //guard let absolutePath = getFileURL()?.appendingPathComponent("suplArray.txt").absoluteString else {return}
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+        let path = documentsDirectory.appendingPathComponent("suplArray").path
         
-        self.suplArray = decodedTeams
-        self.datesArray = datesArray
+        //guard let decoded = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [[suplStruct]] else {print("FUCK");return}
+        print(NSKeyedUnarchiver.unarchiveObject(withFile: path))
+        print(NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [[suplStruct]])
+        
         
         reloadData()
         
@@ -96,13 +98,66 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         dataController.getData(completion: {
             let data = NSKeyedArchiver.archivedData(withRootObject: self.suplArray)
+            //guard let url = self.getFileURL() else {return}
+            
+            
+            guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+            let path = documentsDirectory.appendingPathComponent("suplArray").path
+            
+            print(FileManager.default.createFile(atPath: path, contents: data, attributes: [:]))
+            
+            print(NSKeyedArchiver.archiveRootObject(self.suplArray, toFile: path))
+            do {
+                //try data.write(to: path)
+                //let stringSuplArray = String(bytes: data, encoding: String.Encoding.utf8)
+                //try stringSuplArray?.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+            }
+            catch {}
+            
+            /*
+            
+            if FileManager.default.fileExists(atPath: url.appendingPathComponent("suplArray.data").absoluteString) {
+                print("File exists")
+            } else {
+                FileManager.default.createFile(atPath: url.appendingPathComponent("suplArray.data").absoluteString, contents: data, attributes: [:])
+                print("File not found")
+            }
+            
+            
+            do {
+                try data.write(to: url.appendingPathComponent("suplArray.data"), options: .atomic)
+                print("saved")
+            }
+            catch {
+                print("couldn't write data")
+            }
+            
             UserDefaults.standard.set(data, forKey: "suplArray")
             UserDefaults.standard.set(self.datesArray, forKey: "datesArray")
             
-
+            */
             completionHandler(NCUpdateResult.newData)
         })
         
+    }
+    
+    private func getFileURL() -> URL? {
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        
+        let path = documentsDirectory.appendingPathComponent("file.txt")
+        
+        do {
+            try "KKKK".write(to: path, atomically: true, encoding: String.Encoding.utf8)
+        }
+        catch {}
+        
+        do {
+            let text = try String(contentsOf: path, encoding: String.Encoding.utf8)
+            print(text)
+        }
+        catch {}
+        
+        return documentsDirectory
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
