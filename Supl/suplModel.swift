@@ -19,18 +19,6 @@ class suplStruct: NSObject, NSCoding {
     var avs: String?
     
     required convenience init(coder aDecoder: NSCoder) {
-        /*
-        guard
-            let group = aDecoder.decodeObject(forKey: "name") as? String,
-            let hour = aDecoder.decodeObject(forKey: "hour") as? String,
-            let change = aDecoder.decodeObject(forKey: "change") as? String,
-            let professorForChange = aDecoder.decodeObject(forKey: "professorForChange") as? String,
-            let schoolroom = aDecoder.decodeObject(forKey: "schoolroom") as? String,
-            let subject = aDecoder.decodeObject(forKey: "subject") as? String,
-            let professorUsual = aDecoder.decodeObject(forKey: "professorUsual") as? String,
-            let avs = aDecoder.decodeObject(forKey: "avs") as? String
-            else {self.init(); print("FUCK"); return}
- */
         self.init()
         self.group = aDecoder.decodeObject(forKey: "group") as? String
         self.hour = aDecoder.decodeObject(forKey: "hour") as? String
