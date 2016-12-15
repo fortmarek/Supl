@@ -32,16 +32,16 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         let openAppGesture = UITapGestureRecognizer(target: self, action:  #selector(openMain))
         tableView.addGestureRecognizer(openAppGesture)
         
-        
-        //let decoded  = UserDefaults.standard.object(forKey: "suplArray") as! Data
-        //guard let absolutePath = getFileURL()?.appendingPathComponent("suplArray.txt").absoluteString else {return}
+        //Loading cached data from documents directory
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        let path = documentsDirectory.appendingPathComponent("suplArray").path
         
-        //guard let decoded = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [[suplStruct]] else {print("FUCK");return}
-        print(NSKeyedUnarchiver.unarchiveObject(withFile: path))
-        print(NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [[suplStruct]])
+        let suplPath = documentsDirectory.appendingPathComponent("suplArray").path
+        guard let decodedSuplArray = NSKeyedUnarchiver.unarchiveObject(withFile: suplPath) as? [[suplStruct]] else {return}
+        self.suplArray = decodedSuplArray
         
+        let datesPath = documentsDirectory.appendingPathComponent("datesArray").path
+        guard let decodedDatesArray = NSKeyedUnarchiver.unarchiveObject(withFile: datesPath) as? [String] else {return}
+        self.datesArray = decodedDatesArray
         
         reloadData()
         
@@ -65,8 +65,8 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     
             guard (suplArray.count > 0) else {return}
             let height = CGFloat(suplArray[0].count * 55)
-            self.preferredContentSize = CGSize(width: 0, height: height);
-            self.reloadInputViews()
+            preferredContentSize = CGSize(width: 0, height: height);
+            reloadInputViews()
         }
         else {
             preferredContentSize = maxSize
@@ -97,45 +97,16 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         dataController.getData(completion: {
-            let data = NSKeyedArchiver.archivedData(withRootObject: self.suplArray)
-            //guard let url = self.getFileURL() else {return}
             
-            
+            //Caching data to documents directory to avoid tableView flashing when viewDidLoad
             guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-            let path = documentsDirectory.appendingPathComponent("suplArray").path
             
-            print(FileManager.default.createFile(atPath: path, contents: data, attributes: [:]))
+            let suplPath = documentsDirectory.appendingPathComponent("suplArray").path
+            NSKeyedArchiver.archiveRootObject(self.suplArray, toFile: suplPath)
             
-            print(NSKeyedArchiver.archiveRootObject(self.suplArray, toFile: path))
-            do {
-                //try data.write(to: path)
-                //let stringSuplArray = String(bytes: data, encoding: String.Encoding.utf8)
-                //try stringSuplArray?.write(to: path, atomically: true, encoding: String.Encoding.utf8)
-            }
-            catch {}
-            
-            /*
-            
-            if FileManager.default.fileExists(atPath: url.appendingPathComponent("suplArray.data").absoluteString) {
-                print("File exists")
-            } else {
-                FileManager.default.createFile(atPath: url.appendingPathComponent("suplArray.data").absoluteString, contents: data, attributes: [:])
-                print("File not found")
-            }
-            
-            
-            do {
-                try data.write(to: url.appendingPathComponent("suplArray.data"), options: .atomic)
-                print("saved")
-            }
-            catch {
-                print("couldn't write data")
-            }
-            
-            UserDefaults.standard.set(data, forKey: "suplArray")
-            UserDefaults.standard.set(self.datesArray, forKey: "datesArray")
-            
-            */
+            let datesPath = documentsDirectory.appendingPathComponent("datesArray").path
+            NSKeyedArchiver.archiveRootObject(self.datesArray, toFile: datesPath)
+
             completionHandler(NCUpdateResult.newData)
         })
         
