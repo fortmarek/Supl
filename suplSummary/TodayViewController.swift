@@ -28,6 +28,9 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         messageLabel.textAlignment = .center
         self.tableView.addSubview(messageLabel)
         
+        let openAppGesture = UITapGestureRecognizer(target: self, action:  #selector(openMain))
+        tableView.addGestureRecognizer(openAppGesture)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,16 +38,24 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
+    func openMain() {
+        guard let openUrl = NSURL(string: "Supl://") else {return}
+        extensionContext?.open(openUrl as URL, completionHandler: nil)
+    }
+    
     
     @available(iOSApplicationExtension 10.0, *)
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize){
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        
         if (activeDisplayMode == NCWidgetDisplayMode.expanded) {
+    
             guard (suplArray.count > 0) else {return}
             let height = CGFloat(suplArray[0].count * 55)
             self.preferredContentSize = CGSize(width: 0, height: height);
+            self.reloadInputViews()
         }
         else {
-            
+            preferredContentSize = maxSize
         }
     }
     
@@ -53,7 +64,6 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         messageLabel.isHidden = false
         
         messageLabel.text = "Žádné změny"
-        print("EMPTY")
         
         if #available(iOSApplicationExtension 10.0, *) {
             guard let extensionContext = self.extensionContext else {return}
@@ -81,10 +91,10 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         guard let firstDate = datesArray.ref(0) else {return 0}
         
-        if firstDate == "Zítra" {
+        if firstDate == "Dnes" {
             self.reloadInputViews()
             messageLabel.isHidden = true
-            print("M")
+            
             return 1
         }
         else {
@@ -97,6 +107,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let suplArraySection = suplArray.ref(section)
             else {return 0}
+        
         if suplArraySection.count > 2 {
             if #available(iOSApplicationExtension 10.0, *) {
                 guard let extensionContext = self.extensionContext else {return 0}
