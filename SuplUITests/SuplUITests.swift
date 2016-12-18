@@ -36,6 +36,8 @@ class SuplUITests: XCTestCase {
         
         setupSnapshot(XCUIApplication())
         
+        snapshot("main")
+        
         XCUIApplication().navigationBars["Supl"].buttons["Settings"].tap()
         
         snapshot("settings")

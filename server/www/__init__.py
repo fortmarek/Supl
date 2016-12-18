@@ -289,6 +289,10 @@ api.add_resource(Notification, '/users/<string:user_id>/notification')
 def html():
     return render_template('main.html')
 
+@app.route('/mockup')
+def mockup():
+    return render_template('mockup_supl/main.html')
+
 @app.route('/korunka')
 def korunka():
     return render_template('korunka/main_server.html')

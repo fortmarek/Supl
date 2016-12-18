@@ -9,6 +9,9 @@
     "show_complete_frame": false
   },
   "data": [
+	{
+  		"filter" : "main"
+  	},
   	{
   		"filter" : "settings"
   	},
