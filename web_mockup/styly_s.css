@@ -1,0 +1,123 @@
+<!-- odkaz 1 - tento radek nechte i ve vasem vlastnim souboru stylu -->
+<!-- ***** suplovani - prehled suplovani pro zaky ***** -->
+table {border-collapse:collapse !important;}
+<!-- zakladni styly pisma  -->
+.textnormal_1 {font-family: Arial; font-size: 9px}
+.textlarge_1 {font-family: Arial; font-size: 12px; font-weight: bold}
+.textsmall_1 {font-family: Arial; font-size: 6px}
+.textsmaller_1 {font-family: Arial; font-size: 5px}
+.textbaka_1 {font-family: Arial; font-size: 6px}
+.textinfo_1 {font-family: Arial; font-size: 9px; font-weight: bold; text-decoration: underline}
+
+<!-- stranka s nabidkou dnu pro zobrazeni  -->
+body.nb_suplov_1 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; margin: 10px 10px 10px 10px}
+table.nb_tb_1 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; border-collapse: separate; border: none #000000 0px}
+td.nb_td_1 {padding: 3px 13px 3px 13px; border: solid #000000 1px}
+td.nb_td_titulek_1 {font-size: 15px; font-weight: bold; text-align: center; border: solid #000000 1px}
+
+<!--  stranka s obsahem suplovani -->
+body.suplov_1 {font-family: Arial; font-size: 9px; color: #000000; background-color: #FFFFFF; margin: 5px 5px 5px 5px}
+<!-- tabulka absenci trid  -->
+table.tb_abtrid_1 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abtrid_1 {font-weight: bold; background-color: #C0C0C0}
+td.td_abtrid_1 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci ucitelu  -->
+table.tb_abucit_1 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abucit_1 {font-weight: bold; background-color: #C0C0C0}
+td.td_abucit_1 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci mistnosti  -->
+table.tb_abmist_1 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abmist_1 {font-weight: bold; background-color: #C0C0C0}
+td.td_abmist_1 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu trid  -->
+table.tb_supltrid_1 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_supltrid_1 {font-weight: bold; background-color: #C0C0C0}
+td.td_supltrid_1 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu ucitelu  -->
+table.tb_suplucit_1 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_suplucit_1 {font-weight: bold; background-color: #C0C0C0}
+td.td_suplucit_1 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+
+
+<!-- odkaz 2 - tento radek nechte i ve vasem vlastnim souboru stylu -->
+<!-- ***** suplovani - prehled suplovani pro ucitele ***** -->
+
+<!-- zakladni styly pisma  -->
+.textnormal_2 {font-family: Arial; font-size: 9px}
+.textlarge_2 {font-family: Arial; font-size: 12px; font-weight: bold}
+.textsmall_2 {font-family: Arial; font-size: 6px}
+.textsmaller_2 {font-family: Arial; font-size: 5px}
+.textbaka_2 {font-family: Arial; font-size: 6px}
+.textinfo_2 {font-family: Arial; font-size: 9px; font-weight: bold; text-decoration: underline}
+
+<!-- stranka s nabidkou dnu pro zobrazeni  -->
+body.nb_suplov_2 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; margin: 10px 10px 10px 10px}
+table.nb_tb_2 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; border-collapse: separate; border: none #000000 0px}
+td.nb_td_2 {padding: 3px 13px 3px 13px; border: solid #000000 1px}
+td.nb_td_titulek_2 {font-size: 15px; font-weight: bold; text-align: center; border: solid #000000 1px}
+
+<!--  stranka s obsahem suplovani -->
+body.suplov_2 {font-family: Arial; font-size: 9px; color: #000000; background-color: #FFFFFF; margin: 5px 5px 5px 5px}
+<!-- tabulka absenci trid  -->
+table.tb_abtrid_2 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abtrid_2 {font-weight: bold; background-color: #C0C0C0}
+td.td_abtrid_2 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci ucitelu  -->
+table.tb_abucit_2 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abucit_2 {font-weight: bold; background-color: #C0C0C0}
+td.td_abucit_2 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci mistnosti  -->
+table.tb_abmist_2 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abmist_2 {font-weight: bold; background-color: #C0C0C0}
+td.td_abmist_2 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu trid  -->
+table.tb_supltrid_2 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_supltrid_2 {font-weight: bold; background-color: #C0C0C0}
+td.td_supltrid_2 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu ucitelu  -->
+table.tb_suplucit_2 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_suplucit_2 {font-weight: bold; background-color: #C0C0C0}
+td.td_suplucit_2 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+
+
+<!-- odkaz 3 - tento radek nechte i ve vasem vlastnim souboru stylu -->
+<!-- ***** suplovani - prehled suplovani pro www ***** -->
+
+<!-- zakladni styly pisma  -->
+.textnormal_3 {font-family: Arial; font-size: 9px}
+.textlarge_3 {font-family: Arial; font-size: 12px; font-weight: bold}
+.textsmall_3 {font-family: Arial; font-size: 6px}
+.textsmaller_3 {font-family: Arial; font-size: 5px}
+.textbaka_3 {font-family: Arial; font-size: 6px}
+.textinfo_3 {font-family: Arial; font-size: 9px; font-weight: bold; text-decoration: underline}
+
+<!-- stranka s nabidkou dnu pro zobrazeni  -->
+body.nb_suplov_3 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; margin: 10px 10px 10px 10px}
+table.nb_tb_3 {font-family: Arial; font-size: 13px; color: #000000; background-color: #C0C0C0; border-collapse: separate; border: none #000000 0px}
+td.nb_td_3 {padding: 3px 13px 3px 13px; border: solid #000000 1px}
+td.nb_td_titulek_3 {font-size: 15px; font-weight: bold; text-align: center; border: solid #000000 1px}
+
+<!--  stranka s obsahem suplovani -->
+body.suplov_3 {font-family: Arial; font-size: 9px; color: #000000; background-color: #FFFFFF; margin: 5px 5px 5px 5px}
+<!-- tabulka absenci trid  -->
+table.tb_abtrid_3 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abtrid_3 {font-weight: bold; background-color: #C0C0C0}
+td.td_abtrid_3 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci ucitelu  -->
+table.tb_abucit_3 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abucit_3 {font-weight: bold; background-color: #C0C0C0}
+td.td_abucit_3 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- tabulka absenci mistnosti  -->
+table.tb_abmist_3 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_abmist_3 {font-weight: bold; background-color: #C0C0C0}
+td.td_abmist_3 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu trid  -->
+table.tb_supltrid_3 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_supltrid_3 {font-weight: bold; background-color: #C0C0C0}
+td.td_supltrid_3 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+<!-- zmeny v rozvrhu ucitelu  -->
+table.tb_suplucit_3 {font-family: Arial; font-size: 9px; border-collapse: separate; border: solid #000000 1px; margin: 5px 0px 5px 0px}
+tr.tr_suplucit_3 {font-weight: bold; background-color: #C0C0C0}
+td.td_suplucit_3 {border: solid #C0C0C0 1px; padding: 1px 3px 1px 3px}
+
+
