@@ -1,1 +1,1 @@
-- Oprava tokenů pro notifikace
+- Widget: Nový widget vám jednoduše zobrazí změny v rozvrhu pro aktuální den

@@ -4,13 +4,11 @@
  devices([
    "iPhone 7",
    "iPhone 7 Plus",
-   "iPhone 6",
-   "iPhone 6 Plus",
    "iPhone 5"
  ])
 
 languages([
-  "cs-CZ"
+  "en-US"
 ])
 
 # Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments
