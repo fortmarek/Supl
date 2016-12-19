@@ -36,6 +36,12 @@ class SuplUITests: XCTestCase {
         
         setupSnapshot(XCUIApplication())
         
+        _ = self.expectation(
+            for: NSPredicate(format: "self.count = 1"),
+            evaluatedWith: XCUIApplication().tables,
+            handler: nil)
+        self.waitForExpectations(timeout: 5.0, handler: nil)
+        
         snapshot("main")
         
         XCUIApplication().navigationBars["Supl"].buttons["Settings"].tap()

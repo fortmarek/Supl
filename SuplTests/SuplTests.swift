@@ -17,7 +17,7 @@ class SuplTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewControllerWithIdentifier("suplVC") as? ViewController else {return}
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "suplVC") as? ViewController else {return}
         self.vc = viewController
         
         let _ = viewController.view

@@ -43,7 +43,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4305">
@@ -98,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scrape.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scrape.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="263" column="8" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="8" />
+            <state relative-caret-position="271">
+              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
               <folding>
                 <element signature="e#20#49#0" expanded="true" />
                 <marker date="1480351628000" expanded="true" signature="2273:2303" ph="SELECT `scho... schools" />
@@ -143,8 +143,8 @@
       <file leaf-file-name="date_module.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape/date_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -928,19 +928,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27724138" sideWeight="0.50289434" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2013889" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27724138" sideWeight="0.50289434" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="manage.py@supl" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946298" sideWeight="0.49710566" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1111,16 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/date_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrape/school_fix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1129,29 +1119,6 @@
             <element signature="e#0#15#0" expanded="true" />
             <marker date="1476218812000" expanded="true" signature="111:132" ph="SELECT * FRO... schools" />
             <marker date="1476218812000" expanded="true" signature="550:586" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1479890514000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
-            <marker date="1479890514000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
-            <marker date="1479890514000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
-            <marker date="1479890514000" expanded="true" signature="1788:1855" ph="SELECT `chan... changes" />
-            <marker date="1479890514000" expanded="true" signature="2207:2274" ph="SELECT `chan... changes" />
-            <marker date="1479890514000" expanded="true" signature="3164:3240" ph="DELETE FROM " />
-            <marker date="1479890514000" expanded="true" signature="4628:4719" ph="SELECT `clas... classes" />
-            <marker date="1479890514000" expanded="true" signature="4825:4886" ph="INSERT INTO `classes`... " />
-            <marker date="1479890514000" expanded="true" signature="4982:5060" ph="SELECT `clas... temporary_classes" />
-            <marker date="1479890514000" expanded="true" signature="5298:5356" ph="SELECT `user... temp_properties" />
-            <marker date="1479890514000" expanded="true" signature="5492:5560" ph="INSERT INTO `user_properties`... " />
-            <marker date="1479890514000" expanded="true" signature="5643:5691" ph="DELETE FROM " />
-            <marker date="1479890514000" expanded="true" signature="5766:5834" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1169,22 +1136,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="263" column="8" selection-start-line="263" selection-start-column="8" selection-end-line="263" selection-end-column="8" />
-          <folding>
-            <element signature="e#20#49#0" expanded="true" />
-            <marker date="1480351628000" expanded="true" signature="2273:2303" ph="SELECT `scho... schools" />
-            <marker date="1480351628000" expanded="true" signature="2483:2531" ph="SELECT `scho... schools" />
-            <marker date="1480351628000" expanded="true" signature="2626:2670" ph="INSERT INTO `schools`... " />
-            <marker date="1480351628000" expanded="true" signature="5169:5348" ph="SELECT DISTI... professor_changes" />
-            <marker date="1480351628000" expanded="true" signature="5936:6066" ph="SELECT DISTI... changes" />
+            <element signature="e#0#14#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1224,6 +1176,54 @@
             <marker date="1482089559000" expanded="true" signature="9946:10002" ph="INSERT INTO missing_value... " />
             <marker date="1482089559000" expanded="true" signature="10124:10183" ph="SELECT * FRO... missing_value" />
             <marker date="1482089559000" expanded="true" signature="10282:10339" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="135" column="29" selection-start-line="135" selection-start-column="29" selection-end-line="135" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1479890514000" expanded="true" signature="574:779" ph="INSERT INTO `changes`... " />
+            <marker date="1479890514000" expanded="true" signature="1089:1157" ph="SELECT `clas... classes" />
+            <marker date="1479890514000" expanded="true" signature="1578:1634" ph="SELECT * FRO... changes" />
+            <marker date="1479890514000" expanded="true" signature="1788:1855" ph="SELECT `chan... changes" />
+            <marker date="1479890514000" expanded="true" signature="2207:2274" ph="SELECT `chan... changes" />
+            <marker date="1479890514000" expanded="true" signature="3164:3240" ph="DELETE FROM " />
+            <marker date="1479890514000" expanded="true" signature="4628:4719" ph="SELECT `clas... classes" />
+            <marker date="1479890514000" expanded="true" signature="4825:4886" ph="INSERT INTO `classes`... " />
+            <marker date="1479890514000" expanded="true" signature="4982:5060" ph="SELECT `clas... temporary_classes" />
+            <marker date="1479890514000" expanded="true" signature="5298:5356" ph="SELECT `user... temp_properties" />
+            <marker date="1479890514000" expanded="true" signature="5492:5560" ph="INSERT INTO `user_properties`... " />
+            <marker date="1479890514000" expanded="true" signature="5643:5691" ph="DELETE FROM " />
+            <marker date="1479890514000" expanded="true" signature="5766:5834" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/date_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape/scrape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+          <folding>
+            <element signature="e#20#49#0" expanded="true" />
+            <marker date="1480351628000" expanded="true" signature="2273:2303" ph="SELECT `scho... schools" />
+            <marker date="1480351628000" expanded="true" signature="2483:2531" ph="SELECT `scho... schools" />
+            <marker date="1480351628000" expanded="true" signature="2626:2670" ph="INSERT INTO `schools`... " />
+            <marker date="1480351628000" expanded="true" signature="5169:5348" ph="SELECT DISTI... professor_changes" />
+            <marker date="1480351628000" expanded="true" signature="5936:6066" ph="SELECT DISTI... changes" />
           </folding>
         </state>
       </provider>

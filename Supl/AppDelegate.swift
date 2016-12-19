@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
         sharedDefaults?.setValue(defaults.string(forKey: "userId"), forKey: "userId")
         sharedDefaults?.synchronize()
         
+        //For UI Testing
+        //defaults.setValue("283A08B7-ED0A-4FFC-BA0C-8EB8589A1B87", forKey: "userId")
+        //sharedDefaults?.setValue(defaults.string(forKey: "userId"), forKey: "userId")
+        //sharedDefaults?.synchronize()
+        
+        
+        
         if defaults.string(forKey: "userId") == nil {
             guard let userId = UIDevice.current.identifierForVendor else {return true}
             let id = userId.uuidString
