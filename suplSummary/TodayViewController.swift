@@ -120,6 +120,7 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         
         if firstDate == "Dnes" {
             self.reloadInputViews()
+
             messageLabel.isHidden = true
 
             return 1

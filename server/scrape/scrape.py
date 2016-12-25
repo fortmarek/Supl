@@ -65,7 +65,6 @@ def get_individual_links(html, basic_link):
     if html == False:
         return []
     for string_date in html.find_all('option'):
-        print(string_date)
         date = date_module.get_date(string_date)
         if date_module.is_date_present(date):
             final_link = get_final_link(basic_link, string_date['value'])
