@@ -138,6 +138,7 @@ def get_index(html):
 
 def fix_tables(html, old_dates_count, index, dates):
     dates_number = old_dates_count
+    #print("D: {0}", (dates))
     for paragraph in html.body.find_all('p', recursive=False):
         try:
             if paragraph['class'][0] == 'textnormal_' + index:
@@ -149,6 +150,9 @@ def fix_tables(html, old_dates_count, index, dates):
                 dates_number += 1
         except KeyError:
             continue
+        #except IndexError:
+        #    print(dates)
+        #    print(html)
     return dates
 
 def get_data(html, school, should_compare):

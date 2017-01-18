@@ -96,6 +96,8 @@ class TodayViewController: SuplTable, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
+
+        
         dataController.getData(completion: {
             
             //Caching data to documents directory to avoid tableView flashing when viewDidLoad
