@@ -141,7 +141,7 @@ def fix_tables(html, old_dates_count, index, dates):
     #print("D: {0}", (dates))
     for paragraph in html.body.find_all('p', recursive=False):
         try:
-            if paragraph['class'][0] == 'textnormal_' + index:
+            if paragraph['class'][0] == 'textnormal_' + index and dates_number < len(dates) - 2:
                 dates.pop(dates_number - 1)
                 dates_number -= 1
                 if len(dates) == 0:
@@ -267,8 +267,9 @@ def run_scrape():
 
     try:
         for school in schools:
-        #for i in range(0, 1):
-        #    school = 'http://old.gjk.cz/suplovani.php'
+            print(school)
+      #  for i in range(0, 1):
+      #      school = 'http://old.gjk.cz/suplovani.php'
             get_school_data(school, True)
         file = open('/home/scrape/log-file.txt', 'a')
         file.write("Success\n")

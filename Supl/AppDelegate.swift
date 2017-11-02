@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NotificationsDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         //Convert token data to string
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-    
+        print(token)
         self.postToken(token)
     }
     

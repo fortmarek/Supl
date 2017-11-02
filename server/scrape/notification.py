@@ -39,7 +39,7 @@ def send_notifications(id, property_type):
 
     apns = APNs(use_sandbox=True, cert_file=config.CERT, enhanced=True)
     message = unicode('Změna rozvrhu', 'utf-8')
-    payload = Payload(alert=message, sound="default", badge=0, mutable_content=True)
+    payload = Payload(alert=message, sound="default", badge=0)
 
     tokens = get_tokens(id, property_type)
 
